@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Remove Plosives in Audacity with High-Pass Filter - audacity</title>
+    <meta name="description" content="Plosives—the distracting thumps and pops caused by bursts of mechanical air hitting a microphone capsule during &quot;p,&quot; &quot;b,&quot; and &quot;t&quot; sounds—can compromise the quality of any vocal track. This guide explains how to surgically eliminate plosive pops in Audacit">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-remove-plosives-in-audacity-with-high-pass-filter">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Remove Plosives in Audacity with High-Pass Filter - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-remove-plosives-in-audacity-with-high-pass-filter" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Plosives—the distracting thumps and pops caused by bursts of mechanical air hitting a microphone capsule during &quot;p,&quot; &quot;b,&quot; and &quot;t&quot; sounds—can compromise the quality of any vocal track. This guide explains how to surgically eliminate plosive pops in Audacit" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-remove-plosives-in-audacity-with-high-pass-filter">How to
+Remove Plosives in Audacity with High-Pass Filter</h1>
+<p>Plosives—the distracting thumps and pops caused by bursts of
+mechanical air hitting a microphone capsule during "p," "b," and "t"
+sounds—can compromise the quality of any vocal track. This guide
+explains how to surgically eliminate plosive pops in Audacity by
+applying a localized high-pass filter. By isolating only the damaged
+milliseconds rather than filtering the entire track, you effectively cut
+the unwanted sub-bass energy while keeping the speaker’s natural vocal
+warmth completely intact.</p>
+<h3 id="1-locate-the-plosive">1. Locate the Plosive</h3>
+<p>Zoom in closely on your audio track where the pop occurs. You can
+identify plosives visually:</p>
+<ul>
+<li><strong>Waveform View:</strong> Look for an unusually wide,
+low-frequency wave cycle directly beneath the spoken consonant.</li>
+<li><strong>Spectrogram View (Recommended):</strong> Click the track
+dropdown menu next to the track name, select
+<strong>Spectrogram</strong>, and look for an intense, bright burst of
+energy concentrated below 100 Hz.</li>
+</ul>
+<h3 id="2-isolate-the-pop">2. Isolate the Pop</h3>
+<p>Using the <strong>Selection Tool (F1)</strong>, highlight
+<em>only</em> the specific duration of the low-frequency burst. This
+selection is typically very brief, often between 50 to 150 milliseconds.
+Avoid selecting the high-frequency vowel sound that follows to ensure
+the spoken word retains its natural tone. Press <strong>Z</strong> on
+your keyboard to snap the selection edges to zero-crossings, which
+prevents clicks or pops at the transition points.</p>
+<h3 id="3-apply-the-high-pass-filter">3. Apply the High-Pass Filter</h3>
+<p>With the plosive highlighted:</p>
+<ol type="1">
+<li>Navigate to <strong>Effect &gt; EQ and Filters &gt; High-Pass
+Filter</strong>.</li>
+<li>Set the <strong>Frequency (Hz)</strong> slider between <strong>80 Hz
+and 120 Hz</strong>. Most plosive rumble lives between 20 Hz and 80 Hz,
+while standard human vocal fundamentals sit slightly higher.</li>
+<li>Set the <strong>Rolloff</strong> to <strong>12 dB</strong> or
+<strong>24 dB per octave</strong>. A 24 dB slope provides a steeper,
+more aggressive cut for severe pops, whereas 12 dB offers a gentler,
+more transparent reduction.</li>
+<li>Click <strong>Preview</strong> to evaluate the change.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<h3 id="4-review-in-context">4. Review in Context</h3>
+<p>Deselect the audio and play back the entire phrase to ensure the
+transition sounds seamless. If a thud is still audible, press
+<code>Ctrl+Z</code> (or <code>Cmd+Z</code> on macOS) to undo, slightly
+increase the frequency threshold (up to 150 Hz), and reapply. If the
+vocal sounds unnaturally thin for a split second, lower the cutoff
+frequency closer to 70 Hz or reduce the rolloff to 6 dB.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

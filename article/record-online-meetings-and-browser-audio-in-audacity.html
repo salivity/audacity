@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Online Meetings and Browser Audio in Audacity - audacity</title>
+    <meta name="description" content="Recording audio from online meetings, webinars, or browser tabs directly into Audacity is a straightforward process that captures digital sound without the background noise of an external microphone. This guide explains how to configure Audacity’s recordi">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/record-online-meetings-and-browser-audio-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Record Online Meetings and Browser Audio in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/record-online-meetings-and-browser-audio-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Recording audio from online meetings, webinars, or browser tabs directly into Audacity is a straightforward process that captures digital sound without the background noise of an external microphone. This guide explains how to configure Audacity’s recordi" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="record-online-meetings-and-browser-audio-in-audacity">Record
+Online Meetings and Browser Audio in Audacity</h1>
+<p>Recording audio from online meetings, webinars, or browser tabs
+directly into Audacity is a straightforward process that captures
+digital sound without the background noise of an external microphone.
+This guide explains how to configure Audacity’s recording settings to
+capture internal system sounds on Windows using the WASAPI loopback
+method, as well as how to set up the necessary virtual routing on macOS.
+Following these steps ensures high-quality, direct-source recordings of
+platforms like Google Meet, Zoom, YouTube, or any active web browser
+tab.</p>
+<h2 id="recording-on-windows-wasapi-loopback">Recording on Windows
+(WASAPI Loopback)</h2>
+<p>Windows users can record internal desktop and browser audio natively
+using Audacity's built-in Windows Audio Session API (WASAPI) loopback
+feature.</p>
+<ol type="1">
+<li><strong>Open Audacity</strong> on your computer.</li>
+<li>Locate the <strong>Audio Setup</strong> toolbar (or go to
+<strong>Edit</strong> &gt; <strong>Preferences</strong> &gt;
+<strong>Audio Settings</strong>).</li>
+<li>Set the <strong>Host</strong> to <strong>Windows
+WASAPI</strong>.</li>
+<li>Set the <strong>Recording Device</strong> to your active playback
+device's loopback option (for example, <em>Speakers (loopback)</em> or
+<em>Headphones (loopback)</em>). Choose the device you are currently
+using to listen to the meeting or tab.</li>
+<li>Set the <strong>Recording Channels</strong> to <strong>2
+(Stereo)</strong>.</li>
+<li>Verify the <strong>Playback Device</strong> matches the device
+selected for the loopback (e.g., your current speakers or
+headphones).</li>
+<li>Go to <strong>Transport</strong> &gt; <strong>Transport
+Options</strong> and ensure <strong>Software Playthrough of
+input</strong> is turned <strong>Off</strong> to prevent loud audio
+feedback and echo.</li>
+<li>Start the audio in your browser tab or join your meeting, then click
+the red <strong>Record</strong> button in Audacity.</li>
+</ol>
+<h2 id="recording-on-macos-virtual-audio-cable">Recording on macOS
+(Virtual Audio Cable)</h2>
+<p>macOS does not have a native loopback feature, so it requires a free
+third-party virtual audio driver (such as BlackHole) to route browser or
+meeting audio into Audacity.</p>
+<ol type="1">
+<li><strong>Install a Virtual Audio Driver</strong>: Download and
+install a loopback driver like BlackHole.</li>
+<li><strong>Create a Multi-Output Device</strong>:
+<ul>
+<li>Open <strong>Audio MIDI Setup</strong> (found in
+<code>Applications &gt; Utilities</code>).</li>
+<li>Click the <strong>+</strong> icon at the bottom left and choose
+<strong>Create Multi-Output Device</strong>.</li>
+<li>Check the boxes for both your primary listening device (e.g.,
+Headphones) and the virtual driver (e.g., BlackHole 2ch). This allows
+you to hear the audio while Audacity records it.</li>
+</ul></li>
+<li><strong>Change System Output</strong>: Open <strong>System
+Settings</strong> &gt; <strong>Sound</strong>, and set the Output to
+your newly created <strong>Multi-Output Device</strong>.</li>
+<li><strong>Configure Audacity</strong>:
+<ul>
+<li>Open Audacity and go to <strong>Audio Setup</strong>.</li>
+<li>Set the <strong>Host</strong> to <strong>Core Audio</strong>.</li>
+<li>Set the <strong>Recording Device</strong> to the virtual driver
+(e.g., <strong>BlackHole 2ch</strong>).</li>
+</ul></li>
+<li>Open your meeting or browser tab, click <strong>Record</strong> in
+Audacity, and capture the incoming stream.</li>
+</ol>
+<h2 id="capturing-both-your-microphone-and-meeting-audio">Capturing Both
+Your Microphone and Meeting Audio</h2>
+<p>If you need to record both your own voice and the attendees in a
+meeting, a single loopback source will only capture what you hear, not
+what you say into your microphone.</p>
+<ul>
+<li><strong>Windows</strong>: The simplest method without third-party
+tools is to open <strong>Windows Sound Settings</strong>, go to the
+<strong>Recording</strong> tab, select your microphone, open
+<strong>Properties</strong>, go to the <strong>Listen</strong> tab, and
+check <strong>Listen to this device</strong> through your main playback
+device. This mixes your microphone input directly into the WASAPI
+loopback stream.</li>
+<li><strong>macOS / Advanced Users</strong>: Use software like OBS
+Studio or VoiceMeeter (Windows) to mix your microphone input and browser
+output into a single virtual output channel, then select that virtual
+channel as the recording device in Audacity.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

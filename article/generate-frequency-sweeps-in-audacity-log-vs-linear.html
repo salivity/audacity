@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Frequency Sweeps in Audacity: Log vs Linear - audacity</title>
+    <meta name="description" content="Audacity fully supports the creation of both linear and logarithmic frequency sweeps through its built-in Chirp generator. This guide explains how to generate these sweeps step-by-step, highlights the fundamental differences between linear and logarithmic">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/generate-frequency-sweeps-in-audacity-log-vs-linear">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Generate Frequency Sweeps in Audacity: Log vs Linear - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/generate-frequency-sweeps-in-audacity-log-vs-linear" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity fully supports the creation of both linear and logarithmic frequency sweeps through its built-in Chirp generator. This guide explains how to generate these sweeps step-by-step, highlights the fundamental differences between linear and logarithmic" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="generate-frequency-sweeps-in-audacity-log-vs-linear">Generate
+Frequency Sweeps in Audacity: Log vs Linear</h1>
+<p>Audacity fully supports the creation of both linear and logarithmic
+frequency sweeps through its built-in Chirp generator. This guide
+explains how to generate these sweeps step-by-step, highlights the
+fundamental differences between linear and logarithmic frequency
+progression, and details when to choose each scale for audio testing,
+room calibration, or sound design.</p>
+<h3 id="how-to-generate-a-frequency-sweep-in-audacity">How to Generate a
+Frequency Sweep in Audacity</h3>
+<p>Audacity uses the term "Chirp" to describe an audio signal whose
+frequency changes over time.</p>
+<ol type="1">
+<li>Open Audacity.</li>
+<li>Navigate to the top menu and select <strong>Generate</strong> &gt;
+<strong>Chirp...</strong>.</li>
+<li>Choose your desired <strong>Waveform</strong> (Sine is the standard
+choice for frequency testing).</li>
+<li>Enter the <strong>Start Frequency (Hz)</strong> and <strong>End
+Frequency (Hz)</strong> (for example, 20 Hz to 20,000 Hz for full-range
+audio).</li>
+<li>Set the <strong>Start Amplitude</strong> and <strong>End
+Amplitude</strong> (a setting of 0.8 is typical to prevent digital
+clipping).</li>
+<li>Under the <strong>Interpolation</strong> drop-down menu, choose
+either <strong>Linear</strong> or <strong>Logarithmic</strong>.</li>
+<li>Set the <strong>Duration</strong> of the sweep.</li>
+<li>Click <strong>Generate</strong> to create the track.</li>
+</ol>
+<h3 id="linear-vs-logarithmic-sweeps">Linear vs. Logarithmic Sweeps</h3>
+<p>The key difference between the two scales lies in the
+<strong>Interpolation</strong> setting, which governs how the frequency
+transitions from the start value to the end value.</p>
+<h4 id="linear-frequency-sweeps">Linear Frequency Sweeps</h4>
+<p>In a linear sweep, the frequency changes at a constant rate in Hertz
+per second. For example, during a 10-second sweep from 0 Hz to 10,000
+Hz, the signal increases by 1,000 Hz every second.</p>
+<ul>
+<li><strong>Behavior:</strong> The sweep spends the vast majority of its
+duration in the high-frequency range because human hearing perceives
+pitch logarithmically. The jump from 100 Hz to 200 Hz is an entire
+octave, but represents only a fraction of a second in a linear
+sweep.</li>
+<li><strong>Common Uses:</strong> Synthesizer effects, educational
+demonstrations of waveform mathematics, and certain RF (radio frequency)
+testing scenarios.</li>
+</ul>
+<h4 id="logarithmic-frequency-sweeps">Logarithmic Frequency Sweeps</h4>
+<p>In a logarithmic (or exponential) sweep, the frequency changes by a
+constant number of octaves per second. The sweep doubles in frequency at
+fixed time intervals (e.g., 20 Hz to 40 Hz takes the same amount of time
+as 10,000 Hz to 20,000 Hz).</p>
+<ul>
+<li><strong>Behavior:</strong> A logarithmic sweep sounds like a smooth,
+steady rise across the entire audible spectrum to human ears, giving
+equal auditory weight to bass, midrange, and treble frequencies.</li>
+<li><strong>Common Uses:</strong> Acoustic measurements, speaker
+testing, room impulse response deconvolution, and audio equipment
+frequency response checks.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

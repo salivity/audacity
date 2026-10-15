@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Audacity Export Opus Audio Files? - audacity</title>
+    <meta name="description" content="Audacity natively supports encoding and exporting audio to the Opus format without requiring external libraries or third-party plugins. Starting with the release of Audacity 3.2, native Opus support was fully integrated into the software via the built-in">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/can-audacity-export-opus-audio-files">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Can Audacity Export Opus Audio Files? - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/can-audacity-export-opus-audio-files" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity natively supports encoding and exporting audio to the Opus format without requiring external libraries or third-party plugins. Starting with the release of Audacity 3.2, native Opus support was fully integrated into the software via the built-in" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="can-audacity-export-opus-audio-files">Can Audacity Export Opus
+Audio Files?</h1>
+<p>Audacity natively supports encoding and exporting audio to the Opus
+format without requiring external libraries or third-party plugins.
+Starting with the release of Audacity 3.2, native Opus support was fully
+integrated into the software via the built-in <code>libopus</code>
+library. This article outlines Audacity's Opus capabilities, details the
+exact steps to export Opus files, and explains the configurable encoding
+settings available to users.</p>
+<h3 id="native-opus-support-in-audacity">Native Opus Support in
+Audacity</h3>
+<p>In older versions of Audacity (prior to version 3.2), users had to
+manually install and configure the optional FFmpeg library to export
+files in modern formats like Opus. However, modern releases of Audacity
+feature built-in support for Opus encoding and decoding.</p>
+<p>When you export to Opus in modern Audacity, the software wraps the
+Opus audio stream into an <code>.opus</code> (Ogg Opus) container.
+Because this functionality is bundled directly into the software, no
+additional software, command-line tools, or FFmpeg installations are
+required.</p>
+<h3 id="how-to-export-opus-audio-in-audacity">How to Export Opus Audio
+in Audacity</h3>
+<p>To natively export your project or track as an Opus file, follow
+these steps:</p>
+<ol type="1">
+<li>Open your audio project in Audacity (version 3.2 or newer).</li>
+<li>Click <strong>File</strong> in the top menu bar.</li>
+<li>Hover over <strong>Export</strong> and select <strong>Export
+Audio...</strong> (or press <code>Ctrl + Shift + E</code> on
+Windows/Linux, <code>Cmd + Shift + E</code> on macOS).</li>
+<li>In the export dialog, open the <strong>Format</strong> dropdown menu
+and select <strong>Opus (OggOpus) Files</strong>.</li>
+<li>Choose a destination folder and enter a file name.</li>
+<li>Adjust your encoding parameters in the format options section (see
+details below).</li>
+<li>Click <strong>Export</strong> to render and save the file.</li>
+</ol>
+<h3 id="configurable-opus-export-settings">Configurable Opus Export
+Settings</h3>
+<p>Audacity provides several parameters to balance file size and audio
+fidelity during the export process:</p>
+<ul>
+<li><strong>Quality / Bitrate:</strong> Opus is exceptionally efficient.
+Bitrates typically range from 6 kbps to 510 kbps. For standard stereo
+speech, 32–64 kbps is generally sufficient. For high-fidelity stereo
+music, 96–160 kbps provides transparent, near-lossless perceived
+quality.</li>
+<li><strong>Complexity:</strong> Sets the computational effort used by
+the encoder (ranging from 0 to 10). A higher complexity value optimizes
+audio quality at your chosen bitrate at the cost of slightly slower
+rendering times. Setting this to 10 is recommended for standard
+exports.</li>
+<li><strong>Frame Duration:</strong> Controls the packet size in
+milliseconds (typically 2.5 ms to 60 ms, with 20 ms being the standard
+default). Smaller durations reduce latency for real-time applications,
+while larger durations marginally improve compression efficiency for
+saved files.</li>
+<li><strong>Bitrate Mode:</strong> Allows you to choose between Variable
+Bitrate (VBR), Constrained VBR (CVBR), and Constant Bitrate (CBR). VBR
+is selected by default as it allocates bits dynamically based on the
+complexity of the audio.</li>
+</ul>
+<h3 id="summary">Summary</h3>
+<p>Audacity does not require extra software or complex setup to create
+Opus files. As long as you are using Audacity 3.2 or newer, you can
+directly import, edit, and natively export Ogg Opus audio with complete
+control over bitrates and compression settings.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

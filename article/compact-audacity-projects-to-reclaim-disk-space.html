@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Audacity Projects to Reclaim Disk Space - audacity</title>
+    <meta name="description" content="Audacity projects can rapidly consume gigabytes of storage because the software uses non-destructive editing, retaining deleted or trimmed audio clips within the project file in case you decide to undo an action. This guide explains how to use the built-i">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/compact-audacity-projects-to-reclaim-disk-space">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Compact Audacity Projects to Reclaim Disk Space - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/compact-audacity-projects-to-reclaim-disk-space" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity projects can rapidly consume gigabytes of storage because the software uses non-destructive editing, retaining deleted or trimmed audio clips within the project file in case you decide to undo an action. This guide explains how to use the built-i" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="compact-audacity-projects-to-reclaim-disk-space">Compact
+Audacity Projects to Reclaim Disk Space</h1>
+<p>Audacity projects can rapidly consume gigabytes of storage because
+the software uses non-destructive editing, retaining deleted or trimmed
+audio clips within the project file in case you decide to undo an
+action. This guide explains how to use the built-in "Compact Project"
+command introduced in Audacity 3.0.0 and later to permanently purge this
+hidden, unused audio data and significantly reduce the file size of your
+<code>.aup3</code> database files.</p>
+<h3 id="why-audacity-files-become-bloated">Why Audacity Files Become
+Bloated</h3>
+<p>When you cut, trim, or overwrite tracks, Audacity does not instantly
+delete the discarded audio from your hard drive. Instead, it flags the
+data as inactive to support multi-level undo functionality. Over a long
+editing session, an <code>.aup3</code> file can grow to several times
+the size of the actual audio present on your timeline. Compacting
+rewrites the project database to include only the currently used audio
+data, freeing up the rest of the disk space.</p>
+<h3 id="step-by-step-how-to-compact-a-project">Step-by-Step: How to
+Compact a Project</h3>
+<ol type="1">
+<li><strong>Open Your Project:</strong> Launch Audacity and open the
+<code>.aup3</code> project file you want to optimize.</li>
+<li><strong>Review Your Edits:</strong> Verify that you are satisfied
+with your timeline. Compacting will clear the undo history and
+permanently discard unused audio blocks.</li>
+<li><strong>Access the Compact Tool:</strong> Go to the top menu bar,
+click <strong>File</strong>, and select <strong>Compact
+Project...</strong> from the dropdown menu.</li>
+<li><strong>Confirm the Action:</strong> A confirmation dialog will
+appear, showing you the current file size and estimating how much space
+will be reclaimed. Click <strong>Compact</strong> (or
+<strong>Yes</strong>) to proceed.</li>
+<li><strong>Wait for Completion:</strong> Audacity will copy the active
+audio tracks into a newly compacted database file and replace the
+bloated original. Depending on the original file size and your storage
+drive speed, this process may take several minutes.</li>
+</ol>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li><strong>Save Before Compacting:</strong> Make sure all recent
+changes are saved before initiating the compact operation to prevent
+data conflicts.</li>
+<li><strong>Compact Before Archiving:</strong> The most effective time
+to compact a project is right after you finish your final mixdown,
+before moving the project to long-term storage or cloud drives.</li>
+<li><strong>Make a Backup if Unsure:</strong> If there is a chance you
+might need previously cut takes or older versions of tracks, use
+<strong>File &gt; Save Project &gt; Backup Project</strong> before
+running the compact command.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

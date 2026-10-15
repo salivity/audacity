@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Snap to Seconds or Samples in Audacity - audacity</title>
+    <meta name="description" content="Snapping selections in Audacity allows you to lock your cursor and selection boundaries to precise intervals, eliminating guesswork during audio editing. By configuring Audacity’s Time Toolbar and Selection Toolbar, you can force selections to align perfe">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-snap-to-seconds-or-samples-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Snap to Seconds or Samples in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-snap-to-seconds-or-samples-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Snapping selections in Audacity allows you to lock your cursor and selection boundaries to precise intervals, eliminating guesswork during audio editing. By configuring Audacity’s Time Toolbar and Selection Toolbar, you can force selections to align perfe" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-snap-to-seconds-or-samples-in-audacity">How to Snap to
+Seconds or Samples in Audacity</h1>
+<p>Snapping selections in Audacity allows you to lock your cursor and
+selection boundaries to precise intervals, eliminating guesswork during
+audio editing. By configuring Audacity’s Time Toolbar and Selection
+Toolbar, you can force selections to align perfectly to the nearest
+whole second or down to the individual sample. This guide covers how to
+enable snapping, choose your desired time format, and ensure your audio
+cuts are frame-accurate.</p>
+<h3 id="step-1-enable-the-snapping-feature">Step 1: Enable the Snapping
+Feature</h3>
+<p>To begin snapping your selections, you must activate the snap mode in
+Audacity's interface:</p>
+<ol type="1">
+<li>Locate the <strong>Selection Toolbar</strong>, which is typically
+docked at the bottom of the main Audacity window. (If it is missing,
+enable it by going to <strong>View &gt; Toolbars &gt; Selection
+Toolbar</strong>).</li>
+<li>Find the <strong>Snap</strong> option.</li>
+<li>Click the dropdown menu and change it from <strong>Off</strong> to
+<strong>Nearest</strong>. Selecting "Nearest" ensures that your
+selection edges automatically jump to the closest unit you define.
+Alternatively, choosing <strong>Prior</strong> will snap strictly
+backward to the preceding unit.</li>
+</ol>
+<h3 id="step-2-set-the-format-to-seconds">Step 2: Set the Format to
+Seconds</h3>
+<p>If you want your selections to snap strictly to full seconds:</p>
+<ol type="1">
+<li>Look at the numeric displays in the Selection Toolbar (such as
+<em>Selection Start</em> or <em>Start and End of Selection</em>).</li>
+<li>Click the dropdown arrow next to the time display, or right-click
+directly on the numbers.</li>
+<li>Choose a format based on seconds. For whole seconds, select
+<strong>hh:mm:ss</strong> or <strong>seconds</strong>.</li>
+<li>Click and drag anywhere on your audio track. Your selection
+boundaries will now jump in one-second increments.</li>
+</ol>
+<h3 id="step-3-set-the-format-to-samples">Step 3: Set the Format to
+Samples</h3>
+<p>For sample-accurate editing, such as aligning phase or zero-crossing
+points:</p>
+<ol type="1">
+<li>Go back to the time display in the <strong>Selection
+Toolbar</strong>.</li>
+<li>Click the format dropdown menu or right-click the numbers.</li>
+<li>Select <strong>samples</strong> from the list of available
+formats.</li>
+<li>Zoom in closely on your waveform using <strong>Ctrl + 1</strong> (or
+<strong>Cmd + 1</strong> on macOS).</li>
+<li>Click and drag your cursor. The selection points will now snap
+directly to individual digital audio samples based on your project's
+sample rate (e.g., 44,100 or 48,000 samples per second).</li>
+</ol>
+<h3 id="disabling-snapping">Disabling Snapping</h3>
+<p>If you need to make freeform selections without locking to a grid,
+open the <strong>Snap</strong> dropdown in the Selection Toolbar and set
+it back to <strong>Off</strong>. Alternatively, holding down the
+<strong>Shift</strong> key while dragging a selection will temporarily
+bypass snapping in most versions of Audacity.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

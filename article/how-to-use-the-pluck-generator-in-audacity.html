@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use the Pluck Generator in Audacity - audacity</title>
+    <meta name="description" content="Audacity includes a built-in synthesis tool called Pluck that produces realistic plucked string tones using the Karplus-Strong physical modeling algorithm. This guide provides a straightforward walkthrough on how to locate the Pluck generator, configure i">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-use-the-pluck-generator-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use the Pluck Generator in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-use-the-pluck-generator-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity includes a built-in synthesis tool called Pluck that produces realistic plucked string tones using the Karplus-Strong physical modeling algorithm. This guide provides a straightforward walkthrough on how to locate the Pluck generator, configure i" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-use-the-pluck-generator-in-audacity">How to Use the Pluck
+Generator in Audacity</h1>
+<p>Audacity includes a built-in synthesis tool called Pluck that
+produces realistic plucked string tones using the Karplus-Strong
+physical modeling algorithm. This guide provides a straightforward
+walkthrough on how to locate the Pluck generator, configure its pitch
+and decay settings, and render custom synthesized string notes directly
+into your audio timeline.</p>
+<h3 id="step-1-set-up-an-audio-track">Step 1: Set Up an Audio Track</h3>
+<ol type="1">
+<li>Launch Audacity.</li>
+<li>Go to the top menu and select <strong>Tracks</strong> &gt;
+<strong>Add New</strong> &gt; <strong>Mono Track</strong> (or
+<strong>Stereo Track</strong> depending on your project needs).</li>
+<li>Click on the track timeline where you want the note to begin, or
+highlight an area if you have a predefined duration in mind.</li>
+</ol>
+<h3 id="step-2-open-the-pluck-generator">Step 2: Open the Pluck
+Generator</h3>
+<ol type="1">
+<li>Click on the <strong>Generate</strong> menu at the top of the
+screen.</li>
+<li>Select <strong>Pluck...</strong> from the dropdown list. A
+configuration window will appear with parameters for pitch, decay, and
+duration.</li>
+</ol>
+<h3 id="step-3-configure-the-note-parameters">Step 3: Configure the Note
+Parameters</h3>
+<ul>
+<li><strong>MIDI Pitch No. (32 to 96):</strong> Enter the MIDI note
+number for the pitch you want to create. For reference, standard MIDI
+note <code>60</code> corresponds to Middle C (C4), <code>69</code>
+corresponds to Concert A (A440), and <code>40</code> corresponds to the
+low E on a standard acoustic guitar.</li>
+<li><strong>Fade-out type:</strong> Choose how the note naturally
+decays.
+<ul>
+<li><strong>Abrupt:</strong> Simulates muting or damping the string
+quickly after it is plucked.</li>
+<li><strong>Gradual:</strong> Allows the string vibration to decay
+naturally, creating a resonant acoustic sustain.</li>
+</ul></li>
+<li><strong>Duration:</strong> Set the total length of the audio clip
+using hours, minutes, seconds, or milliseconds. Ensure this value
+provides enough time for the note to decay naturally if using a gradual
+fade.</li>
+</ul>
+<h3 id="step-4-generate-the-note">Step 4: Generate the Note</h3>
+<ol type="1">
+<li>Click the <strong>Generate</strong> (or <strong>OK</strong>) button
+to insert the synthesized waveform into your track.</li>
+<li>Press the <strong>Spacebar</strong> to listen to the result.</li>
+</ol>
+<h3 id="creating-melodies-and-chords">Creating Melodies and Chords</h3>
+<p>To compose simple chord progressions or melodies using Pluck:</p>
+<ul>
+<li><strong>For Melodies:</strong> Place the cursor immediately after
+your first generated note, reopen the Pluck generator, input a new MIDI
+pitch, and generate the next note in sequence.</li>
+<li><strong>For Chords:</strong> Create multiple audio tracks, line up
+the cursor at the identical timestamp across each track, and generate
+harmonic intervals (such as root, third, and fifth MIDI pitches) across
+the separate tracks.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

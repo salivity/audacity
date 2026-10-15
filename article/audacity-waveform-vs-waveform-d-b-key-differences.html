@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Waveform vs Waveform dB: Key Differences - audacity</title>
+    <meta name="description" content="In Audacity, the primary difference between the standard Waveform view and the Waveform (dB) view lies in how audio amplitude is mathematically scaled and visually presented. The standard Waveform view uses a linear scale that emphasizes high-energy peaks">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-waveform-vs-waveform-d-b-key-differences">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Waveform vs Waveform dB: Key Differences - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-waveform-vs-waveform-d-b-key-differences" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Audacity, the primary difference between the standard Waveform view and the Waveform (dB) view lies in how audio amplitude is mathematically scaled and visually presented. The standard Waveform view uses a linear scale that emphasizes high-energy peaks" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-waveform-vs-waveform-db-key-differences">Audacity
+Waveform vs Waveform dB: Key Differences</h1>
+<p>In Audacity, the primary difference between the standard Waveform
+view and the Waveform (dB) view lies in how audio amplitude is
+mathematically scaled and visually presented. The standard Waveform view
+uses a linear scale that emphasizes high-energy peaks and overall
+volume, whereas the Waveform (dB) view uses a logarithmic decibel scale
+that mirrors human hearing to expose quiet sounds and background noise.
+Understanding how these two views work allows you to choose the right
+visual feedback for tasks ranging from basic cutting to fine-tuned audio
+restoration.</p>
+<h3 id="standard-waveform-view-linear-scale">Standard Waveform View
+(Linear Scale)</h3>
+<p>The standard Waveform view measures amplitude on a linear vertical
+scale running from -1.0 to +1.0, representing 0% to 100% of maximum
+digital volume.</p>
+<ul>
+<li><strong>Visual Behavior:</strong> Because the scale is linear, quiet
+audio takes up very little vertical space. A sound recorded at -20 dB
+will appear as a tiny ripple, while sounds below -40 dB appear virtually
+as flat lines.</li>
+<li><strong>Best Uses:</strong>
+<ul>
+<li>Spotting digital clipping and extreme transients quickly.</li>
+<li>Performing basic cuts, splices, and timing adjustments based on
+visible beats or loud speech syllables.</li>
+<li>General editing and track arrangement where high-level dynamics
+matter most.</li>
+</ul></li>
+<li><strong>Limitation:</strong> It is ineffective for spotting
+low-level artifacts, room tone, hiss, or quiet mouth noises because they
+blend into the center zero line.</li>
+</ul>
+<h3 id="waveform-db-view-logarithmic-scale">Waveform (dB) View
+(Logarithmic Scale)</h3>
+<p>The Waveform (dB) view measures amplitude logarithmically in decibels
+full scale (dBFS), typically ranging from 0 dB at the top and bottom
+edges down to a customizable floor (such as -60 dB or -96 dB) at the
+center line.</p>
+<ul>
+<li><strong>Visual Behavior:</strong> Human hearing perceives loudness
+logarithmically rather than linearly. The dB view mimics this perception
+by giving equal visual weight to equal perceptual changes in volume. As
+a result, low-level audio is expanded vertically and clearly
+visible.</li>
+<li><strong>Best Uses:</strong>
+<ul>
+<li>Detecting background noise, ambient room hiss, and bleed between
+microphones.</li>
+<li>Editing spoken word to find subtle breaths, lip smacks, and faint
+clicks between sentences.</li>
+<li>Assessing natural audio fade-outs and reverb tails to ensure they
+decay smoothly without abrupt cutoffs.</li>
+</ul></li>
+<li><strong>Limitation:</strong> Because quiet and moderately loud
+sounds both occupy significant vertical space, the distinct shapes of
+loud drum hits or sharp speech consonants can look less pronounced
+compared to the linear view.</li>
+</ul>
+<h3 id="summary-of-differences">Summary of Differences</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Standard Waveform</th>
+<th style="text-align: left;">Waveform (dB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Scale Type</strong></td>
+<td style="text-align: left;">Linear (-1.0 to +1.0)</td>
+<td style="text-align: left;">Logarithmic (0 dB to -60 dB or lower)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Low-Level Detail</strong></td>
+<td style="text-align: left;">Hidden / Flat line</td>
+<td style="text-align: left;">Clearly visible</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Peak Detection</strong></td>
+<td style="text-align: left;">Excellent</td>
+<td style="text-align: left;">Good, but visually compressed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Perceptual Accuracy</strong></td>
+<td style="text-align: left;">Low (computational representation)</td>
+<td style="text-align: left;">High (matches human hearing)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary Task</strong></td>
+<td style="text-align: left;">Rhythm cutting, beat alignment, clipping
+check</td>
+<td style="text-align: left;">Noise cleanup, vocal editing, fade
+inspection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-switch-views">How to Switch Views</h3>
+<p>To toggle between displays in Audacity, click the dropdown menu next
+to the track name in the Track Control Panel on the left side of the
+track, then select either <strong>Waveform</strong> or <strong>Waveform
+(dB)</strong>. You can switch between them at any time without altering
+the underlying audio data.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

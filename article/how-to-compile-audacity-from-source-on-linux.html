@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Compile Audacity from Source on Linux - audacity</title>
+    <meta name="description" content="Compiling Audacity from source code on Linux enables you to run the latest development features, optimize performance for your specific hardware, or test custom modifications. This guide outlines the essential prerequisites, required system dependencies,">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-compile-audacity-from-source-on-linux">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Compile Audacity from Source on Linux - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-compile-audacity-from-source-on-linux" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Compiling Audacity from source code on Linux enables you to run the latest development features, optimize performance for your specific hardware, or test custom modifications. This guide outlines the essential prerequisites, required system dependencies," />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-compile-audacity-from-source-on-linux">How to Compile
+Audacity from Source on Linux</h1>
+<p>Compiling Audacity from source code on Linux enables you to run the
+latest development features, optimize performance for your specific
+hardware, or test custom modifications. This guide outlines the
+essential prerequisites, required system dependencies, and step-by-step
+instructions to clone the official Audacity repository, configure the
+build environment with CMake, and compile the audio editor from
+scratch.</p>
+<h3 id="1-install-required-build-tools-and-dependencies">1. Install
+Required Build Tools and Dependencies</h3>
+<p>Audacity is written in C++ and requires modern build utilities,
+including CMake, a C++17-compliant compiler, Python, and development
+libraries for audio and GUI management.</p>
+<p>On <strong>Ubuntu / Debian</strong>:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> git cmake build-essential python3 python3-pip <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    libgtk-3-dev libasound2-dev libjack-jackd2-dev libpulse-dev <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    libavformat-dev libsndfile1-dev</span></code></pre></div>
+<p>On <strong>Fedora</strong>:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install <span class="at">-y</span> git cmake gcc-c++ python3 python3-pip <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    gtk3-devel alsa-lib-devel jack-audio-connection-kit-devel pulseaudio-libs-devel <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    ffmpeg-devel libsndfile-devel</span></code></pre></div>
+<p>On <strong>Arch Linux</strong>:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> <span class="at">--needed</span> git cmake base-devel python python-pip <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    gtk3 alsa-lib jack2 libpulse ffmpeg libsndfile</span></code></pre></div>
+<h3 id="2-clone-the-audacity-repository">2. Clone the Audacity
+Repository</h3>
+<p>Clone the source repository from GitHub. Ensure you use the
+<code>--recurse-submodules</code> flag to download all nested libraries
+bundled with the project.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--recurse-submodules</span> https://github.com/audacity/audacity.git</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> audacity</span></code></pre></div>
+<p>If you prefer to compile a specific stable release rather than the
+development branch, list the tags and check out the desired version:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-l</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout tags/Audacity-3.x.x <span class="at">-b</span> my-build</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div>
+<h3 id="3-create-a-build-directory">3. Create a Build Directory</h3>
+<p>Always perform an "out-of-source" build to keep generated artifacts
+separated from the source files.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> build</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> build</span></code></pre></div>
+<h3 id="4-configure-the-project-with-cmake">4. Configure the Project
+with CMake</h3>
+<p>Generate the build system files using CMake. Audacity relies on Conan
+or system packages to manage dependencies. By default, setting the build
+type to <code>Release</code> optimizes the application for standard
+use.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-G</span> <span class="st">&quot;Unix Makefiles&quot;</span> <span class="at">-DCMAKE_BUILD_TYPE</span><span class="op">=</span>Release ..</span></code></pre></div>
+<p><em>Note:</em> If you encounter dependency issues, you can explicitly
+configure dependency handling by appending
+<code>-Daudacity_has_vst3=OFF</code> or specifying package managers
+according to Audacity's latest CMake options.</p>
+<h3 id="5-compile-audacity">5. Compile Audacity</h3>
+<p>Execute the build using all available CPU cores to speed up
+compilation time:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">--build</span> . <span class="at">--parallel</span> <span class="va">$(</span><span class="fu">nproc</span><span class="va">)</span></span></code></pre></div>
+<p>Depending on your hardware, the build process may take several
+minutes to complete.</p>
+<h3 id="6-run-or-install-the-application">6. Run or Install the
+Application</h3>
+<p>Once compilation finishes, you can run Audacity directly from the
+build directory without installing it to your system:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./bin/Release/audacity</span></span></code></pre></div>
+<p>To install the compiled binary, desktop entry, and icons globally on
+your system:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cmake <span class="at">--install</span> .</span></code></pre></div>
+<p>After installation, update the desktop database to make Audacity
+visible in your application launcher:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> update-desktop-database</span></code></pre></div></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

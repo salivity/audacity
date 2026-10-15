@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Audio Recording with Audacity Timer Record - audacity</title>
+    <meta name="description" content="Audacity includes a built-in Timer Record feature that allows you to automate audio capture without being present at your computer. This guide details how to configure your recording devices, set precise start and end times, and define automated post-reco">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/schedule-audio-recording-with-audacity-timer-record">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Schedule Audio Recording with Audacity Timer Record - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/schedule-audio-recording-with-audacity-timer-record" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity includes a built-in Timer Record feature that allows you to automate audio capture without being present at your computer. This guide details how to configure your recording devices, set precise start and end times, and define automated post-reco" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="schedule-audio-recording-with-audacity-timer-record">Schedule
+Audio Recording with Audacity Timer Record</h1>
+<p>Audacity includes a built-in Timer Record feature that allows you to
+automate audio capture without being present at your computer. This
+guide details how to configure your recording devices, set precise start
+and end times, and define automated post-recording actions such as
+saving projects or shutting down your system.</p>
+<h3 id="step-1-set-up-and-test-your-audio-input">Step 1: Set Up and Test
+Your Audio Input</h3>
+<p>Before scheduling the recording, ensure your input device is active
+and configured correctly:</p>
+<ol type="1">
+<li>Connect your microphone, interface, or enable internal recording
+(such as "Stereo Mix" on Windows or a loopback device on macOS).</li>
+<li>Open Audacity and locate the <strong>Audio Setup</strong>
+toolbar.</li>
+<li>Select your intended <strong>Host</strong>, <strong>Recording
+Device</strong>, and <strong>Recording Channels</strong> (Mono or
+Stereo).</li>
+<li>Perform a quick manual test recording to confirm input levels are
+balanced and not clipping. Delete the test track before proceeding.</li>
+</ol>
+<h3 id="step-2-open-the-timer-record-window">Step 2: Open the Timer
+Record Window</h3>
+<p>Open the scheduler interface using either method:</p>
+<ul>
+<li>Press the keyboard shortcut <strong>Shift + T</strong>.</li>
+<li>Go to the top menu and select <strong>Transport &gt; Recording &gt;
+Timer Record...</strong></li>
+</ul>
+<h3 id="step-3-set-the-recording-schedule">Step 3: Set the Recording
+Schedule</h3>
+<p>The Timer Record dialog box provides fields to define when recording
+occurs:</p>
+<ul>
+<li><strong>Start Date and Time:</strong> Set the exact date, hour,
+minute, and second you want the recording to begin. If you want it to
+begin immediately, leave the start time as the current time.</li>
+<li><strong>End Date and Time:</strong> Specify when the recording
+should conclude.</li>
+<li><strong>Duration:</strong> Alternatively, adjust the duration fields
+(hours, minutes, seconds). Modifying the duration automatically adjusts
+the "End Date and Time" field, and vice versa.</li>
+</ul>
+<h3 id="step-4-configure-automatic-save-and-export-actions">Step 4:
+Configure Automatic Save and Export Actions</h3>
+<p>Beneath the scheduling fields, Audacity allows you to specify what
+happens once the recording completes:</p>
+<ul>
+<li><strong>Save project as:</strong> Automatically saves the recording
+as an Audacity project file (<code>.aup3</code>) to a chosen
+folder.</li>
+<li><strong>Export audio:</strong> Automatically exports the file
+directly to standard formats like WAV or MP3. Click the options button
+next to it to select the destination folder, file format, and sample
+rate.</li>
+</ul>
+<h3 id="step-5-configure-post-recording-system-actions">Step 5:
+Configure Post-Recording System Actions</h3>
+<p>You can instruct Audacity to manage system power states when the
+session concludes:</p>
+<ul>
+<li>Choose <strong>Do nothing</strong> to leave Audacity open.</li>
+<li>Choose <strong>Close Audacity</strong> to quit the application after
+saving.</li>
+<li>Choose <strong>Restart system</strong> or <strong>Shut down
+system</strong> if you are running an overnight or unattended capture
+and want to conserve power.</li>
+</ul>
+<h3 id="step-6-arm-the-timer">Step 6: Arm the Timer</h3>
+<ol type="1">
+<li>Click the <strong>OK</strong> button at the bottom of the
+window.</li>
+<li>A progress window will appear displaying the countdown to the start
+time, remaining recording time, and scheduled actions.</li>
+<li>Keep the computer powered on and leave Audacity running. Ensure that
+your operating system's sleep or hibernation settings are disabled for
+the scheduled period to prevent the machine from suspending operation
+before recording begins.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

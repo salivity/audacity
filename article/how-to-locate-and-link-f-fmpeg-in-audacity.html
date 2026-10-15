@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Locate and Link FFmpeg in Audacity - audacity</title>
+    <meta name="description" content="Audacity requires the optional FFmpeg library to import and export extended audio formats such as M4A (AAC), AC3, AMR, and WMA. While Audacity often detects FFmpeg automatically after installation, system changes or custom install paths may require manual">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-locate-and-link-f-fmpeg-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Locate and Link FFmpeg in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-locate-and-link-f-fmpeg-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity requires the optional FFmpeg library to import and export extended audio formats such as M4A (AAC), AC3, AMR, and WMA. While Audacity often detects FFmpeg automatically after installation, system changes or custom install paths may require manual" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-locate-and-link-ffmpeg-in-audacity">How to Locate and
+Link FFmpeg in Audacity</h1>
+<p>Audacity requires the optional FFmpeg library to import and export
+extended audio formats such as M4A (AAC), AC3, AMR, and WMA. While
+Audacity often detects FFmpeg automatically after installation, system
+changes or custom install paths may require manual configuration. This
+guide provides step-by-step instructions on how to locate and manually
+link the FFmpeg library inside Audacity's preferences across Windows,
+macOS, and Linux.</p>
+<h3 id="step-1-open-audacity-preferences">Step 1: Open Audacity
+Preferences</h3>
+<p>Launch Audacity and open the Preferences menu using the appropriate
+method for your operating system:</p>
+<ul>
+<li><strong>Windows / Linux:</strong> Click on <strong>Edit</strong> in
+the top menu bar and select <strong>Preferences</strong>, or press
+<code>Ctrl + P</code>.</li>
+<li><strong>macOS:</strong> Click on <strong>Audacity</strong> in the
+top menu bar and select <strong>Preferences</strong>, or press
+<code>Cmd + ,</code>.</li>
+</ul>
+<h3 id="step-2-navigate-to-the-libraries-section">Step 2: Navigate to
+the Libraries Section</h3>
+<p>In the Preferences window, look at the sidebar on the left side of
+the screen. Click on <strong>Libraries</strong> to open the library
+configuration panel.</p>
+<h3 id="step-3-check-the-ffmpeg-status">Step 3: Check the FFmpeg
+Status</h3>
+<p>Locate the section labeled <strong>FFmpeg Import/Export
+Library</strong>:</p>
+<ul>
+<li>If a version number is displayed next to <strong>FFmpeg Library
+Version</strong>, Audacity is already linked and ready to use.</li>
+<li>If it displays <strong>FFmpeg library not found</strong>, click the
+<strong>Locate...</strong> button on the right.</li>
+</ul>
+<h3 id="step-4-manually-locate-the-ffmpeg-file">Step 4: Manually Locate
+the FFmpeg File</h3>
+<p>A dialog box titled "Locate FFmpeg" will appear.</p>
+<ol type="1">
+<li>Click the <strong>Browse...</strong> button.</li>
+<li>Navigate to the directory where FFmpeg was installed and select the
+core library file:
+<ul>
+<li><strong>Windows:</strong> Look for <code>avformat-*.dll</code>
+(typically located in <code>C:\Program Files\FFmpeg for Audacity\</code>
+or <code>C:\Program Files (x86)\FFmpeg for Audacity\</code>).</li>
+<li><strong>macOS:</strong> Look for <code>libavformat.*.dylib</code>
+(typically located in
+<code>/Library/Application Support/audacity/libs/</code>).</li>
+<li><strong>Linux:</strong> Look for <code>libavformat.so.*</code>
+(typically located in <code>/usr/lib/</code> or
+<code>/usr/local/lib/</code>).</li>
+</ul></li>
+<li>Select the file and click <strong>Open</strong>.</li>
+</ol>
+<h3 id="step-5-save-and-verify">Step 5: Save and Verify</h3>
+<ol type="1">
+<li>Click <strong>OK</strong> in the "Locate FFmpeg" dialog window.</li>
+<li>Verify that the <strong>FFmpeg Library Version</strong> line now
+displays a valid version number instead of the "not found" message.</li>
+<li>Click <strong>OK</strong> at the bottom of the main Preferences
+window to save your settings.</li>
+</ol>
+<p>Audacity is now linked to FFmpeg and ready to handle additional audio
+formats.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

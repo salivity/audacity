@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upward vs Downward Compression in Audacity - audacity</title>
+    <meta name="description" content="Dynamic range compression is an essential tool in audio production used to narrow the gap between the quietest and loudest parts of a track. While traditional downward compression works by reducing the volume of sounds that exceed a specific threshold, up">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/upward-vs-downward-compression-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Upward vs Downward Compression in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/upward-vs-downward-compression-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Dynamic range compression is an essential tool in audio production used to narrow the gap between the quietest and loudest parts of a track. While traditional downward compression works by reducing the volume of sounds that exceed a specific threshold, up" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="upward-vs-downward-compression-in-audacity">Upward vs Downward
+Compression in Audacity</h1>
+<p>Dynamic range compression is an essential tool in audio production
+used to narrow the gap between the quietest and loudest parts of a
+track. While traditional downward compression works by reducing the
+volume of sounds that exceed a specific threshold, upward compression
+achieves balance by boosting the volume of signals that fall below a
+threshold. Understanding how these two processes function within
+Audacity and its compatible plugins allows creators to control dynamics,
+preserve natural transients, and enhance subtle details in voiceovers,
+podcasts, and music tracks.</p>
+<h2 id="understanding-downward-compression">Understanding Downward
+Compression</h2>
+<p>Downward compression is the most common form of dynamic processing
+and serves as the standard mode for Audacity’s built-in Compressor
+effect.</p>
+<h3 id="how-it-works">How It Works</h3>
+<ol type="1">
+<li>You set a <strong>threshold</strong> (for example, -12 dB).</li>
+<li>Any audio signal that rises <strong>above</strong> this threshold is
+attenuated (turned down) according to a set <strong>ratio</strong> (such
+as 2:1 or 4:1).</li>
+<li>Audio that remains below the threshold is left untouched.</li>
+<li>Because the peaks are attenuated, overall headroom is created,
+allowing you to apply <strong>makeup gain</strong> to raise the entire
+signal’s volume uniformly.</li>
+</ol>
+<h3 id="results-and-best-uses">Results and Best Uses</h3>
+<ul>
+<li><strong>Taming Peaks:</strong> It clamps down on sudden, loud sounds
+like aggressive vocal plosives, snare hits, or shouted phrases.</li>
+<li><strong>Punch and Control:</strong> When paired with makeup gain, it
+delivers a punchier, more consistent signal.</li>
+<li><strong>Risk:</strong> High ratios or aggressive settings can
+"squash" the transient punch of the audio, making it sound flat or
+lifeless.</li>
+</ul>
+<h2 id="understanding-upward-compression">Understanding Upward
+Compression</h2>
+<p>Upward compression acts on the opposite end of the dynamic spectrum.
+While not the native default in Audacity’s built-in tools, upward
+compression can be applied using specific plugin parameters (such as
+peak-based inversion settings) or via third-party VST and Nyquist
+plugins (such as Xfer OTT or specialized leveling plugins).</p>
+<h3 id="how-it-works-1">How It Works</h3>
+<ol type="1">
+<li>You set a <strong>threshold</strong> targeting low-level audio.</li>
+<li>Any audio that falls <strong>below</strong> this threshold is
+amplified upward toward the threshold level.</li>
+<li>The loudest peaks that sit above the threshold remain completely
+uncompressed and unaltered.</li>
+</ol>
+<h3 id="results-and-best-uses-1">Results and Best Uses</h3>
+<ul>
+<li><strong>Preserving Transients:</strong> Because loud peaks are never
+attenuated, the natural impact, sharpness, and punch of attacks (like
+drum hits or initial vocal consonants) remain intact.</li>
+<li><strong>Revealing Hidden Detail:</strong> It lifts quiet room
+ambience, subtle vocal inflections, reverberation tails, and faint
+instruments without making the loudest parts harsher.</li>
+<li><strong>Risk:</strong> It raises the noise floor, which can
+exaggerate background hum, room hiss, or mouth noises if applied to
+noisy recordings.</li>
+</ul>
+<h2 id="key-differences-at-a-glance">Key Differences at a Glance</h2>
+<ul>
+<li><strong>Threshold Action:</strong> Downward compression pushes peaks
+down; upward compression pulls troughs up.</li>
+<li><strong>Transient Impact:</strong> Downward can dull sharp
+transients if attack times are fast; upward leaves transients entirely
+natural.</li>
+<li><strong>Noise Floor:</strong> Downward compression (prior to makeup
+gain) ignores background noise; upward compression actively boosts
+background noise along with other low-volume material.</li>
+<li><strong>Loudness Perception:</strong> Downward compression increases
+average loudness by reducing peaks and applying makeup gain; upward
+compression increases perceived loudness directly by making quiet
+sections louder.</li>
+</ul>
+<h2 id="choosing-the-right-approach-in-audacity">Choosing the Right
+Approach in Audacity</h2>
+<p>Use <strong>downward compression</strong> (via Audacity’s native
+Compressor under <em>Effect &gt; Volume and Compression &gt;
+Compressor</em>) when your primary goal is to control unpredictable
+volume spikes, prevent digital clipping, and smooth out standard vocal
+takes.</p>
+<p>Use <strong>upward compression</strong> (via specialized VST plugins
+loaded into Audacity) when you want to thicken a thin recording, restore
+presence to low-volume phrases in a podcast, or lift subtle acoustic
+textures without sacrificing the punch and dynamic impact of the louder
+elements.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

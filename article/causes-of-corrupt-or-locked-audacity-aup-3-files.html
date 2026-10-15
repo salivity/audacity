@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causes of Corrupt or Locked Audacity AUP3 Files - audacity</title>
+    <meta name="description" content="Audacity&#39;s transition to the .aup3 format introduced a unified SQLite database structure designed to store entire audio projects within a single file. While this modern format eliminated the common missing-file issues of older Audacity versions, users sti">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/causes-of-corrupt-or-locked-audacity-aup-3-files">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Causes of Corrupt or Locked Audacity AUP3 Files - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/causes-of-corrupt-or-locked-audacity-aup-3-files" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity&#39;s transition to the .aup3 format introduced a unified SQLite database structure designed to store entire audio projects within a single file. While this modern format eliminated the common missing-file issues of older Audacity versions, users sti" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="causes-of-corrupt-or-locked-audacity-aup3-files">Causes of
+Corrupt or Locked Audacity AUP3 Files</h1>
+<p>Audacity's transition to the <code>.aup3</code> format introduced a
+unified SQLite database structure designed to store entire audio
+projects within a single file. While this modern format eliminated the
+common missing-file issues of older Audacity versions, users still
+frequently encounter errors where projects become corrupted or stuck in
+a locked state. This article outlines the primary causes behind these
+issues, detailing how database locking mechanisms, improper shutdowns,
+storage conflicts, and background software can compromise
+<code>.aup3</code> project files.</p>
+<h3 id="1-lingering-sqlite-lock-and-temporary-files">1. Lingering SQLite
+Lock and Temporary Files</h3>
+<p>Audacity relies on SQLite's Write-Ahead Logging (WAL) mechanism to
+manage data safely during an active session. When you open a project,
+Audacity generates two temporary companion files in the same directory:
+<code>project.aup3-wal</code> and <code>project.aup3-shm</code>. These
+files temporarily store writes and index state information. If Audacity
+does not close properly, these companion files are not cleanly merged
+and deleted. As a result, SQLite retains an active lock on the main
+database, prompting a "project is locked" or read-only error upon
+subsequent launch attempts.</p>
+<h3 id="2-cloud-storage-and-network-drive-syncing">2. Cloud Storage and
+Network Drive Syncing</h3>
+<p>Saving, opening, or editing <code>.aup3</code> files directly on
+cloud-synced folders (such as Google Drive, OneDrive, or Dropbox) or
+Network Attached Storage (NAS) is a leading cause of file corruption.
+SQLite requires rapid, low-latency disk writes with precise file-locking
+capabilities. Cloud synchronization clients frequently attempt to upload
+the <code>.aup3</code>, <code>-wal</code>, and <code>-shm</code> files
+mid-write, creating a file lock race condition that leads to interrupted
+database transactions and data corruption.</p>
+<h3 id="3-abrupt-system-crashes-and-forced-terminations">3. Abrupt
+System Crashes and Forced Terminations</h3>
+<p>If your computer loses power, your operating system crashes, or
+Audacity is forcefully terminated (via Task Manager or Force Quit) while
+performing a write operation, the open database transaction is
+interrupted. While SQLite has built-in recovery protocols, sudden write
+failures during intensive tasks—such as applying complex effects,
+exporting, or massive undo/redo history updates—can corrupt the database
+header or leave orphaned pointers, rendering the file unreadable.</p>
+<h3 id="4-premature-disconnection-of-external-storage">4. Premature
+Disconnection of External Storage</h3>
+<p>Working directly from external hard drives, USB thumb drives, or SD
+cards poses a significant risk to project integrity. If the physical
+storage device is unplugged before Audacity has completely finalized its
+writes, or if the drive's power-saving mode puts it into a suspended
+state during processing, the database write stream breaks instantly.
+This leaves the file header damaged and flags the project as
+corrupt.</p>
+<h3 id="5-antivirus-and-real-time-security-scanning">5. Antivirus and
+Real-Time Security Scanning</h3>
+<p>Antivirus software or endpoint protection utilities with aggressive
+real-time scanning can lock files as soon as they are modified on the
+disk. Because Audacity continuously updates the <code>.aup3</code>
+database and its associated temporary files, a background security scan
+can temporarily hijack file access privileges. If Audacity is denied
+access to its own project file during an essential write routine, it may
+fail silently or corrupt the file structure.</p>
+<h3 id="6-drive-exhaustion-and-bad-sectors">6. Drive Exhaustion and Bad
+Sectors</h3>
+<p>When a storage volume runs out of free disk space during recording or
+editing, Audacity cannot complete the temporary buffer writes required
+to maintain the database structure. This sudden out-of-space condition
+can break the index of the <code>.aup3</code> file. Similarly,
+underlying hardware defects—such as bad sectors on a traditional hard
+drive or failing flash memory cells—can physically alter bits in the
+database, resulting in irreversible corruption.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Pure Room Tone Matters in Audacity - audacity</title>
+    <meta name="description" content="Capturing pure room tone is the most critical step when using the Noise Reduction effect in Audacity. Audacity relies on a designated audio sample to build a &quot;Noise Profile,&quot; which acts as a blueprint for the frequencies the software should remove. If thi">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/why-pure-room-tone-matters-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Why Pure Room Tone Matters in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/why-pure-room-tone-matters-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Capturing pure room tone is the most critical step when using the Noise Reduction effect in Audacity. Audacity relies on a designated audio sample to build a &quot;Noise Profile,&quot; which acts as a blueprint for the frequencies the software should remove. If thi" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="why-pure-room-tone-matters-in-audacity">Why Pure Room Tone
+Matters in Audacity</h1>
+<p>Capturing pure room tone is the most critical step when using the
+Noise Reduction effect in Audacity. Audacity relies on a designated
+audio sample to build a "Noise Profile," which acts as a blueprint for
+the frequencies the software should remove. If this profile contains
+anything other than constant, ambient background sound, the software
+will inadvertently strip out essential parts of your main audio,
+resulting in muffled, distorted, or metallic-sounding voice tracks.</p>
+<h3 id="how-audacitys-noise-reduction-works">How Audacity’s Noise
+Reduction Works</h3>
+<p>Audacity uses a process called spectral subtraction. When you
+highlight a section of audio and select <strong>Get Noise
+Profile</strong>, the algorithm analyzes the exact frequencies and
+amplitudes present in that specific selection. When you subsequently
+apply the effect to the entire track, Audacity identifies those exact
+frequency signatures and attenuates (reduces) them wherever they
+appear.</p>
+<p>Because the algorithm cannot distinguish between what you intended to
+sample and an accidental sound, it assumes every single frequency inside
+the selected profile is unwanted noise.</p>
+<h3 id="the-consequences-of-an-impure-sample">The Consequences of an
+Impure Sample</h3>
+<p>If your sample includes subtle vocalizations, breaths, clothes
+rustling, mouth clicks, or chair squeaks, Audacity registers those
+specific acoustic characteristics as target noise.</p>
+<p>When applied to the rest of the recording, the filter attempts to
+eliminate those same frequencies from your voice. This leads to common
+audio artifacts, such as:</p>
+<ul>
+<li><strong>The "Underwater" or "Phasing" Effect:</strong> The voice
+sounds hollow, robotic, or as if spoken through a metal pipe.</li>
+<li><strong>Loss of Presence and Clarity:</strong> Key vocal harmonics
+are stripped away, making speech sound muffled and difficult to
+understand.</li>
+<li><strong>Choppy Dynamics:</strong> Audacity cuts in and out
+aggressively whenever vocal tones match the contaminated profile.</li>
+</ul>
+<h3 id="what-pure-room-tone-consists-of">What Pure Room Tone Consists
+Of</h3>
+<p>Pure room tone consists exclusively of the persistent, stationary
+background noise inherent to your recording environment and gear. This
+includes:</p>
+<ul>
+<li>Low-level electrical hums (60 Hz / 50 Hz).</li>
+<li>Continuous computer fans or HVAC airflow.</li>
+<li>Preamp hiss and microphone self-noise.</li>
+</ul>
+<p>It must never include transient, non-stationary sounds such as
+keyboard taps, stomach rumbles, footfalls, or external traffic spikes,
+as these change rapidly and will confuse the filter.</p>
+<h3 id="how-to-capture-it-correctly">How to Capture It Correctly</h3>
+<p>To get the cleanest noise profile:</p>
+<ol type="1">
+<li><strong>Record "Dead Air":</strong> Remain completely still and
+quiet for 5 to 10 seconds at the beginning or end of your recording
+session. Do not breathe into the microphone or move your hands.</li>
+<li><strong>Select a Clean Segment:</strong> Zoom into the waveform and
+highlight roughly 1 to 2 seconds of this silence, visually verifying
+that there are no waveform spikes indicating movement or breath.</li>
+<li><strong>Generate the Profile:</strong> Open <strong>Effect &gt;
+Noise Removal and Repair &gt; Noise Reduction</strong>, click
+<strong>Get Noise Profile</strong>, and then apply the reduction to the
+rest of the track with conservative settings.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

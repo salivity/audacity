@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Generate DTMF Dial Tones in Audacity - audacity</title>
+    <meta name="description" content="Audacity features a built-in tool for creating Dual-Tone Multi-Frequency (DTMF) signals, which are the familiar sounds produced when pressing the keys on a classic touch-tone telephone. This guide provides a straightforward walkthrough on how to locate th">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-generate-dtmf-dial-tones-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Generate DTMF Dial Tones in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-generate-dtmf-dial-tones-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity features a built-in tool for creating Dual-Tone Multi-Frequency (DTMF) signals, which are the familiar sounds produced when pressing the keys on a classic touch-tone telephone. This guide provides a straightforward walkthrough on how to locate th" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-generate-dtmf-dial-tones-in-audacity">How to Generate
+DTMF Dial Tones in Audacity</h1>
+<p>Audacity features a built-in tool for creating Dual-Tone
+Multi-Frequency (DTMF) signals, which are the familiar sounds produced
+when pressing the keys on a classic touch-tone telephone. This guide
+provides a straightforward walkthrough on how to locate the DTMF
+generator in Audacity, input phone numbers or specific sequences, adjust
+the signal duration, and produce realistic telephone audio for your
+multimedia projects.</p>
+<h3 id="step-1-open-a-project">Step 1: Open a Project</h3>
+<p>Launch Audacity on your computer. You can generate tones directly
+into a blank workspace or create a new audio track first by going to
+<strong>Tracks</strong> &gt; <strong>Add New</strong> &gt; <strong>Mono
+Track</strong> (or <strong>Stereo Track</strong>). If no track is
+present, Audacity will automatically create one when the tone is
+generated.</p>
+<h3 id="step-2-open-the-dtmf-tones-generator">Step 2: Open the DTMF
+Tones Generator</h3>
+<ol type="1">
+<li>Click on the <strong>Generate</strong> menu located in the top
+navigation bar.</li>
+<li>Select <strong>DTMF Tones...</strong> from the drop-down list. A
+configuration dialog window will appear.</li>
+</ol>
+<h3 id="step-3-input-the-dial-sequence">Step 3: Input the Dial
+Sequence</h3>
+<p>In the DTMF dialog box, locate the <strong>Sequence</strong> text
+box. Enter the characters you wish to turn into tones. The generator
+supports the following standard telephone keypad inputs:</p>
+<ul>
+<li><strong>Numbers:</strong> <code>0</code> through <code>9</code></li>
+<li><strong>Special characters:</strong> <code>*</code> (star) and
+<code>#</code> (pound/hash)</li>
+<li><strong>Priority keys:</strong> <code>A</code>, <code>B</code>,
+<code>C</code>, and <code>D</code> (used in military and legacy
+telecommunication systems)</li>
+</ul>
+<h3 id="step-4-adjust-duty-cycle-and-duration">Step 4: Adjust Duty Cycle
+and Duration</h3>
+<ul>
+<li><strong>Duty Cycle (%):</strong> This controls the ratio between the
+sound of the tone and the silent pause that follows each keypress. The
+default setting is typically around 55% to 70%. A standard setting of
+50% means the tone and the following silence are equal in length.</li>
+<li><strong>Duration:</strong> Set the total length of the sequence.
+Audacity allows you to specify the duration using hours, minutes,
+seconds, or milliseconds. Ensure the overall length provides enough time
+for each digit to sound naturally without cutting off the sequence.</li>
+</ul>
+<h3 id="step-5-render-and-export">Step 5: Render and Export</h3>
+<ol type="1">
+<li>Click <strong>Preview</strong> to hear how the tones sound before
+placing them into your timeline.</li>
+<li>Click <strong>OK</strong> to generate the audio waveforms onto your
+selected track.</li>
+<li>To save your tones as a standalone audio file, go to
+<strong>File</strong> &gt; <strong>Export</strong> and choose your
+preferred audio format, such as WAV or MP3.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

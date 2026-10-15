@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Crash Reporting and User Data Privacy - audacity</title>
+    <meta name="description" content="Audacity safeguards user data during online crash reporting through explicit user consent, strict data minimization, network anonymization, and short retention periods. When an unexpected error occurs, the open-source audio editor relies on automated tele">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-crash-reporting-and-user-data-privacy">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Crash Reporting and User Data Privacy - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-crash-reporting-and-user-data-privacy" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity safeguards user data during online crash reporting through explicit user consent, strict data minimization, network anonymization, and short retention periods. When an unexpected error occurs, the open-source audio editor relies on automated tele" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-crash-reporting-and-user-data-privacy">Audacity Crash
+Reporting and User Data Privacy</h1>
+<p>Audacity safeguards user data during online crash reporting through
+explicit user consent, strict data minimization, network anonymization,
+and short retention periods. When an unexpected error occurs, the
+open-source audio editor relies on automated telemetry solely to
+diagnose software bugs, ensuring personal identifiers and proprietary
+audio content remain strictly confidential and isolated from developer
+logs.</p>
+<h3 id="explicit-consent-and-user-control">Explicit Consent and User
+Control</h3>
+<p>Audacity does not automatically transmit crash data in the background
+without user awareness. When a crash happens, the application launches a
+crash reporter dialogue upon the next restart. This dialogue informs the
+user of the incident and explicitly asks for permission to send the
+diagnostic report to the development team. Users retain full control to
+decline the submission, ensuring no diagnostics leave the local machine
+without direct authorization.</p>
+<h3 id="strict-data-minimization">Strict Data Minimization</h3>
+<p>The privacy policy establishes clear boundaries regarding the types
+of technical data extracted during a crash. The diagnostic package
+typically contains:</p>
+<ul>
+<li>The application version and build architecture.</li>
+<li>Operating system details (such as version and platform).</li>
+<li>Memory stack traces and crash minidumps detailing the exact failure
+point.</li>
+</ul>
+<p>Crucially, crash logs do not capture, extract, or upload the user's
+actual audio recordings, project files, metadata, or editing history.
+The telemetry is confined strictly to debugging data necessary to
+identify code-level software faults.</p>
+<h3 id="ip-anonymization-and-identity-protection">IP Anonymization and
+Identity Protection</h3>
+<p>Network identifiers are handled with privacy-focused restrictions.
+While an IP address is inherently necessary to transmit data across the
+internet to the reporting server, Audacity's backend infrastructure
+processes this information defensively. IP addresses are either
+truncated or stripped immediately upon receipt, preventing the
+association of a specific crash log with an individual's digital
+identity or physical location. The reports are never linked to personal
+profiles or commercial advertising databases.</p>
+<h3 id="encrypted-transmission-and-limited-retention">Encrypted
+Transmission and Limited Retention</h3>
+<p>All diagnostic packages transmitted by the crash utility are
+encrypted in transit using standard HTTPS/TLS protocols. This prevents
+third parties on the same network from intercepting the diagnostic
+payload. Once received, the crash reports are stored in secure developer
+databases accessible only to authorized engineers. Audacity maintains
+limited data retention schedules, permanently purging crash logs once
+they are resolved or after a set operational window, preventing
+indefinite storage of diagnostic information.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

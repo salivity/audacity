@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Non-Destructive EQ in Audacity - audacity</title>
+    <meta name="description" content="Audacity supports real-time, non-destructive equalization, but with a specific distinction depending on the tools you use. While the software&#39;s legacy native tools—specifically the Filter Curve EQ and Graphic EQ—remain destructive offline processes, Audac">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/real-time-non-destructive-eq-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Real-Time Non-Destructive EQ in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/real-time-non-destructive-eq-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity supports real-time, non-destructive equalization, but with a specific distinction depending on the tools you use. While the software&#39;s legacy native tools—specifically the Filter Curve EQ and Graphic EQ—remain destructive offline processes, Audac" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="real-time-non-destructive-eq-in-audacity">Real-Time
+Non-Destructive EQ in Audacity</h1>
+<p>Audacity supports real-time, non-destructive equalization, but with a
+specific distinction depending on the tools you use. While the
+software's legacy native tools—specifically the Filter Curve EQ and
+Graphic EQ—remain destructive offline processes, Audacity introduced a
+real-time effects engine in version 3.2 that allows non-destructive
+equalizers to be applied via third-party plugins. This article explains
+how non-destructive EQ functions in Audacity, the limitations of native
+curve tools, and how to set up real-time equalization curves.</p>
+<h3 id="native-eq-vs-real-time-non-destructive-eq">Native EQ vs.
+Real-Time Non-Destructive EQ</h3>
+<p>Audacity separates its equalization tools into two distinct
+workflows:</p>
+<ul>
+<li><strong>Native Filter Curve EQ &amp; Graphic EQ:</strong> Accessed
+via the traditional <strong>Effect</strong> menu, these built-in tools
+rewrite the actual audio waveform when applied. Once applied and saved,
+the underlying audio data is permanently altered, making this method
+destructive.</li>
+<li><strong>The Real-Time Effects System:</strong> Located directly on
+the track control panel, this framework processes audio dynamically
+during playback without altering the original recording.</li>
+</ul>
+<h3 id="how-to-use-non-destructive-equalization-curves">How to Use
+Non-Destructive Equalization Curves</h3>
+<p>To achieve non-destructive equalization in Audacity, you must use
+compatible third-party plugins (VST3, AU, or LV2 formats) rather than
+the native "Filter Curve" menu option.</p>
+<ol type="1">
+<li><strong>Install an EQ Plugin:</strong> Download and install a
+compatible free or commercial parametric or graphic EQ plugin (such as
+Tokyo Dawn Labs Nova, FabFilter Pro-Q, or MeldaProduction
+MEqualizer).</li>
+<li><strong>Access the Effects Panel:</strong> In Audacity 3.2 or newer,
+look at the track control panel to the left of your audio waveform and
+click the <strong>Effects</strong> button.</li>
+<li><strong>Add the EQ:</strong> Click <strong>Add Effect</strong>,
+navigate your installed plugins, and select your preferred
+equalizer.</li>
+<li><strong>Adjust Curves in Real Time:</strong> Open the plugin
+interface. You can now adjust curve nodes, gain, Q-factors, and
+high/low-pass filters while playback is active.</li>
+</ol>
+<h3 id="benefits-of-the-non-destructive-workflow">Benefits of the
+Non-Destructive Workflow</h3>
+<ul>
+<li><strong>Reversible Adjustments:</strong> Because the waveform is not
+modified, you can change frequency curves, toggle the EQ on and off for
+A/B testing, or remove the effect entirely at any stage of mixing.</li>
+<li><strong>Mix-Stage Flexibility:</strong> EQ adjustments remain fully
+active and adjustable right up until you export the project to a final
+audio file (such as WAV or MP3).</li>
+<li><strong>Stackable Processing:</strong> The real-time effects stack
+allows you to place an EQ curve before or after other dynamic effects,
+like compressors or gates, to evaluate signal flow changes on the
+fly.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

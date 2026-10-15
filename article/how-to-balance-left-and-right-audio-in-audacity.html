@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Balance Left and Right Audio in Audacity - audacity</title>
+    <meta name="description" content="Uneven stereo tracks—where audio in one ear is noticeably louder than the other—can ruin a listening experience, but it is easy to correct in Audacity. This guide details how to equalize the left and right audio channels using Audacity&#39;s built-in tools, c">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-balance-left-and-right-audio-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Balance Left and Right Audio in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-balance-left-and-right-audio-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Uneven stereo tracks—where audio in one ear is noticeably louder than the other—can ruin a listening experience, but it is easy to correct in Audacity. This guide details how to equalize the left and right audio channels using Audacity&#39;s built-in tools, c" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-balance-left-and-right-audio-in-audacity">How to Balance
+Left and Right Audio in Audacity</h1>
+<p>Uneven stereo tracks—where audio in one ear is noticeably louder than
+the other—can ruin a listening experience, but it is easy to correct in
+Audacity. This guide details how to equalize the left and right audio
+channels using Audacity's built-in tools, covering both a quick panning
+adjustment and a precise method for permanently leveling each channel's
+volume.</p>
+<h3 id="method-1-the-quick-fix-using-the-pan-slider">Method 1: The Quick
+Fix Using the Pan Slider</h3>
+<p>If the volume difference is consistent across the entire track, you
+can quickly re-center the audio using the track control panel.</p>
+<ol type="1">
+<li>Open your audio file in Audacity.</li>
+<li>Locate the <strong>Pan slider</strong> (labeled <strong>L - - - -
+R</strong>) in the track control box to the left of the waveform.</li>
+<li>Drag the slider toward the quieter side (e.g., slide toward the
+Right if the left channel is too loud) until the audio sounds
+centered.</li>
+<li>Listen back to ensure both ears sound even.</li>
+<li>Go to <strong>File &gt; Export</strong> to save the balanced
+audio.</li>
+</ol>
+<h3 id="method-2-splitting-the-stereo-track-for-precise-leveling">Method
+2: Splitting the Stereo Track for Precise Leveling</h3>
+<p>For a permanent and exact balance, split the stereo track into
+independent left and right channels to measure and amplify the quieter
+side.</p>
+<ol type="1">
+<li>Click the drop-down arrow next to the track name in the track
+control panel.</li>
+<li>Select <strong>Split Stereo Track</strong>. This separates the audio
+into two distinct tracks: the top track is the Left channel, and the
+bottom track is the Right channel.</li>
+<li>Select the waveform of the quieter channel by clicking its track
+control panel.</li>
+<li>Navigate to <strong>Effect &gt; Volume and Compression &gt;
+Amplify</strong> (or <strong>Amplify</strong> under the
+<strong>Effect</strong> menu in older versions).</li>
+<li>Enter a positive value in the <strong>Amplification (dB)</strong>
+box to boost the track to match the volume of the louder channel,
+ensuring <strong>New Peak Amplitude</strong> does not exceed 0.0 dB to
+prevent clipping. Click <strong>Apply</strong>.</li>
+<li>Alternatively, select both tracks and run <strong>Effect &gt; Volume
+and Compression &gt; Normalize</strong>, checking the option to
+<strong>Normalize stereo channels independently</strong>. This
+automatically brings both sides to the same peak volume.</li>
+<li>To join them back together, click the drop-down arrow on the top
+(Left) track and select <strong>Make Stereo Track</strong>.</li>
+</ol>
+<h3
+id="method-3-fixing-inconsistent-volume-with-the-envelope-tool">Method
+3: Fixing Inconsistent Volume with the Envelope Tool</h3>
+<p>If the volume drifts unevenly between the ears only at specific
+points in the recording:</p>
+<ol type="1">
+<li>Follow the steps above to <strong>Split Stereo Track</strong>.</li>
+<li>Press <strong>F2</strong> or click the <strong>Envelope
+Tool</strong> icon in the toolbar.</li>
+<li>Click on the waveform line of the quieter channel to create control
+points.</li>
+<li>Drag the points upward to increase the volume only during the
+sections where that specific ear drops in level.</li>
+<li>Rejoin the tracks using <strong>Make Stereo Track</strong> once
+balanced throughout.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

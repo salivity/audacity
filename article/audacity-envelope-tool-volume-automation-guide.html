@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Envelope Tool: Volume Automation Guide - audacity</title>
+    <meta name="description" content="The Envelope Tool in Audacity gives users precise, visual control over manual volume automation throughout an audio track. Instead of applying a uniform volume change to an entire clip, this tool allows you to create adjustable control points directly on">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-envelope-tool-volume-automation-guide">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Envelope Tool: Volume Automation Guide - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-envelope-tool-volume-automation-guide" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Envelope Tool in Audacity gives users precise, visual control over manual volume automation throughout an audio track. Instead of applying a uniform volume change to an entire clip, this tool allows you to create adjustable control points directly on" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-envelope-tool-volume-automation-guide">Audacity
+Envelope Tool: Volume Automation Guide</h1>
+<p>The Envelope Tool in Audacity gives users precise, visual control
+over manual volume automation throughout an audio track. Instead of
+applying a uniform volume change to an entire clip, this tool allows you
+to create adjustable control points directly on the waveform to smoothly
+fade, duck, or boost amplitude at specific moments. This article
+explains how the Envelope Tool functions, how to create and manipulate
+volume control points, and best practices for achieving seamless audio
+transitions.</p>
+<h3 id="understanding-the-envelope-tool">Understanding the Envelope
+Tool</h3>
+<p>The Envelope Tool changes how Audacity represents an audio track's
+volume. Normally, track volume is static unless modified by effects like
+Amplify or Normalize. When the Envelope Tool is selected—either by
+clicking its icon in the Tools toolbar (two triangles connected by a
+line) or by pressing the shortcut <strong>F2</strong>—a thick blue
+border and a gray inner boundary appear at the top and bottom of the
+audio track. These boundaries represent the amplitude limits of the
+track.</p>
+<h3 id="creating-and-adjusting-control-points">Creating and Adjusting
+Control Points</h3>
+<p>Manual volume automation with the Envelope Tool relies on creating
+"control points" (often called keyframes in other audio software):</p>
+<ol type="1">
+<li><strong>Adding Points:</strong> Click anywhere along the upper or
+lower boundary of a track's waveform. Clicking creates a small white
+control point.</li>
+<li><strong>Adjusting Amplitude:</strong> Click and drag a control point
+downward to reduce the volume at that specific location, or drag it
+upward to restore or boost the volume.</li>
+<li><strong>Establishing Segments:</strong> A single point changes the
+volume of the entire track proportionally. To automate volume in a
+specific section, create at least three or four points:
+<ul>
+<li>Two outer "anchor" points to hold the original volume level before
+and after the change.</li>
+<li>One or two inner "target" points to define the attenuated or boosted
+level.</li>
+</ul></li>
+<li><strong>Moving Points:</strong> Click and drag any existing point
+left or right to change its timing along the timeline.</li>
+<li><strong>Removing Points:</strong> To delete a control point, click
+and drag it outside the vertical boundaries of the track lane.</li>
+</ol>
+<h3 id="common-use-cases-for-manual-automation">Common Use Cases for
+Manual Automation</h3>
+<ul>
+<li><strong>Audio Ducking:</strong> When narrating over background
+music, place four control points on the music track. Lower the middle
+two points during spoken sections so the voice remains clear, and let
+the music swell back to full volume during pauses.</li>
+<li><strong>Manual De-Essing and De-Clicking:</strong> Rather than using
+aggressive dynamic filters, zoom in on harsh sibilants, coughs, or
+microphone bumps and briefly drop the envelope to attenuate the unwanted
+noise cleanly.</li>
+<li><strong>Custom Fades:</strong> Unlike the automated Fade In or Fade
+Out effects, the Envelope Tool allows for non-linear, tailored fades
+that match the natural decay of an instrument or speech pattern.</li>
+</ul>
+<h3 id="key-benefits">Key Benefits</h3>
+<p>The primary advantage of the Envelope Tool is that it is
+non-destructive during the editing session. Control points remain
+editable at any stage before rendering or exporting the project. If an
+adjustment sounds too quiet or too loud later in the mixing process, you
+can simply click on the existing control points and reposition them
+without undoing other editing steps.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

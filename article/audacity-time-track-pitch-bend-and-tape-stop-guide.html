@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Time Track Pitch Bend and Tape Stop Guide - audacity</title>
+    <meta name="description" content="Audacity’s Time Track feature dynamically alters playback speed across an entire project, which simultaneously modulates the pitch of the audio. This capability makes it the premier native tool for creating smooth continuous pitch bends, vinyl slowdowns,">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-time-track-pitch-bend-and-tape-stop-guide">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Time Track Pitch Bend and Tape Stop Guide - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-time-track-pitch-bend-and-tape-stop-guide" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity’s Time Track feature dynamically alters playback speed across an entire project, which simultaneously modulates the pitch of the audio. This capability makes it the premier native tool for creating smooth continuous pitch bends, vinyl slowdowns," />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-time-track-pitch-bend-and-tape-stop-guide">Audacity
+Time Track Pitch Bend and Tape Stop Guide</h1>
+<p>Audacity’s Time Track feature dynamically alters playback speed
+across an entire project, which simultaneously modulates the pitch of
+the audio. This capability makes it the premier native tool for creating
+smooth continuous pitch bends, vinyl slowdowns, and classic tape-stop
+effects without requiring third-party plugins. This guide details how to
+add the Time Track, set its parameters, and manipulate control points to
+create these effects.</p>
+<h3 id="step-1-add-the-time-track-to-your-project">Step 1: Add the Time
+Track to Your Project</h3>
+<ol type="1">
+<li>Open your audio project in Audacity.</li>
+<li>In the top menu, navigate to <strong>Tracks</strong> &gt;
+<strong>Add New</strong> &gt; <strong>Time Track</strong>.</li>
+<li>A new track titled "Time Track" will appear at the very top of your
+project workspace, featuring a linear graph representing playback
+speed.</li>
+</ol>
+<h3 id="step-2-configure-the-speed-range">Step 2: Configure the Speed
+Range</h3>
+<p>By default, the Time Track is set to a subtle range (often 90% to
+110%), which is insufficient for dramatic pitch shifts or tape
+stops.</p>
+<ol type="1">
+<li>Click the drop-down menu on the Time Track control panel (the
+downward arrow next to the track name).</li>
+<li>Select <strong>Set Range</strong>.</li>
+<li>Set the <strong>Lower Speed</strong> and <strong>Upper
+Speed</strong> limits according to the desired effect:
+<ul>
+<li><strong>For a Tape-Stop Effect:</strong> Set the <strong>Lower
+Speed</strong> to <code>0%</code> (or <code>10%</code> if your version
+restricts true zero) and the <strong>Upper Speed</strong> to
+<code>100%</code>.</li>
+<li><strong>For a Pitch-Bend Effect:</strong> Set the <strong>Lower
+Speed</strong> to <code>50%</code> (half speed/down an octave) and the
+<strong>Upper Speed</strong> to <code>150%</code> or <code>200%</code>
+(double speed/up an octave).</li>
+</ul></li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<h3 id="step-3-plot-the-effect-with-envelope-points">Step 3: Plot the
+Effect with Envelope Points</h3>
+<p>The horizontal line across the Time Track represents project speed.
+Manipulating this line controls speed and pitch variations over
+time.</p>
+<ol type="1">
+<li>Switch to the <strong>Envelope Tool</strong> by clicking its icon in
+the toolbar or pressing <strong>F2</strong>.</li>
+<li>Identify the exact moment in your audio track where the effect
+should begin.</li>
+<li>Click the blue line on the Time Track at that position to place an
+anchor point at 100% (normal speed).</li>
+<li>Create a second point at the moment the effect should conclude:
+<ul>
+<li><strong>To create a tape-stop:</strong> Click slightly later in the
+timeline (typically 0.5 to 1.5 seconds after the first point) and drag
+the new point straight down to the minimum speed level. The steep
+downward slope forces the audio to decelerate to a complete halt,
+mimicking a tape machine powering down.</li>
+<li><strong>To create a pitch-bend:</strong> Click where the bend should
+reach its peak or trough, then drag the point up or down. Add a
+subsequent point back at 100% to return the track smoothly to its
+original pitch and tempo.</li>
+</ul></li>
+</ol>
+<h3 id="step-4-preview-and-render-the-result">Step 4: Preview and Render
+the Result</h3>
+<ol type="1">
+<li>Press the <strong>Spacebar</strong> to listen to the modulation.
+Adjust the points horizontally to change the duration of the slide, or
+vertically to adjust the depth of the pitch change.</li>
+<li>The Time Track affects all tracks playing simultaneously in the
+workspace. If you only want the effect applied to a specific segment,
+mute other tracks or split the target audio onto an isolated
+section.</li>
+<li>To permanently apply the effect, highlight the audio and go to
+<strong>Tracks</strong> &gt; <strong>Mix</strong> &gt; <strong>Mix and
+Render</strong>, or simply export the finished project via
+<strong>File</strong> &gt; <strong>Export Audio</strong>.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

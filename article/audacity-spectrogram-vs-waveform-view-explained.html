@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Spectrogram vs Waveform View Explained - audacity</title>
+    <meta name="description" content="Audacity offers two primary visual modes for analyzing audio tracks: the standard Waveform view and the Spectrogram view. While the default Waveform view displays amplitude changes over time to show overall loudness, the Spectrogram view maps frequency co">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-spectrogram-vs-waveform-view-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Spectrogram vs Waveform View Explained - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-spectrogram-vs-waveform-view-explained" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity offers two primary visual modes for analyzing audio tracks: the standard Waveform view and the Spectrogram view. While the default Waveform view displays amplitude changes over time to show overall loudness, the Spectrogram view maps frequency co" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-spectrogram-vs-waveform-view-explained">Audacity
+Spectrogram vs Waveform View Explained</h1>
+<p>Audacity offers two primary visual modes for analyzing audio tracks:
+the standard Waveform view and the Spectrogram view. While the default
+Waveform view displays amplitude changes over time to show overall
+loudness, the Spectrogram view maps frequency content over time using
+color intensity to represent volume. Understanding the differences
+between these two modes allows audio editors to choose the right
+perspective for cutting, leveling, and surgical noise removal.</p>
+<h3 id="the-waveform-view-amplitude-over-time">The Waveform View:
+Amplitude Over Time</h3>
+<p>The Waveform view is the default display mode in Audacity. It
+provides a direct representation of an audio signal's displacement over
+time:</p>
+<ul>
+<li><strong>Horizontal Axis (X-axis):</strong> Represents time (seconds,
+minutes).</li>
+<li><strong>Vertical Axis (Y-axis):</strong> Represents amplitude or
+volume, typically on a linear scale from -1.0 to +1.0, or in decibels
+(dB).</li>
+</ul>
+<p>The Waveform view is ideal for general editing tasks. It clearly
+displays silence, loud peaks, and transients. Editors rely on it to
+identify where speech pauses occur, align different tracks, adjust
+overall levels, and cut or arrange sections of audio based on rhythm and
+timing. However, it does not reveal the specific pitches or frequencies
+present within the sound.</p>
+<h3 id="the-spectrogram-view-frequency-and-energy-over-time">The
+Spectrogram View: Frequency and Energy Over Time</h3>
+<p>The Spectrogram view transforms the audio data using a mathematical
+process called the Fast Fourier Transform (FFT) to break down the sound
+into its individual frequency components:</p>
+<ul>
+<li><strong>Horizontal Axis (X-axis):</strong> Represents time, matching
+the timeline of the Waveform view.</li>
+<li><strong>Vertical Axis (Y-axis):</strong> Represents frequency in
+Hertz (Hz), ranging from low bass tones at the bottom to high treble
+frequencies at the top.</li>
+<li><strong>Color / Brightness (Z-dimension):</strong> Represents
+amplitude or energy. Brighter, more saturated colors indicate higher
+energy at that specific frequency, while darker areas indicate silence
+or low energy.</li>
+</ul>
+<p>The Spectrogram view is essential for detailed audio analysis and
+restoration. It makes individual sound events visible, allowing users to
+spot unwanted background noises such as electrical hums, mic plosives,
+mouth clicks, or sirens that might be completely invisible in the
+standard Waveform view.</p>
+<h3 id="key-differences-at-a-glance">Key Differences at a Glance</h3>
+<ul>
+<li><strong>Visual Dimension:</strong> The Waveform is a two-dimensional
+plot (Time vs. Amplitude). The Spectrogram is effectively
+three-dimensional (Time vs. Frequency, with Amplitude shown via
+color).</li>
+<li><strong>Information Provided:</strong> Waveforms show <em>how
+loud</em> an audio file is at any given moment. Spectrograms show
+<em>which frequencies</em> make up that loudness.</li>
+<li><strong>Primary Use Cases:</strong> Use the Waveform view for basic
+trimming, splicing, envelope adjustments, and level balancing. Use the
+Spectrogram view for spectral selection, noise reduction, click removal,
+and analyzing pitch.</li>
+</ul>
+<h3 id="switching-between-views-in-audacity">Switching Between Views in
+Audacity</h3>
+<p>To toggle between views, click the track name in the Track Control
+Panel to open the drop-down menu, then select
+<strong>Spectrogram</strong> or <strong>Waveform</strong>. You can also
+split the track into a Multi-view mode in recent versions of Audacity,
+allowing you to see both the Waveform and Spectrogram simultaneously for
+the same track.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

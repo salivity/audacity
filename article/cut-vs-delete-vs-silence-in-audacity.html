@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut vs Delete vs Silence in Audacity - audacity</title>
+    <meta name="description" content="While Cut, Delete, and Silence in Audacity all remove unwanted sound from an audio track, they differ fundamentally in how they handle the clipboard and the timeline. Cut removes the selection and copies it to your clipboard while shifting remaining audio">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/cut-vs-delete-vs-silence-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cut vs Delete vs Silence in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/cut-vs-delete-vs-silence-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="While Cut, Delete, and Silence in Audacity all remove unwanted sound from an audio track, they differ fundamentally in how they handle the clipboard and the timeline. Cut removes the selection and copies it to your clipboard while shifting remaining audio" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="cut-vs-delete-vs-silence-in-audacity">Cut vs Delete vs Silence
+in Audacity</h1>
+<p>While Cut, Delete, and Silence in Audacity all remove unwanted sound
+from an audio track, they differ fundamentally in how they handle the
+clipboard and the timeline. Cut removes the selection and copies it to
+your clipboard while shifting remaining audio backward to close the gap.
+Delete also pulls the remaining audio backward to close the gap, but it
+permanently discards the selection without copying it. In contrast,
+Silence replaces the selected audio with total quiet, preserving the
+original length and timing of the entire track without moving any
+surrounding audio.</p>
+<h3 id="the-cut-command-ctrl--x--cmd--x">The Cut Command (Ctrl + X / Cmd
++ X)</h3>
+<p>The Cut tool removes the selected audio segment from the timeline and
+saves it directly to your system's clipboard.</p>
+<ul>
+<li><strong>Timeline Impact:</strong> The gap left by the removed audio
+is automatically closed. All audio to the right of the selection shifts
+leftward, reducing the overall duration of the track.</li>
+<li><strong>Clipboard Impact:</strong> The audio is stored in the
+clipboard, meaning you can paste it elsewhere into the same track, a
+different track, or an entirely new project using the Paste command
+(Ctrl + V).</li>
+<li><strong>Best Used For:</strong> Rearranging sections, moving an
+interview segment, or shifting an intro/outro to a different point in
+your timeline.</li>
+</ul>
+<h3 id="the-delete-command-delete--backspace">The Delete Command (Delete
+/ Backspace)</h3>
+<p>The Delete command removes the selected section from the project
+immediately without copying it anywhere.</p>
+<ul>
+<li><strong>Timeline Impact:</strong> Similar to Cut, the remaining
+audio to the right shifts leftward to close the space, shortening the
+total project length.</li>
+<li><strong>Clipboard Impact:</strong> It does not interact with your
+clipboard. Whatever you previously copied remains in the clipboard
+untouched.</li>
+<li><strong>Best Used For:</strong> Trimming out dead air, removing
+unwanted filler words (like "um" and "ah"), or discarding mistakes when
+you do not need to preserve the timing of other tracks.</li>
+</ul>
+<h3 id="the-silence-audio-command-ctrl--l--cmd--l">The Silence Audio
+Command (Ctrl + L / Cmd + L)</h3>
+<p>The Silence Audio tool replaces the selected waveform with flatline
+silence (zero amplitude).</p>
+<ul>
+<li><strong>Timeline Impact:</strong> The total length of the track does
+not change. None of the surrounding audio shifts, ensuring that any
+alignment with other tracks, background music, or video sync points
+remains intact.</li>
+<li><strong>Clipboard Impact:</strong> It does not touch or alter the
+clipboard.</li>
+<li><strong>Best Used For:</strong> Eliminating coughs, background
+noise, or microphone bleeds during pauses in multitrack recordings (like
+podcasts or musical ensembles) where shifting the audio would throw the
+tracks out of synchronization.</li>
+</ul>
+<h3 id="quick-comparison-summary">Quick Comparison Summary</h3>
+<ul>
+<li><strong>Cut:</strong> Shortens track duration, saves audio to
+clipboard.</li>
+<li><strong>Delete:</strong> Shortens track duration, discards audio
+entirely.</li>
+<li><strong>Silence:</strong> Preserves track duration, maintains
+synchronization, discards audio without copying.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

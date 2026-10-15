@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Contrast Analysis Tool Explained - audacity</title>
+    <meta name="description" content="The Contrast analysis tool in Audacity evaluates the volume difference between foreground speech and background audio to ensure spoken content remains distinct and intelligible. By comparing the Root Mean Square (RMS) loudness of both elements in decibels">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-contrast-analysis-tool-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Contrast Analysis Tool Explained - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-contrast-analysis-tool-explained" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Contrast analysis tool in Audacity evaluates the volume difference between foreground speech and background audio to ensure spoken content remains distinct and intelligible. By comparing the Root Mean Square (RMS) loudness of both elements in decibels" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-contrast-analysis-tool-explained">Audacity Contrast
+Analysis Tool Explained</h1>
+<p>The Contrast analysis tool in Audacity evaluates the volume
+difference between foreground speech and background audio to ensure
+spoken content remains distinct and intelligible. By comparing the Root
+Mean Square (RMS) loudness of both elements in decibels (dB), this
+feature helps audio editors quickly determine whether a mix provides
+sufficient separation to meet international accessibility standards.</p>
+<h3 id="what-the-contrast-tool-measures">What the Contrast Tool
+Measures</h3>
+<p>The tool specifically calculates the difference in average RMS energy
+levels between two distinct sections of an audio project:</p>
+<ul>
+<li><strong>Foreground Audio:</strong> Typically the primary voice track
+or spoken dialogue.</li>
+<li><strong>Background Audio:</strong> Typically ambient music, sound
+effects, or background noise playing behind or alongside the
+dialogue.</li>
+</ul>
+<p>Rather than looking at instantaneous peak volumes, the tool analyzes
+the average sustained energy across the selected regions. The resulting
+calculation is an overall contrast ratio expressed in decibels (dB).</p>
+<h3 id="purpose-and-accessibility-standards">Purpose and Accessibility
+Standards</h3>
+<p>The primary function of the Contrast tool is to test audio against
+the Web Content Accessibility Guidelines (WCAG) 2.0. Under WCAG 2.0
+Success Criterion 1.4.7, audio tracks containing speech must maintain
+sufficient volume separation from background sounds so that individuals
+with hearing impairments can understand the spoken content.</p>
+<p>When you measure both selections, the Contrast tool compares the
+foreground-to-background difference against accessibility
+thresholds:</p>
+<ul>
+<li><strong>Pass Result:</strong> The speech is at least 20 dB louder
+than the background sound, meeting the WCAG Level AAA requirements.</li>
+<li><strong>Fail Result:</strong> The difference is less than 20 dB,
+indicating that background music or noise is loud enough to obscure the
+speech for some listeners.</li>
+</ul>
+<h3 id="interpreting-the-results">Interpreting the Results</h3>
+<p>If the contrast analysis results in a failure, the background music
+needs to be attenuated (lowered) or the speech track amplified using
+standard mixing techniques such as ducking, compression, or simple gain
+adjustments until the RMS separation reaches at least 20 dB.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

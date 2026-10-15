@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyzing Bat Echolocation in Audacity - audacity</title>
+    <meta name="description" content="Audacity is fully capable of analyzing bioacoustic recordings, including ultrasonic bat echolocation calls, by utilizing its high-resolution spectrogram display. While it lacks the automated species-identification algorithms found in dedicated bioacoustic">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/analyzing-bat-echolocation-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Analyzing Bat Echolocation in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/analyzing-bat-echolocation-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity is fully capable of analyzing bioacoustic recordings, including ultrasonic bat echolocation calls, by utilizing its high-resolution spectrogram display. While it lacks the automated species-identification algorithms found in dedicated bioacoustic" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="analyzing-bat-echolocation-in-audacity">Analyzing Bat
+Echolocation in Audacity</h1>
+<p>Audacity is fully capable of analyzing bioacoustic recordings,
+including ultrasonic bat echolocation calls, by utilizing its
+high-resolution spectrogram display. While it lacks the automated
+species-identification algorithms found in dedicated bioacoustics
+software, Audacity provides the necessary tools to inspect call
+structure, measure temporal and spectral parameters, and render
+ultrasonic frequencies when properly configured.</p>
+<h3 id="ultrasonic-sample-rate-support">Ultrasonic Sample Rate
+Support</h3>
+<p>To visualize bat echolocation, which typically occurs between 20 kHz
+and 150 kHz, the recording must have a sufficiently high sampling rate.
+Audacity supports standard ultrasonic sample rates, including 192 kHz,
+256 kHz, 384 kHz, and 500 kHz. By adhering to the Nyquist theorem, a
+recording made at 384 kHz allows Audacity to accurately display
+frequencies up to 192 kHz, covering the echolocation range of nearly all
+bat species.</p>
+<h3 id="configuring-the-spectrogram-view">Configuring the Spectrogram
+View</h3>
+<p>By default, Audacity displays audio as a waveform. To view and
+analyze bat calls, change the track view dropdown to "Spectrogram." To
+clearly see ultrasonic frequencies, adjust the Spectrogram
+Preferences:</p>
+<ul>
+<li><strong>Frequency Range:</strong> Increase the "Max Frequency"
+setting to match the Nyquist frequency of the recording (for example,
+192000 Hz for a 384 kHz file) so high-frequency sweeps are not cut
+off.</li>
+<li><strong>Window Size:</strong> Set the Fast Fourier Transform (FFT)
+window size between 512 and 1024 points. This setting offers a balanced
+trade-off between time resolution and frequency resolution, which is
+essential for capturing brief, rapid frequency-modulated (FM) bat
+pulses.</li>
+<li><strong>Window Type:</strong> A Hann or Blackman-Harris window is
+recommended to minimize spectral leakage.</li>
+<li><strong>Color Gain and Range:</strong> Adjust the gain and dynamic
+range sliders to clearly differentiate low-amplitude harmonic calls from
+background noise.</li>
+</ul>
+<h3 id="measuring-acoustic-parameters">Measuring Acoustic
+Parameters</h3>
+<p>Audacity includes a Spectral Selection tool that allows users to draw
+a bounding box directly around a call on the spectrogram. This tool
+provides precise measurements of:</p>
+<ul>
+<li><strong>Duration:</strong> The start time, end time, and total
+length of the call pulse.</li>
+<li><strong>Bandwidth:</strong> The minimum and maximum frequencies of
+the sweep.</li>
+<li><strong>Characteristic Frequency:</strong> The frequency at the
+flattest or most sustained portion of the call.</li>
+<li><strong>Inter-Pulse Interval:</strong> The time elapsed between
+consecutive echolocation calls.</li>
+</ul>
+<p>Users can also use the "Plot Spectrum" analysis tool (found under the
+Analyze menu) to view a power spectrum graph, making it straightforward
+to identify peak frequencies and harmonic energy.</p>
+<h3 id="playback-and-auditory-inspection">Playback and Auditory
+Inspection</h3>
+<p>Because bat echolocation is inaudible to human ears, Audacity's
+"Change Speed" effect allows researchers to slow down ultrasonic audio
+by a factor of 10x or 20x. This transposes the ultrasonic calls into the
+human audible range while preserving the relative structure and rhythm
+of the pulses for auditory verification.</p>
+<h3 id="limitations-in-bioacoustics">Limitations in Bioacoustics</h3>
+<p>While Audacity is a robust, free tool for manual inspection and
+measurement, it does not include automated call classifiers, sequence
+scrubbers, or metadata tagging standards specifically designed for
+wildlife surveys. For massive datasets requiring automated species
+recognition, specialized platforms such as Kaleidoscope or SonoBat are
+typically preferred, but Audacity remains an effective utility for
+detailed, manual bioacoustic analysis.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Infinite Delay Feedback Loop in Audacity - audacity</title>
+    <meta name="description" content="This guide explains how to generate a long, naturally decaying feedback loop using the built-in Delay effect in Audacity. By extending the track&#39;s timeline with silence, lowering input gain to prevent digital clipping, and configuring decay parameters for">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/create-an-infinite-delay-feedback-loop-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Create an Infinite Delay Feedback Loop in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/create-an-infinite-delay-feedback-loop-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to generate a long, naturally decaying feedback loop using the built-in Delay effect in Audacity. By extending the track&#39;s timeline with silence, lowering input gain to prevent digital clipping, and configuring decay parameters for" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="create-an-infinite-delay-feedback-loop-in-audacity">Create an
+Infinite Delay Feedback Loop in Audacity</h1>
+<p>This guide explains how to generate a long, naturally decaying
+feedback loop using the built-in Delay effect in Audacity. By extending
+the track's timeline with silence, lowering input gain to prevent
+digital clipping, and configuring decay parameters for a high number of
+repetitions, you can transform any audio sample into an expansive,
+self-sustaining delay tail that fades out smoothly over time.</p>
+<h3 id="step-1-add-trailing-silence-to-the-track">Step 1: Add Trailing
+Silence to the Track</h3>
+<p>Audacity terminates applied effects at the end of the current audio
+selection. Because an infinite or ultra-long decaying delay requires
+extended time to fade naturally, you must add blank audio space after
+your original sound.</p>
+<ol type="1">
+<li>Click on the track timeline immediately after your audio clip.</li>
+<li>Go to the top menu and select <strong>Generate</strong> &gt;
+<strong>Silence</strong>.</li>
+<li>Set the duration based on how long you want the decay to last (for
+example, 30 to 60 seconds) and click <strong>Apply</strong>.</li>
+<li>Press <code>Ctrl + A</code> (or <code>Cmd + A</code> on macOS) to
+select both the original audio and the newly added silence.</li>
+</ol>
+<h3 id="step-2-reduce-track-headroom">Step 2: Reduce Track Headroom</h3>
+<p>Each repeated echo in a feedback loop stacks onto the existing audio
+signal. To prevent the combined repeats from exceeding 0 dB and causing
+harsh digital distortion:</p>
+<ol type="1">
+<li>Select the original audio segment.</li>
+<li>Go to <strong>Effect</strong> &gt; <strong>Volume and
+Compression</strong> &gt; <strong>Amplify</strong>.</li>
+<li>Set the <strong>Amplification (dB)</strong> to a negative value,
+such as <code>-6.0 dB</code> or <code>-10.0 dB</code>, and click
+<strong>Apply</strong>.</li>
+</ol>
+<h3 id="step-3-configure-the-delay-effect">Step 3: Configure the Delay
+Effect</h3>
+<p>Audacity features a dedicated Delay plugin that allows precise
+control over decay rate and the total number of iterations.</p>
+<ol type="1">
+<li>With the audio and silence selected, open <strong>Effect</strong>
+&gt; <strong>Delay and Reverb</strong> &gt; <strong>Delay</strong>.</li>
+<li>Set the parameters as follows:
+<ul>
+<li><strong>Delay type</strong>: Select <strong>Regular</strong>.</li>
+<li><strong>Delay level per echo (dB)</strong>: Set this between
+<strong>-0.5 dB</strong> and <strong>-2.0 dB</strong>. A value close to
+<code>0 dB</code> ensures a very slow, prolonged decay. Setting it
+strictly to <code>0 dB</code> produces an infinite repeat without decay,
+while negative values ensure each iteration becomes progressively
+quieter.</li>
+<li><strong>Delay time (seconds)</strong>: Set the interval between
+echoes (for example, <code>0.50</code> seconds for a standard rhythm or
+<code>1.50</code> seconds for an ambient wash).</li>
+<li><strong>Pitch change effect</strong>: Set to
+<strong>None</strong>.</li>
+<li><strong>Number of echoes</strong>: Set this to a maximum or
+near-maximum value (such as <strong>50</strong> to
+<strong>100</strong>). This allows the feedback to loop continuously
+across the entire duration of your generated silence until it drops
+below the threshold of human hearing.</li>
+</ul></li>
+</ol>
+<h3 id="step-4-preview-and-apply">Step 4: Preview and Apply</h3>
+<ol type="1">
+<li>Click <strong>Preview</strong> to listen to the first few seconds of
+the loop.</li>
+<li>If the repeats are fading out too quickly, increase the
+<strong>Delay level per echo</strong> closer to zero (e.g., change
+<code>-2.0 dB</code> to <code>-0.8 dB</code>).</li>
+<li>If the repeats become louder over time or distort, lower the value
+(e.g., <code>-3.0 dB</code>).</li>
+<li>Click <strong>Apply</strong> to render the feedback loop across your
+selection.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

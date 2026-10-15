@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALSA vs JACK for Audacity Recording on Linux - audacity</title>
+    <meta name="description" content="Choosing the right audio host in Audacity on Linux usually comes down to the Advanced Linux Sound Architecture (ALSA) versus the JACK Audio Connection Kit. This guide examines how ALSA and JACK compare when configuring audio recording in Audacity, highlig">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/alsa-vs-jack-for-audacity-recording-on-linux">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ALSA vs JACK for Audacity Recording on Linux - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/alsa-vs-jack-for-audacity-recording-on-linux" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Choosing the right audio host in Audacity on Linux usually comes down to the Advanced Linux Sound Architecture (ALSA) versus the JACK Audio Connection Kit. This guide examines how ALSA and JACK compare when configuring audio recording in Audacity, highlig" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="alsa-vs-jack-for-audacity-recording-on-linux">ALSA vs JACK for
+Audacity Recording on Linux</h1>
+<p>Choosing the right audio host in Audacity on Linux usually comes down
+to the Advanced Linux Sound Architecture (ALSA) versus the JACK Audio
+Connection Kit. This guide examines how ALSA and JACK compare when
+configuring audio recording in Audacity, highlighting differences in
+latency, routing flexibility, setup complexity, and system stability.
+While ALSA serves as the direct, hardware-level interface ideal for
+straightforward single-track recording, JACK functions as a specialized
+sound server built for complex, low-latency, multi-application audio
+routing.</p>
+<h3 id="architecture-and-core-purpose">Architecture and Core
+Purpose</h3>
+<p>ALSA is integrated directly into the Linux kernel to provide hardware
+drivers and a standardized programming interface for sound cards. When
+you select ALSA as the audio host in Audacity, the program communicates
+directly with your audio interface or hardware drivers, minimizing
+system overhead.</p>
+<p>JACK sits on top of ALSA in the user space as a real-time sound
+server. It is purpose-built for professional digital audio workstations.
+Rather than accessing the hardware exclusively, Audacity connects to the
+running JACK daemon, which synchronizes all connected audio streams.</p>
+<h3 id="latency-and-real-time-performance">Latency and Real-Time
+Performance</h3>
+<p>ALSA offers adequate latency performance for basic recording tasks
+such as podcasts, voiceovers, and single-source acoustic tracks.
+However, fine-tuning ALSA buffer sizes inside Audacity to reach
+ultra-low latency can lead to buffer overruns or underruns (xruns),
+producing audible clicks and dropouts.</p>
+<p>JACK was engineered specifically to solve latency issues. When
+combined with a real-time or low-latency Linux kernel, JACK achieves
+deterministic latency as low as 1 to 5 milliseconds. If your recording
+workflow involves real-time software monitoring or overdubbing new
+tracks alongside existing playback, JACK provides superior
+synchronization and eliminates timing drift.</p>
+<h3 id="audio-routing-and-flexibility">Audio Routing and
+Flexibility</h3>
+<p>ALSA assigns audio streams directly to physical hardware ports. It
+does not provide an easy, native way to route audio internally between
+different programs. Under pure ALSA, if Audacity locks an audio device
+for exclusive access, other applications might be blocked from using
+that hardware simultaneously.</p>
+<p>JACK acts as a virtual patchbay. Every audio input, output, and
+application registered with JACK can be interconnected dynamically using
+patchbay utilities such as QjackCtl or Catia. This architecture allows
+you to route audio from software synthesizers, media players, or other
+digital audio workstations (such as Ardour) straight into Audacity
+alongside physical microphone inputs.</p>
+<h3 id="setup-and-usability-in-audacity">Setup and Usability in
+Audacity</h3>
+<p>ALSA is virtually plug-and-play. In Audacity, you open the Audio
+Setup menu, set the Host to ALSA, choose your recording and playback
+devices from the dropdown menus, and begin recording immediately. It
+requires no background configuration or extra daemons.</p>
+<p>JACK requires active configuration before opening Audacity. You must
+launch the JACK server, define buffer sizes and sample rates, and ensure
+the server is stable. Furthermore, your installation of Audacity must be
+compiled with <code>portaudio</code> JACK support; certain sandboxed
+Flatpak or Snap builds may require additional permissions or
+configuration to hook into a host JACK server properly.</p>
+<h3 id="which-system-to-use">Which System to Use</h3>
+<ul>
+<li><strong>Select ALSA</strong> if you want a reliable, simple, and
+low-maintenance setup. It is the best choice for straightforward
+recording tasks, such as interviews, voice acting, and basic
+single-instrument tracking.</li>
+<li><strong>Select JACK</strong> if you are producing music, require
+real-time low-latency hardware monitoring without audible delay, or need
+to route audio between multiple software tools directly into
+Audacity.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

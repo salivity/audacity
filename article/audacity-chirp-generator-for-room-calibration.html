@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Chirp Generator for Room Calibration - audacity</title>
+    <meta name="description" content="Audacity’s built-in Chirp generator provides an accessible, free method to create frequency sweeps for acoustic testing and room calibration. By synthesizing a logarithmic sine sweep across the audible spectrum, you can evaluate speaker response, identify">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-chirp-generator-for-room-calibration">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Chirp Generator for Room Calibration - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-chirp-generator-for-room-calibration" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity’s built-in Chirp generator provides an accessible, free method to create frequency sweeps for acoustic testing and room calibration. By synthesizing a logarithmic sine sweep across the audible spectrum, you can evaluate speaker response, identify" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-chirp-generator-for-room-calibration">Audacity Chirp
+Generator for Room Calibration</h1>
+<p>Audacity’s built-in Chirp generator provides an accessible, free
+method to create frequency sweeps for acoustic testing and room
+calibration. By synthesizing a logarithmic sine sweep across the audible
+spectrum, you can evaluate speaker response, identify room modes, and
+map acoustic reflections. This guide explains how to generate these
+sweeps in Audacity, why specific settings matter, and how to use them
+effectively for room analysis.</p>
+<h2 id="generating-the-sweep-in-audacity">Generating the Sweep in
+Audacity</h2>
+<p>To create an acoustic test sweep, open Audacity and follow these
+steps:</p>
+<ol type="1">
+<li>Navigate to the top menu and select <strong>Generate</strong> &gt;
+<strong>Chirp...</strong></li>
+<li>Set the <strong>Waveform</strong> to <strong>Sine</strong>. Pure
+sine waves are standard for acoustic transfer function
+measurements.</li>
+<li>Configure the <strong>Frequency</strong> settings:
+<ul>
+<li><strong>Start:</strong> Set to <code>20 Hz</code> (the lower limit
+of human hearing and typical sub-bass).</li>
+<li><strong>End:</strong> Set to <code>20000 Hz</code> (the upper limit
+of human hearing).</li>
+</ul></li>
+<li>Configure the <strong>Amplitude</strong> settings:
+<ul>
+<li><strong>Start:</strong> Set to <code>0.8</code> (or -2 dBFS).</li>
+<li><strong>End:</strong> Set to <code>0.8</code> (or -2 dBFS). Keeping
+the amplitude slightly below 1.0 prevents digital clipping during
+playback and processing.</li>
+</ul></li>
+<li>Set the <strong>Interpolation</strong> to
+<strong>Logarithmic</strong>.</li>
+<li>Set the <strong>Duration</strong> between <code>5.000</code> and
+<code>10.000</code> seconds. A longer sweep provides a better
+signal-to-noise ratio in larger spaces.</li>
+<li>Click <strong>Generate</strong>.</li>
+</ol>
+<h2 id="why-logarithmic-interpolation-is-critical">Why Logarithmic
+Interpolation Is Critical</h2>
+<p>Audacity offers both Linear and Logarithmic interpolation. For room
+calibration, you must always choose <strong>Logarithmic</strong>.</p>
+<p>Human hearing and musical pitch perceive frequency on an octave-based
+(logarithmic) scale, where the interval between 20 Hz and 40 Hz
+represents the same musical distance as 10,000 Hz to 20,000 Hz. A linear
+sweep spends an equal amount of time at every Hertz, meaning 90% of the
+sweep duration would be concentrated above 2,000 Hz, leaving the bass
+and lower-midrange severely under-sampled. A logarithmic sweep spends
+equal time per octave, delivering equal energy across all frequency
+bands and providing the precise data needed to detect room resonance and
+standing waves.</p>
+<h2 id="using-the-sweep-for-calibration">Using the Sweep for
+Calibration</h2>
+<p>Once generated, export the sweep as an uncompressed WAV file
+(typically 24-bit, 44.1 kHz or 48 kHz).</p>
+<p>To test your space:</p>
+<ol type="1">
+<li>Position an omnidirectional measurement microphone at your primary
+listening position.</li>
+<li>Play the sweep through your studio monitors or reference speakers at
+a calibrated, comfortable listening volume (typically 75 to 85 dB SPL
+C-Weighted).</li>
+<li>Record the microphone input directly into a separate audio
+track.</li>
+<li>Use Audacity’s <strong>Plot Spectrum</strong> tool
+(<strong>Analyze</strong> &gt; <strong>Plot Spectrum</strong>) on the
+recorded audio to view the overall frequency curve, or switch the track
+display to <strong>Spectrogram</strong> view to observe low-frequency
+ringing and decay times.</li>
+</ol>
+<h2 id="considerations-and-limitations">Considerations and
+Limitations</h2>
+<p>While Audacity is fully capable of generating pristine acoustic
+sweeps, it does not feature automated impulse response deconvolution or
+room correction filter generation out of the box. Dedicated room
+measurement tools often embed high-frequency timing chirps before the
+main sweep to calculate latency and phase alignment. Audacity's Chirp
+generates a raw, continuous sweep, making it best suited for baseline
+frequency response checks, manual acoustic analysis, or external
+processing.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Gain Reduction in Audacity Compressor - audacity</title>
+    <meta name="description" content="Audacity does not support real-time gain reduction meters within its native built-in compressor. While the stock tool allows you to adjust threshold, ratio, attack, and release settings, it provides no visual feedback showing how many decibels of dynamic">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/real-time-gain-reduction-in-audacity-compressor">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Real-Time Gain Reduction in Audacity Compressor - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/real-time-gain-reduction-in-audacity-compressor" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity does not support real-time gain reduction meters within its native built-in compressor. While the stock tool allows you to adjust threshold, ratio, attack, and release settings, it provides no visual feedback showing how many decibels of dynamic" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="real-time-gain-reduction-in-audacity-compressor">Real-Time Gain
+Reduction in Audacity Compressor</h1>
+<p>Audacity does not support real-time gain reduction meters within its
+native built-in compressor. While the stock tool allows you to adjust
+threshold, ratio, attack, and release settings, it provides no visual
+feedback showing how many decibels of dynamic control are being applied
+at any given moment. However, modern versions of Audacity support
+real-time third-party plugins that solve this limitation, enabling full
+visual gain reduction monitoring during playback.</p>
+<h3 id="the-limitation-of-audacitys-native-compressor">The Limitation of
+Audacity’s Native Compressor</h3>
+<p>Audacity's built-in dynamic compressor (found under <strong>Effect
+&gt; Volume and Compression &gt; Compressor</strong>) operates primarily
+as an offline, destructive processor. When using this native effect:</p>
+<ul>
+<li>There is no moving gain reduction (GR) meter to show dynamic
+attenuation.</li>
+<li>The "Preview" button only plays a short snippet of audio to evaluate
+the settings by ear.</li>
+<li>Visual feedback is limited to a static input-versus-output threshold
+graph rather than a live visualizer.</li>
+</ul>
+<h3 id="the-solution-use-real-time-third-party-plugins">The Solution:
+Use Real-Time Third-Party Plugins</h3>
+<p>Starting with Audacity version 3.2, the software introduced
+non-destructive real-time effects. This architecture allows you to
+insert third-party VST3, VST, or Audio Units (AU) plugins onto
+individual audio tracks, many of which include responsive, real-time
+gain reduction meters.</p>
+<h4 id="recommended-free-plugins-with-visual-meters">Recommended Free
+Plugins with Visual Meters</h4>
+<ul>
+<li><strong>TDR Kotelnikov (Tokyo Dawn Records):</strong> A
+mastering-grade compressor with highly detailed, responsive gain
+reduction metering.</li>
+<li><strong>MCompressor (MeldaProduction):</strong> Features visual
+compression curves and real-time gain reduction displays.</li>
+<li><strong>Rough Rider 3 (Audio Damage):</strong> A modern compressor
+with a clear, vintage-style analog gain reduction meter.</li>
+</ul>
+<h3 id="how-to-view-live-gain-reduction-in-audacity">How to View Live
+Gain Reduction in Audacity</h3>
+<p>To monitor gain reduction in real time while adjusting your
+compression parameters, follow these steps:</p>
+<ol type="1">
+<li><strong>Install a Compatible Plugin:</strong> Download and install a
+64-bit VST3 or AU compressor plugin that includes visual metering.</li>
+<li><strong>Enable the Plugin:</strong> Open Audacity, go to
+<strong>Effect &gt; Plugin Manager</strong>, locate your installed
+plugin, select it, and click <strong>Enable</strong>.</li>
+<li><strong>Open the Effects Panel:</strong> On the track you want to
+process, click the <strong>Effects</strong> button located on the
+left-hand Track Control Panel.</li>
+<li><strong>Insert the Compressor:</strong> Click <strong>Add
+Effect</strong> in the Realtime Effects sidebar and select your
+third-party compressor from the list.</li>
+<li><strong>Monitor Gain Reduction:</strong> Start audio playback by
+pressing the Spacebar, then click on the effect name to open its
+graphical interface. As the audio plays, you can adjust the threshold
+and ratio controls while visually monitoring the live gain reduction
+meter inside the plugin window.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

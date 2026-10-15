@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove AC Background Rumble in Audacity - audacity</title>
+    <meta name="description" content="Continuous air conditioner noise can ruin an otherwise clean audio recording, but it can be easily removed using Audacity’s built-in audio processing tools. This guide covers a fast, two-step method to eliminate low-frequency air conditioning hum and stea">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/remove-ac-background-rumble-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Remove AC Background Rumble in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/remove-ac-background-rumble-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Continuous air conditioner noise can ruin an otherwise clean audio recording, but it can be easily removed using Audacity’s built-in audio processing tools. This guide covers a fast, two-step method to eliminate low-frequency air conditioning hum and stea" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="remove-ac-background-rumble-in-audacity">Remove AC Background
+Rumble in Audacity</h1>
+<p>Continuous air conditioner noise can ruin an otherwise clean audio
+recording, but it can be easily removed using Audacity’s built-in audio
+processing tools. This guide covers a fast, two-step method to eliminate
+low-frequency air conditioning hum and steady ambient hiss using the
+High-Pass Filter and the Noise Reduction effect without degrading your
+primary voice track.</p>
+<h3 id="step-1-apply-a-high-pass-filter">Step 1: Apply a High-Pass
+Filter</h3>
+<p>Air conditioning units produce heavy sub-bass vibrations and low-end
+rumble that typically sit below 80 Hz to 100 Hz. A high-pass filter cuts
+these low frequencies immediately while leaving human speech
+unaffected.</p>
+<ol type="1">
+<li>Open your audio file in Audacity.</li>
+<li>Select the entire track by pressing <strong>Ctrl + A</strong>
+(Windows) or <strong>Cmd + A</strong> (Mac).</li>
+<li>Go to the top menu and select <strong>Effect &gt; EQ and Filters
+&gt; High-Pass Filter</strong>.</li>
+<li>Set the <strong>Frequency (Hz)</strong> to <strong>80</strong> (or
+<strong>100</strong> for heavy mechanical rumble).</li>
+<li>Set the <strong>Roll-off (dB per octave)</strong> to <strong>12
+dB</strong> or <strong>24 dB</strong>.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<p>This removes the deepest mechanical hum before you apply more
+aggressive noise reduction.</p>
+<h3 id="step-2-capture-a-noise-profile">Step 2: Capture a Noise
+Profile</h3>
+<p>The Noise Reduction tool requires a sample of the isolated air
+conditioner sound so it knows precisely which frequencies to remove.</p>
+<ol type="1">
+<li>Highlight a 2- to 3-second section of your recording that contains
+<em>only</em> the air conditioner sound (a pause where nobody is
+speaking).</li>
+<li>Go to <strong>Effect &gt; Noise Removal and Repair &gt; Noise
+Reduction</strong>.</li>
+<li>In Step 1 of the dialog window, click the <strong>Get Noise
+Profile</strong> button. The window will close automatically.</li>
+</ol>
+<h3 id="step-3-apply-the-noise-reduction">Step 3: Apply the Noise
+Reduction</h3>
+<p>Once Audacity has analyzed the noise profile, apply the suppression
+across your entire recording.</p>
+<ol type="1">
+<li>Select your entire track again using <strong>Ctrl + A</strong> or
+<strong>Cmd + A</strong>.</li>
+<li>Return to <strong>Effect &gt; Noise Removal and Repair &gt; Noise
+Reduction</strong>.</li>
+<li>In Step 2 of the window, adjust the following parameters to ensure
+the audio sounds natural:
+<ul>
+<li><strong>Noise reduction (dB):</strong> Set between
+<strong>6</strong> and <strong>12</strong>. Higher settings can make the
+voice sound metallic or hollow.</li>
+<li><strong>Sensitivity:</strong> Set between <strong>5</strong> and
+<strong>7</strong>.</li>
+<li><strong>Frequency smoothing (bands):</strong> Set between
+<strong>3</strong> and <strong>6</strong> to keep the transition
+smooth.</li>
+</ul></li>
+<li>Ensure the <strong>Noise</strong> radio button is set to
+<strong>Reduce</strong>.</li>
+<li>Click <strong>Preview</strong> to check the results. If the voice
+sounds distorted, lower the Noise Reduction (dB) slider.</li>
+<li>Click <strong>OK</strong> to process the audio.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

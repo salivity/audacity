@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Plugin Compatibility: VST vs AU vs LV2 - audacity</title>
+    <meta name="description" content="Audacity supports various audio plugin formats to expand its audio processing capabilities, primarily Virtual Studio Technology (VST), Audio Units (AU), and LADSPA Version 2 (LV2). The core differences between these formats lie in their operating system c">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-plugin-compatibility-vst-vs-au-vs-lv-2">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Plugin Compatibility: VST vs AU vs LV2 - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-plugin-compatibility-vst-vs-au-vs-lv-2" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity supports various audio plugin formats to expand its audio processing capabilities, primarily Virtual Studio Technology (VST), Audio Units (AU), and LADSPA Version 2 (LV2). The core differences between these formats lie in their operating system c" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-plugin-compatibility-vst-vs-au-vs-lv2">Audacity Plugin
+Compatibility: VST vs AU vs LV2</h1>
+<p>Audacity supports various audio plugin formats to expand its audio
+processing capabilities, primarily Virtual Studio Technology (VST),
+Audio Units (AU), and LADSPA Version 2 (LV2). The core differences
+between these formats lie in their operating system compatibility,
+performance integration, and licensing ecosystems. While VST is the
+universal industry standard for Windows and macOS, AU provides deeply
+integrated processing exclusively for Apple systems, and LV2 delivers a
+flexible, open-source standard with native strength on Linux and
+cross-platform utility.</p>
+<h3 id="vst-virtual-studio-technology">VST (Virtual Studio
+Technology)</h3>
+<p>Developed by Steinberg, VST is the most widely adopted audio plugin
+architecture in the music production industry. In Audacity, VST support
+encompasses both legacy VST2 (often requiring manual scanning) and
+modern VST3 formats (introduced natively in Audacity 3.2+).</p>
+<ul>
+<li><strong>Platform Compatibility:</strong> Windows, macOS, and Linux
+(though Linux support for commercial VSTs often requires compatibility
+layers like Wine).</li>
+<li><strong>Architecture:</strong> VST3 plugins feature dynamic resource
+allocation, meaning they only consume processing power when audio data
+is actively routed through them.</li>
+<li><strong>Audacity Integration:</strong> Audacity supports real-time
+adjustments for VST3 plugins, a feature long requested by users.
+However, complex VST instruments (VSTi) often have limited functionality
+in Audacity compared to traditional digital audio workstations (DAWs),
+as Audacity primarily focuses on audio processing rather than MIDI
+sequencing.</li>
+</ul>
+<h3 id="au-audio-units">AU (Audio Units)</h3>
+<p>Audio Units is Apple’s proprietary system-level audio plugin
+architecture, built directly into the macOS Core Audio framework.</p>
+<ul>
+<li><strong>Platform Compatibility:</strong> macOS exclusively.</li>
+<li><strong>Architecture:</strong> Because AU is built into the macOS
+operating system, it offers low latency and high stability. Plugins
+installed system-wide are immediately available to any compatible macOS
+application without deep file searching.</li>
+<li><strong>Audacity Integration:</strong> Mac users running Audacity
+can leverage all built-in Apple system effects (such as the AUGraphicEQ,
+AUDelay, and Apple dynamics processors) right out of the box without
+downloading third-party tools. AU plugins in Audacity run natively on
+both Intel and Apple Silicon hardware, offering stable performance.</li>
+</ul>
+<h3 id="lv2-ladspa-version-2">LV2 (LADSPA Version 2)</h3>
+<p>LV2 is an extensible, open-source plugin standard created to succeed
+LADSPA. It was developed to address limitations regarding MIDI handling,
+custom graphical user interfaces (GUIs), and parameter automation.</p>
+<ul>
+<li><strong>Platform Compatibility:</strong> Linux, Windows, and macOS
+(native cross-platform support).</li>
+<li><strong>Architecture:</strong> LV2 is modular and non-restrictive,
+avoiding proprietary licensing fees or vendor lock-in. It operates with
+low CPU overhead and is highly modular.</li>
+<li><strong>Audacity Integration:</strong> Because Audacity is an
+open-source project, LV2 enjoys direct, native alignment with the
+program’s core philosophy. Audacity includes built-in LV2 support with
+fully functional GUIs. While it is the primary standard for Linux audio
+production, fewer commercial, mainstream plugins are released in LV2
+compared to VST.</li>
+</ul>
+<h3 id="key-differences-summary">Key Differences Summary</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">VST (VST2 / VST3)</th>
+<th style="text-align: left;">Audio Units (AU)</th>
+<th style="text-align: left;">LV2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Primary OS</strong></td>
+<td style="text-align: left;">Windows, macOS</td>
+<td style="text-align: left;">macOS only</td>
+<td style="text-align: left;">Linux (also Windows, macOS)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Developer / License</strong></td>
+<td style="text-align: left;">Steinberg (Proprietary)</td>
+<td style="text-align: left;">Apple (Proprietary)</td>
+<td style="text-align: left;">Open Source (LGPL/GPL)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Availability</strong></td>
+<td style="text-align: left;">Huge commercial market</td>
+<td style="text-align: left;">Abundant on macOS</td>
+<td style="text-align: left;">Primarily open-source community</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Real-time Audacity
+FX</strong></td>
+<td style="text-align: left;">Yes (VST3)</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Built-in System
+Tools</strong></td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Yes (via macOS Core Audio)</td>
+<td style="text-align: left;">Often included in Linux distros</td>
+</tr>
+</tbody>
+</table>
+<h3 id="which-format-should-you-choose-in-audacity">Which Format Should
+You Choose in Audacity?</h3>
+<ul>
+<li><strong>On Windows:</strong> VST3 is the preferred choice due to its
+broad developer support, efficient CPU management, and real-time
+processing capabilities in modern versions of Audacity.</li>
+<li><strong>On macOS:</strong> Audio Units (AU) often provides the
+smoothest stability and comes pre-loaded with high-quality system tools,
+though VST3 is equally viable for cross-platform workflows.</li>
+<li><strong>On Linux:</strong> LV2 is the primary recommendation,
+offering superior system stability, complete feature support, and zero
+proprietary compatibility issues.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

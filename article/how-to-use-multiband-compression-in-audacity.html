@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Multiband Compression in Audacity - audacity</title>
+    <meta name="description" content="While Audacity does not include a native multiband compressor, you can easily add this functionality by installing third-party VST plugins. This guide walks you through acquiring a compatible multiband compression plugin, enabling it within Audacity’s Plu">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-use-multiband-compression-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use Multiband Compression in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-use-multiband-compression-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="While Audacity does not include a native multiband compressor, you can easily add this functionality by installing third-party VST plugins. This guide walks you through acquiring a compatible multiband compression plugin, enabling it within Audacity’s Plu" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-use-multiband-compression-in-audacity">How to Use
+Multiband Compression in Audacity</h1>
+<p>While Audacity does not include a native multiband compressor, you
+can easily add this functionality by installing third-party VST plugins.
+This guide walks you through acquiring a compatible multiband
+compression plugin, enabling it within Audacity’s Plugin Manager, and
+applying it to your audio tracks for precise dynamic control across
+specific frequency ranges.</p>
+<h3 id="step-1-download-a-compatible-multiband-compressor-plugin">Step
+1: Download a Compatible Multiband Compressor Plugin</h3>
+<p>Audacity supports VST2, VST3, and AU (macOS) plugins. Ensure you
+download a plugin version that matches your Audacity architecture
+(usually 64-bit on modern systems). Popular, free options include:</p>
+<ul>
+<li><strong>ReaXcomp (from the Cockos ReaPlugs suite):</strong> A highly
+flexible, lightweight VST multiband compressor.</li>
+<li><strong>TDR Nova (Tokyo Dawn Records):</strong> A dynamic equalizer
+that can function as a powerful multiband compressor via VST/VST3.</li>
+</ul>
+<p>Download the installer or DLL/VST3 files from the official developer
+websites.</p>
+<h3 id="step-2-install-the-plugin-files">Step 2: Install the Plugin
+Files</h3>
+<ul>
+<li><strong>Using an installer:</strong> Run the setup file and ensure
+the VST/VST3 files are directed to your system's standard plugin
+directory (such as <code>C:\Program Files\Common Files\VST3</code> on
+Windows or <code>/Library/Audio/Plug-Ins/VST3</code> on macOS).</li>
+<li><strong>Using manual files (DLL/VST3):</strong> Move the
+<code>.dll</code> or <code>.vst3</code> files directly into Audacity’s
+designated <code>Plug-Ins</code> folder or your system's default VST
+directory.</li>
+</ul>
+<h3 id="step-3-enable-the-plugin-in-audacity">Step 3: Enable the Plugin
+in Audacity</h3>
+<ol type="1">
+<li>Open Audacity.</li>
+<li>Navigate to the top menu and select <strong>Effect</strong> &gt;
+<strong>Plugin Manager</strong> (or <strong>Audio Setup</strong> &gt;
+<strong>Manage Plugins</strong> depending on your Audacity
+version).</li>
+<li>Click <strong>Rescan</strong> to locate newly added files.</li>
+<li>Locate your installed plugin (e.g., "ReaXcomp" or "TDR Nova") in the
+list.</li>
+<li>Select the plugin, click <strong>Enable</strong>, and click
+<strong>OK</strong>.</li>
+</ol>
+<h3 id="step-4-apply-multiband-compression-to-audio">Step 4: Apply
+Multiband Compression to Audio</h3>
+<ol type="1">
+<li>Import or record your audio into Audacity.</li>
+<li>Select the portion of the audio track you wish to process (or press
+<code>Ctrl + A</code> / <code>Cmd + A</code> to select the entire
+track).</li>
+<li>Click the <strong>Effect</strong> menu, locate your plugin (often
+listed under the developer name or a categorized sub-menu), and open
+it.</li>
+<li>Set your crossover frequencies to isolate the lows, mids, and
+highs.</li>
+<li>Adjust the threshold, ratio, attack, and release settings
+independently for each band to control dynamic range without affecting
+the entire frequency spectrum.</li>
+<li>Use the plugin's preview function to audition the changes in
+real-time, then click <strong>Apply</strong> to render the compression
+onto your Audacity track.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

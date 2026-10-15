@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Audacity Changes Pitch Without Changing Duration - audacity</title>
+    <meta name="description" content="Audacity alters an audio track&#39;s pitch without affecting its duration by utilizing advanced time-scale modification (TSM) and digital signal processing (DSP) algorithms, primarily powered by the open-source SoundTouch library. In analog audio, changing pi">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-audacity-changes-pitch-without-changing-duration">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Audacity Changes Pitch Without Changing Duration - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-audacity-changes-pitch-without-changing-duration" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity alters an audio track&#39;s pitch without affecting its duration by utilizing advanced time-scale modification (TSM) and digital signal processing (DSP) algorithms, primarily powered by the open-source SoundTouch library. In analog audio, changing pi" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-audacity-changes-pitch-without-changing-duration">How
+Audacity Changes Pitch Without Changing Duration</h1>
+<p>Audacity alters an audio track's pitch without affecting its duration
+by utilizing advanced time-scale modification (TSM) and digital signal
+processing (DSP) algorithms, primarily powered by the open-source
+SoundTouch library. In analog audio, changing pitch inherently alters
+playback speed, making audio shorter when pitched up or longer when
+pitched down. Audacity bypasses this physical limitation by
+mathematically decoupling the audio's frequency information from its
+time domain, shifting the fundamental frequencies while reconstructing
+the original timing through overlapping sample grains or phase
+analysis.</p>
+<h3 id="the-problem-with-traditional-resampling">The Problem with
+Traditional Resampling</h3>
+<p>When you speed up a digital audio file by resampling, you pack more
+waveform cycles into a shorter span of time. This increases the
+frequency (raising the pitch) while simultaneously reducing the playback
+duration. Conversely, slowing it down drops the frequency and lengthens
+the track. To change pitch independently, software must either shift
+frequencies without moving time, or resample the audio and immediately
+counteract the resulting length change.</p>
+<h3 id="the-soundtouch-engine-and-wsola">The SoundTouch Engine and
+WSOLA</h3>
+<p>Under the hood, Audacity’s "Change Pitch" effect employs the
+SoundTouch library, which primarily uses a time-domain technique known
+as <strong>WSOLA (Waveform Similarity Overlap-Add)</strong> alongside
+sample-rate conversion:</p>
+<ol type="1">
+<li><strong>Resampling for Pitch Modification:</strong> The audio is
+first resampled to achieve the desired target pitch. For example, to
+raise the pitch by a few semitones, the algorithm effectively speeds up
+the playback rate of the audio data. At this intermediate stage, the
+pitch is correct, but the file is now too short.</li>
+<li><strong>Time-Stretching via WSOLA:</strong> To restore the audio to
+its original duration without changing the new pitch, SoundTouch applies
+WSOLA. The audio stream is sliced into small overlapping fragments,
+called "grains," typically between 20 and 50 milliseconds long.</li>
+<li><strong>Correlation Matching:</strong> The algorithm analyzes the
+waveform shapes at the borders of these grains. It calculates
+cross-correlation to find points of highest similarity between adjacent
+fragments.</li>
+<li><strong>Overlap and Add (OLA):</strong> The grains are duplicated or
+spaced out (depending on whether the audio needs to be lengthened or
+shortened) and blended back together using crossfades. Because the
+fragments are aligned at points of waveform similarity, constructive and
+destructive phase interference is minimized.</li>
+</ol>
+<h3 id="frequency-domain-alternative-the-phase-vocoder">Frequency-Domain
+Alternative: The Phase Vocoder</h3>
+<p>In alternative high-quality algorithms or spectral tools, Audacity
+relies on a <strong>Phase Vocoder</strong> based on the Short-Time
+Fourier Transform (STFT):</p>
+<ul>
+<li><strong>Decomposition:</strong> The audio is converted from the time
+domain (amplitude over time) into the frequency domain (spectral
+components over time) using the Fast Fourier Transform (FFT).</li>
+<li><strong>Bin Shifting:</strong> The frequencies within each spectral
+frame are shifted mathematically upward or downward to the targeted
+pitch.</li>
+<li><strong>Phase Alignment:</strong> The phase values of each frequency
+bin must be recalculated so that when frames are placed back-to-back,
+the sine waves maintain continuity across boundaries.</li>
+<li><strong>Synthesis:</strong> The Inverse Fast Fourier Transform
+(IFFT) converts the shifted spectral data back into an audible
+time-domain waveform with its original length preserved.</li>
+</ul>
+<h3 id="mitigating-artifacts">Mitigating Artifacts</h3>
+<p>Processing audio this way is computationally intensive and can
+introduce digital artifacts. Aggressive pitch shifting can cause
+"phasiness" (a hollow, robotic sound), transient smearing (softening the
+sharp attack of drums), or audible flutter. Audacity mitigates these
+issues by dynamically adjusting grain sizes and tracking transient peaks
+to ensure the pitch shift sounds as natural as possible across speech,
+instruments, and complex mixes.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

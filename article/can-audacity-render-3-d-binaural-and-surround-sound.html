@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Audacity Render 3D Binaural and Surround Sound? - audacity</title>
+    <meta name="description" content="Audacity can render 3D binaural audio and basic multi-channel surround sound, but it cannot do so natively. Because it lacks integrated spatial panning tools and modern object-based audio engines, users must rely on third-party VST plugins for binaural pr">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/can-audacity-render-3-d-binaural-and-surround-sound">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Can Audacity Render 3D Binaural and Surround Sound? - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/can-audacity-render-3-d-binaural-and-surround-sound" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity can render 3D binaural audio and basic multi-channel surround sound, but it cannot do so natively. Because it lacks integrated spatial panning tools and modern object-based audio engines, users must rely on third-party VST plugins for binaural pr" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="can-audacity-render-3d-binaural-and-surround-sound">Can Audacity
+Render 3D Binaural and Surround Sound?</h1>
+<p>Audacity can render 3D binaural audio and basic multi-channel
+surround sound, but it cannot do so natively. Because it lacks
+integrated spatial panning tools and modern object-based audio engines,
+users must rely on third-party VST plugins for binaural processing or
+use Audacity's advanced multi-channel mixing settings for surround
+sound. This guide breaks down what Audacity can and cannot achieve with
+spatial audio formats and outlines how to produce these mixes.</p>
+<h2 id="native-capabilities-and-limitations">Native Capabilities and
+Limitations</h2>
+<p>Audacity does not feature a built-in 3D spatial panner, an Ambisonics
+decoders, or native support for modern immersive formats like Dolby
+Atmos. By default, its mixing environment operates strictly in standard
+stereo and mono panning. However, Audacity does support multi-channel
+audio tracks, which allows it to import, edit, and export up to 32
+separate audio channels simultaneously.</p>
+<h2 id="rendering-surround-sound-51-and-71">Rendering Surround Sound
+(5.1 and 7.1)</h2>
+<p>Audacity can export traditional channel-based surround sound, such as
+5.1 or 7.1 setups. However, you cannot dynamically pan a sound across a
+virtual room using visual positioning tools.</p>
+<p>To render surround sound in Audacity:</p>
+<ol type="1">
+<li><strong>Enable Multi-Channel Export:</strong> Navigate to
+<strong>Edit &gt; Preferences &gt; Import / Export</strong> and select
+<strong>Use advanced mixing options</strong>.</li>
+<li><strong>Assign Channels:</strong> Create discrete mono tracks for
+each speaker channel (e.g., Left, Right, Center, LFE/Subwoofer, Left
+Surround, Right Surround).</li>
+<li><strong>Export:</strong> Go to <strong>File &gt; Export
+Audio</strong>. The Advanced Mixing Options dialog will appear, allowing
+you to map each project track to an individual channel output in formats
+that support multi-channel audio, such as WAV, AIFF, or FLAC.</li>
+</ol>
+<h2 id="rendering-3d-binaural-audio">Rendering 3D Binaural Audio</h2>
+<p>Binaural audio uses Head-Related Transfer Functions (HRTF) to
+simulate human hearing, delivering a 3D soundstage through standard
+stereo headphones. While Audacity does not generate HRTF profiles
+natively, it fully supports third-party VST3, VST2, and LADSPA plugins
+that can.</p>
+<p>To render 3D binaural sound in Audacity:</p>
+<ol type="1">
+<li><strong>Install a Binaural Spatializer Plugin:</strong> Download and
+install free or commercial spatializer plugins, such as DearVR MICRO or
+the IEM Plugin Suite.</li>
+<li><strong>Enable the Plugin:</strong> Open Audacity, go to
+<strong>Effect &gt; Plugin Manager</strong>, locate the plugin, and
+click <strong>Enable</strong>.</li>
+<li><strong>Apply Spatial Positioning:</strong> Apply the plugin to a
+track. Use the plugin interface to adjust the sound source's azimuth
+(horizontal angle), elevation (vertical position), and distance.</li>
+<li><strong>Export as Stereo:</strong> Since binaural spatialization
+encodes spatial cues into a standard two-channel signal, simply export
+your final mix as a standard stereo WAV or MP3 file.</li>
+</ol>
+<h2 id="limitations-with-modern-spatial-formats">Limitations with Modern
+Spatial Formats</h2>
+<p>If your goal is to deliver commercial spatial audio formats, Audacity
+is not the right tool:</p>
+<ul>
+<li><strong>Dolby Atmos / Apple Spatial Audio:</strong> Audacity cannot
+embed the spatial metadata or render the multi-bed configurations
+required by Dolby Atmos ADM BWF formats.</li>
+<li><strong>Higher-Order Ambisonics (HOA):</strong> While Audacity can
+technically store B-format multi-channel audio, it cannot monitor or
+decode Ambisonics in real time.</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>Audacity can render 3D binaural audio using third-party HRTF plugins
+and can export traditional 5.1/7.1 surround sound using its advanced
+mixing setup. However, for full-featured surround panning, real-time 3D
+monitoring, or metadata-driven formats like Dolby Atmos, a dedicated
+digital audio workstation (DAW) such as Reaper, Logic Pro, or Pro Tools
+is required.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

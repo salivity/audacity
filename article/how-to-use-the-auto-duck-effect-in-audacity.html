@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use the Auto Duck Effect in Audacity - audacity</title>
+    <meta name="description" content="The Auto Duck effect in Audacity automatically reduces the volume of background music whenever speech is detected, creating a balanced, professional mix for podcasts, videos, and voiceovers. This guide provides a straightforward, step-by-step walkthrough">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-use-the-auto-duck-effect-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use the Auto Duck Effect in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-use-the-auto-duck-effect-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Auto Duck effect in Audacity automatically reduces the volume of background music whenever speech is detected, creating a balanced, professional mix for podcasts, videos, and voiceovers. This guide provides a straightforward, step-by-step walkthrough" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-use-the-auto-duck-effect-in-audacity">How to Use the Auto
+Duck Effect in Audacity</h1>
+<p>The Auto Duck effect in Audacity automatically reduces the volume of
+background music whenever speech is detected, creating a balanced,
+professional mix for podcasts, videos, and voiceovers. This guide
+provides a straightforward, step-by-step walkthrough on properly
+arranging your audio tracks, configuring the Auto Duck settings, and
+applying the effect to achieve seamless audio transitions without manual
+volume adjustments.</p>
+<h3 id="1-arrange-your-tracks-correctly">1. Arrange Your Tracks
+Correctly</h3>
+<p>The Auto Duck effect relies on track placement to determine which
+audio controls the ducking process. Audacity requires the track being
+ducked to sit directly above the track triggering the ducking.</p>
+<ul>
+<li><strong>Top Track:</strong> Place your background music or ambient
+audio here.</li>
+<li><strong>Bottom Track:</strong> Place your speech or voiceover track
+directly underneath the music track.</li>
+</ul>
+<p>If your tracks are not in this order, click the dropdown arrow next
+to the track name on the control panel (or the track title bar) and
+select <strong>Move Track Down</strong> or <strong>Move Track
+Up</strong> to position the music track above the voice track.</p>
+<h3 id="2-select-the-music-track">2. Select the Music Track</h3>
+<p>Auto Duck modifies only the selected audio. Click in the gray
+background area of the track control panel for the <strong>music
+track</strong> (the top track) to select it. Ensure the voice track is
+not selected, as you do not want to apply volume cuts to your
+speech.</p>
+<h3 id="3-open-the-auto-duck-effect">3. Open the Auto Duck Effect</h3>
+<p>Navigate to the top menu and select <strong>Effect</strong> &gt;
+<strong>Volume and Compression</strong> &gt; <strong>Auto Duck</strong>
+(in older versions of Audacity, it is located directly under
+<strong>Effect</strong> &gt; <strong>Auto Duck</strong>).</p>
+<h3 id="4-adjust-the-auto-duck-parameters">4. Adjust the Auto Duck
+Parameters</h3>
+<p>A dialog window will open displaying an interactive graph and several
+input fields:</p>
+<ul>
+<li><strong>Duck Amount:</strong> The volume reduction applied to the
+music. A setting between <strong>-12 dB and -24 dB</strong> usually
+allows speech to cut through clearly without silencing the music
+completely.</li>
+<li><strong>Fade Down Length:</strong> The time it takes for the music
+to lower once speech begins. A value between <strong>0.2 and 0.5
+seconds</strong> creates a smooth transition.</li>
+<li><strong>Fade Up Length:</strong> The time it takes for the music to
+return to normal volume after speech stops. Setting this between
+<strong>0.5 and 1.0 seconds</strong> prevents abrupt volume spikes.</li>
+<li><strong>Duck Amount Threshold:</strong> The volume level the voice
+track must reach to trigger the ducking effect. If your music ducks
+during background noise or breathing, raise this threshold (make it
+closer to 0 dB).</li>
+<li><strong>Maximum Pause:</strong> How long the voice can pause before
+the music fades back up. A setting between <strong>1.0 and 2.0
+seconds</strong> prevents the music from jumping up and down during
+natural pauses between sentences.</li>
+</ul>
+<h3 id="5-apply-the-effect-and-review">5. Apply the Effect and
+Review</h3>
+<p>Click <strong>Preview</strong> to listen to the transitions, or click
+<strong>Apply</strong> (or <strong>OK</strong>) to process the track.
+Audacity will automatically generate volume envelopes that lower the
+music track whenever audio appears on the voice track below it. Play
+back your project to ensure the balance is natural, and press
+<code>Ctrl+Z</code> (Windows) or <code>Cmd+Z</code> (Mac) to undo and
+tweak settings if needed.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

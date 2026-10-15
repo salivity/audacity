@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Multitrack Podcast Disk Space Guide - audacity</title>
+    <meta name="description" content="Before starting a multitrack podcast project in Audacity, you should ensure your computer has at least 20 GB to 50 GB of free disk space available. While the initial recorded audio files take up only a fraction of this amount, Audacity’s uncompressed proc">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-multitrack-podcast-disk-space-guide">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Multitrack Podcast Disk Space Guide - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-multitrack-podcast-disk-space-guide" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Before starting a multitrack podcast project in Audacity, you should ensure your computer has at least 20 GB to 50 GB of free disk space available. While the initial recorded audio files take up only a fraction of this amount, Audacity’s uncompressed proc" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-multitrack-podcast-disk-space-guide">Audacity
+Multitrack Podcast Disk Space Guide</h1>
+<p>Before starting a multitrack podcast project in Audacity, you should
+ensure your computer has at least 20 GB to 50 GB of free disk space
+available. While the initial recorded audio files take up only a
+fraction of this amount, Audacity’s uncompressed processing format,
+project management architecture, and non-destructive undo history
+consume massive amounts of storage during an active editing session.
+Insufficient space can lead to project file corruption, system
+slowdowns, and dropped recordings.</p>
+<h3 id="the-raw-audio-math">The Raw Audio Math</h3>
+<p>Audacity records by default in 32-bit float uncompressed audio at
+either 44.1 kHz or 48 kHz. This format delivers exceptional dynamic
+range and headroom for editing, but it requires significantly more
+storage than standard MP3 or 16-bit WAV files:</p>
+<ul>
+<li><strong>Single Mono Track (44.1 kHz, 32-bit):</strong> ~10.5 MB per
+minute (~630 MB per hour)</li>
+<li><strong>Single Mono Track (48 kHz, 32-bit):</strong> ~11.5 MB per
+minute (~690 MB per hour)</li>
+</ul>
+<p>For a one-hour podcast featuring four participants recorded on
+separate mono tracks at 48 kHz, the baseline raw audio requires roughly
+2.75 GB of disk space just for the initial capture.</p>
+<h3 id="why-audacity-needs-extra-disk-space">Why Audacity Needs Extra
+Disk Space</h3>
+<p>The initial recording is only a small portion of what the software
+actually uses during production:</p>
+<ol type="1">
+<li><strong>Undo History and Temporary Data:</strong> Audacity writes
+every edit, cut, filter, and effect application to the project database
+(the <code>.aup3</code> file) or the temporary directory. Because
+Audacity allows extensive undo actions, it stores duplicate blocks of
+audio data with every major change. A single destructive effect applied
+across all tracks can instantly double the project's disk
+footprint.</li>
+<li><strong>Project Compacting:</strong> When working with the modern
+unified <code>.aup3</code> database format, deleted data is not
+immediately freed from the disk until the project is closed and
+compacted. During the session, the database file expands continuously as
+you edit.</li>
+<li><strong>Operating System Overhead:</strong> Modern operating systems
+require at least 10% to 15% of total drive capacity free to manage
+virtual memory, swap files, and cache. If Audacity consumes the last
+remaining gigabytes of a full drive, the operating system can freeze,
+causing catastrophic project corruption.</li>
+<li><strong>Final Mixdowns and Backups:</strong> You need additional
+space to export your final lossless master files (such as 24-bit WAVs),
+generate compressed MP3 versions for distribution, and save secondary
+backup copies of the raw project.</li>
+</ol>
+<h3 id="recommended-free-space-guidelines">Recommended Free Space
+Guidelines</h3>
+<p>Tailor your available storage based on the scope of your podcast:</p>
+<ul>
+<li><strong>Light Production (2 tracks, under 30 minutes, minimal
+editing):</strong> At least 10 GB to 15 GB of free space.</li>
+<li><strong>Standard Production (3 to 4 tracks, 45 to 60 minutes,
+typical editing):</strong> At least 20 GB to 30 GB of free space.</li>
+<li><strong>Heavy Production (4+ tracks, over 60 minutes, extensive
+processing):</strong> 50 GB or more of free space.</li>
+</ul>
+<p>Always verify that your default Audacity temporary directory points
+to a drive with adequate headroom before pressing record on a multi-mic
+session.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

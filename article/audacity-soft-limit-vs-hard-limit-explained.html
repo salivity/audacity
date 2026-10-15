@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Soft Limit vs Hard Limit Explained - audacity</title>
+    <meta name="description" content="This article explores the fundamental differences between the Soft Limit and Hard Limit algorithms in Audacity&#39;s Limiter effect. You will learn how each algorithm reshapes audio waveforms to prevent clipping, how they impact the tone and dynamic range of">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-soft-limit-vs-hard-limit-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Soft Limit vs Hard Limit Explained - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-soft-limit-vs-hard-limit-explained" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article explores the fundamental differences between the Soft Limit and Hard Limit algorithms in Audacity&#39;s Limiter effect. You will learn how each algorithm reshapes audio waveforms to prevent clipping, how they impact the tone and dynamic range of" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-soft-limit-vs-hard-limit-explained">Audacity Soft Limit
+vs Hard Limit Explained</h1>
+<p>This article explores the fundamental differences between the Soft
+Limit and Hard Limit algorithms in Audacity's Limiter effect. You will
+learn how each algorithm reshapes audio waveforms to prevent clipping,
+how they impact the tone and dynamic range of your audio, and the
+specific production scenarios where each algorithm should be
+applied.</p>
+<h3 id="understanding-the-audacity-limiter">Understanding the Audacity
+Limiter</h3>
+<p>Audacity’s Limiter effect is a dynamic processor designed to prevent
+an audio signal from exceeding a specified decibel threshold. Unlike
+simple clipping, which abruptly cuts off audio and causes digital
+distortion, the Limiter uses lookahead processing to manage peaks
+cleanly. The primary operational choice comes down to the algorithm
+selected: Soft Limit or Hard Limit.</p>
+<h3 id="hard-limit-strict-ceiling-and-maximum-loudness">Hard Limit:
+Strict Ceiling and Maximum Loudness</h3>
+<p>The Hard Limit algorithm acts as a strict brickwall barrier. When the
+incoming audio peaks exceed the threshold, the algorithm aggressively
+restricts them, flattening the tops of the waveforms.</p>
+<ul>
+<li><strong>Behavior:</strong> It clamps down instantaneously at the
+exact set threshold without rounding the entry point into limiting.</li>
+<li><strong>Sound Profile:</strong> Because it forces waveforms into
+flatter shapes, aggressive hard limiting introduces high-frequency
+harmonic distortion. However, if used moderately, it prevents any
+overshoot without altering the dynamics of the audio sitting below the
+threshold.</li>
+<li><strong>Best Used For:</strong>
+<ul>
+<li>Strict broadcast compliance where exceeding a peak ceiling (e.g.,
+-1.0 dB or -3.0 dB) is prohibited.</li>
+<li>Spoken-word audio and podcasting to catch rogue vocal pops without
+changing the lower-level volume.</li>
+<li>Maximizing overall loudness when peak control is the absolute
+priority.</li>
+</ul></li>
+</ul>
+<h3 id="soft-limit-smooth-transitions-and-warmth">Soft Limit: Smooth
+Transitions and Warmth</h3>
+<p>The Soft Limit algorithm uses a rounded curve—often referred to as a
+"soft knee"—to compress audio peaks. Instead of abruptly clamping peaks
+at the ceiling, it begins gently attenuating the signal slightly before
+it hits the maximum threshold.</p>
+<ul>
+<li><strong>Behavior:</strong> It rounds the peaks of the waveform into
+smooth curves rather than flattening them.</li>
+<li><strong>Sound Profile:</strong> Soft limiting introduces subtle,
+low-order harmonic saturation that mimics vintage analog tape or tube
+equipment. This produces a warmer, less aggressive sound compared to
+hard limiting, making the limiting effect far less noticeable to the
+human ear.</li>
+<li><strong>Best Used For:</strong>
+<ul>
+<li>Mastering music tracks, acoustic instruments, and natural-sounding
+vocals.</li>
+<li>Material with heavy low-frequency content (like bass or kick drums)
+where hard limiting would produce audible crackling or harshness.</li>
+<li>Subtle mastering passes where musicality and transparent dynamics
+are preferred over sheer volume.</li>
+</ul></li>
+</ul>
+<h3 id="summary-of-differences">Summary of Differences</h3>
+<ul>
+<li><strong>Waveform Shape:</strong> Hard Limit cuts peaks flat at the
+threshold; Soft Limit rounds peaks into smooth curves.</li>
+<li><strong>Harmonic Distortion:</strong> Hard Limit creates sharp, odd
+harmonics when pushed; Soft Limit creates gentle, warmer
+saturation.</li>
+<li><strong>Audibility:</strong> Hard Limit is completely transparent
+until pushed too hard, after which it sounds harsh. Soft Limit is
+smoother across a wider range of gain reduction.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

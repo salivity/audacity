@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use the Repair Effect in Audacity - audacity</title>
+    <meta name="description" content="Audacity&#39;s Repair effect is a specialized tool designed to eliminate brief audio artifacts such as clicks, pops, and tiny digital dropouts by interpolating the surrounding waveform. This article provides a straightforward guide on how to locate these micr">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-use-the-repair-effect-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use the Repair Effect in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-use-the-repair-effect-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity&#39;s Repair effect is a specialized tool designed to eliminate brief audio artifacts such as clicks, pops, and tiny digital dropouts by interpolating the surrounding waveform. This article provides a straightforward guide on how to locate these micr" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-use-the-repair-effect-in-audacity">How to Use the Repair
+Effect in Audacity</h1>
+<p>Audacity's Repair effect is a specialized tool designed to eliminate
+brief audio artifacts such as clicks, pops, and tiny digital dropouts by
+interpolating the surrounding waveform. This article provides a
+straightforward guide on how to locate these microscopic defects, select
+a region of 128 samples or fewer, and apply the Repair tool to
+seamlessly restore damaged audio without leaving audible traces.</p>
+<h3 id="understanding-the-128-sample-limit">Understanding the 128-Sample
+Limit</h3>
+<p>The Repair effect works by analyzing the valid audio samples
+immediately preceding and following a corrupted section, then
+synthesizing a smooth replacement curve. Because it recalculates the
+waveform using linear prediction, it is strictly limited to a maximum
+length of 128 samples (which translates to roughly 2.9 milliseconds at a
+standard 44.1 kHz sample rate). Attempting to apply the effect to a
+selection larger than 128 samples will trigger an error message
+prompting you to make a smaller selection.</p>
+<h3 id="step-1-locate-the-glitch">Step 1: Locate the Glitch</h3>
+<p>Clicks, ticks, and brief digital errors usually appear as sudden,
+unnatural vertical spikes or flat drops in your waveform.</p>
+<ol type="1">
+<li>Play back the audio track to pinpoint the general area where the
+glitch occurs.</li>
+<li>Stop playback and click the track near the problem area.</li>
+<li>Use the <strong>Zoom In</strong> tool or the shortcut <strong>Ctrl +
+1</strong> (Windows/Linux) or <strong>Cmd + 1</strong> (macOS)
+repeatedly.</li>
+<li>Continue zooming until the continuous audio line changes into
+individual dots connected by a line. Each dot represents a single audio
+sample.</li>
+</ol>
+<h3 id="step-2-select-the-damaged-samples">Step 2: Select the Damaged
+Samples</h3>
+<p>Once the individual samples are visible, isolate only the corrupted
+area:</p>
+<ol type="1">
+<li>Choose the standard <strong>Selection Tool</strong> from the toolbar
+(or press <strong>F1</strong>).</li>
+<li>Click and drag across the damaged samples, including the spike and
+one or two surrounding clean samples.</li>
+<li>Ensure your selection spans 128 samples or fewer. You can verify
+your selection length by setting the bottom toolbar's selection format
+to <strong>samples</strong> rather than time.</li>
+</ol>
+<h3 id="step-3-apply-the-repair-effect">Step 3: Apply the Repair
+Effect</h3>
+<ol type="1">
+<li>Navigate to the top menu and select <strong>Effect</strong>.</li>
+<li>In modern versions of Audacity, choose <strong>Noise Removal and
+Repair</strong>, then click <strong>Repair</strong> (in older versions,
+it is listed directly under the primary <strong>Effect</strong>
+menu).</li>
+<li>The selected dots will immediately shift position to form a smooth
+transition between the pre-existing waveform on either side.</li>
+</ol>
+<h3 id="efficiency-tips">Efficiency Tips</h3>
+<ul>
+<li><strong>Repeat Quickly:</strong> If an audio file contains multiple
+distinct clicks close together, repair them one by one. After using the
+effect once, you can select the next set of damaged samples and press
+<strong>Ctrl + R</strong> (Windows/Linux) or <strong>Cmd + R</strong>
+(macOS) to apply the Repair effect instantly without navigating the
+menus.</li>
+<li><strong>Handling Larger Clicks:</strong> If a glitch exceeds 128
+samples, repair it in adjacent segments of 128 samples or use Audacity's
+<strong>Spectral edit multi-tool</strong> to attenuate the frequency
+spike instead.</li>
+</ul></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

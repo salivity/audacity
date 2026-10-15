@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Match Drum Loop BPM to Tempo in Audacity - audacity</title>
+    <meta name="description" content="Aligning a drum loop to an exact tempo grid in Audacity requires preparing the audio, identifying its current tempo, and using non-destructive time-stretching tools. This guide walks you through trimming the loop to an exact musical length, calculating it">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-match-drum-loop-bpm-to-tempo-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Match Drum Loop BPM to Tempo in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-match-drum-loop-bpm-to-tempo-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Aligning a drum loop to an exact tempo grid in Audacity requires preparing the audio, identifying its current tempo, and using non-destructive time-stretching tools. This guide walks you through trimming the loop to an exact musical length, calculating it" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-match-drum-loop-bpm-to-tempo-in-audacity">How to Match
+Drum Loop BPM to Tempo in Audacity</h1>
+<p>Aligning a drum loop to an exact tempo grid in Audacity requires
+preparing the audio, identifying its current tempo, and using
+non-destructive time-stretching tools. This guide walks you through
+trimming the loop to an exact musical length, calculating its original
+beats per minute (BPM), using the Change Tempo effect without altering
+pitch, and testing the alignment against a reference click track to
+achieve seamless synchronization.</p>
+<h2 id="1-prepare-and-trim-the-loop">1. Prepare and Trim the Loop</h2>
+<p>For tempo matching to work accurately, the drum loop must be trimmed
+to an exact number of musical measures (e.g., exactly 1, 2, or 4
+bars).</p>
+<ol type="1">
+<li>Import your audio file into Audacity (<strong>File &gt; Import &gt;
+Audio</strong>).</li>
+<li>Zoom in closely to the start of the waveform using
+<code>Ctrl + 1</code> (Windows) or <code>Cmd + 1</code> (Mac).</li>
+<li>Use the <strong>Selection Tool</strong> (<code>F1</code>) to locate
+the transient of the very first downbeat. Cut any silence before this
+hit.</li>
+<li>Locate the exact end of the loop—precisely where the next downbeat
+would land—and trim off any excess audio beyond that point.</li>
+</ol>
+<h2 id="2-calculate-the-original-bpm">2. Calculate the Original BPM</h2>
+<p>If you do not know the loop's original BPM, calculate it using the
+selection length:</p>
+<ol type="1">
+<li>Check the <strong>Selection Toolbar</strong> at the bottom of the
+screen and set the format to <strong>Start and Length of
+Selection</strong> in seconds/milliseconds.</li>
+<li>Select the trimmed loop to see its exact duration.</li>
+<li>Use the tempo formula: <span class="math display">\[\text{BPM} =
+\frac{\text{Total Beats}}{\text{Duration in Seconds}} \times 60\]</span>
+<em>(Example: A 4-beat, 1-bar loop that is 2.0 seconds long equals <span
+class="math inline">\((4 / 2.0) \times 60 = 120\text{
+BPM}\)</span>.)</em></li>
+</ol>
+<h2 id="3-adjust-the-tempo-using-the-change-tempo-effect">3. Adjust the
+Tempo Using the Change Tempo Effect</h2>
+<p>Audacity features a dedicated effect that changes playback speed
+without affecting the pitch of the drums.</p>
+<ol type="1">
+<li>Select the entire trimmed drum loop track.</li>
+<li>Go to the top menu and select <strong>Effect &gt; Pitch and Tempo
+&gt; Change Tempo</strong>.</li>
+<li>In the dialog box:
+<ul>
+<li>Enter the detected BPM into the <strong>From</strong> field under
+the "Beats per minute" section.</li>
+<li>Enter your desired target BPM into the <strong>To</strong>
+field.</li>
+<li>Alternatively, if matching an exact time duration, enter the target
+length into the <strong>Length (seconds)</strong> input at the
+bottom.</li>
+</ul></li>
+<li>Ensure <strong>Use high quality stretching</strong> is checked to
+minimize audio artifacts.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<h2 id="4-verify-alignment-with-a-rhythm-track">4. Verify Alignment with
+a Rhythm Track</h2>
+<p>To ensure your drum loop does not drift over time, test it against an
+internal metronome grid.</p>
+<ol type="1">
+<li>Go to <strong>Generate &gt; Rhythm Track</strong>.</li>
+<li>Set the <strong>Tempo (beats per minute)</strong> to your target
+BPM.</li>
+<li>Set the <strong>Number of measures</strong> to match or exceed your
+loop.</li>
+<li>Click <strong>Generate</strong>.</li>
+<li>Press the <strong>Spacebar</strong> to play both tracks
+simultaneously.</li>
+</ol>
+<p>If the transients drift ahead of the click track, your loop is
+slightly too fast; if they lag behind, it is too slow.</p>
+<h2 id="5-micro-adjustments-for-drift">5. Micro-Adjustments for
+Drift</h2>
+<p>If you detect minor timing drift over multiple repetitions:</p>
+<ol type="1">
+<li>Select the drum loop and open <strong>Effect &gt; Pitch and Tempo
+&gt; Change Tempo</strong> again.</li>
+<li>Instead of entering whole BPM numbers, adjust the <strong>Percent
+Change</strong> slider using micro-increments (such as <span
+class="math inline">\(+0.1\%\)</span> or <span
+class="math inline">\(-0.1\%\)</span>).</li>
+<li>Click <strong>Apply</strong> and re-check against the Rhythm Track
+until the transients consistently hit dead-center on the beat.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

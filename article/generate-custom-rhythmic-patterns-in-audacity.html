@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Custom Rhythmic Patterns in Audacity - audacity</title>
+    <meta name="description" content="Audacity includes Nyquist, a powerful Lisp-based audio programming language, which allows producers and sound designers to synthesize procedural audio and algorithmic rhythms directly on the timeline. While Audacity features a default &quot;Rhythm Track&quot; gener">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/generate-custom-rhythmic-patterns-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Generate Custom Rhythmic Patterns in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/generate-custom-rhythmic-patterns-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity includes Nyquist, a powerful Lisp-based audio programming language, which allows producers and sound designers to synthesize procedural audio and algorithmic rhythms directly on the timeline. While Audacity features a default &quot;Rhythm Track&quot; gener" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="generate-custom-rhythmic-patterns-in-audacity">Generate Custom
+Rhythmic Patterns in Audacity</h1>
+<p>Audacity includes Nyquist, a powerful Lisp-based audio programming
+language, which allows producers and sound designers to synthesize
+procedural audio and algorithmic rhythms directly on the timeline. While
+Audacity features a default "Rhythm Track" generator, using custom
+Nyquist scripts through the Nyquist Prompt enables you to create complex
+polyrhythms, step-sequenced triggers, and irregular Euclidean beat
+structures. This guide covers how to implement and run functional
+Nyquist scripts to generate custom rhythmic patterns.</p>
+<h2 id="how-to-run-nyquist-scripts">How to Run Nyquist Scripts</h2>
+<p>To execute these scripts in Audacity:</p>
+<ol type="1">
+<li>Open Audacity and create a new project.</li>
+<li>Navigate to <strong>Tools</strong> (or <strong>Effect</strong> in
+older versions) &gt; <strong>Nyquist Prompt</strong>.</li>
+<li>Paste the chosen Nyquist code into the text field.</li>
+<li>Click <strong>Apply</strong> or <strong>OK</strong> to generate the
+audio pattern onto a new track.</li>
+</ol>
+<hr />
+<h2 id="1-list-based-step-sequencer-script">1. List-Based Step Sequencer
+Script</h2>
+<p>This script operates like a classic 8-step sequencer. You define a
+binary pattern using <code>1</code> (trigger click) and <code>0</code>
+(rest). The script iterates through the list and places high-frequency,
+envelope-shaped pulses at precise intervals.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Simple Step Sequencer Pulse Generator</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> make-pulse </span>(freq dur)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  (mult (osc-pulse freq dur)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        (pwl <span class="fl">0.001</span> <span class="dv">1</span> <span class="fl">0.01</span> <span class="fl">0.5</span> <span class="fl">0.04</span> <span class="dv">0</span> dur)))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">;; Configuration: 1 = Hit, 0 = Rest</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> pattern &#39;(<span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">0</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> step-dur <span class="fl">0.125</span>) <span class="co">; 120 BPM sixteenth note (in seconds)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> out (s-rest <span class="dv">0</span>))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">;; Iterate through the sequence</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">dotimes</span> (<span class="kw">step</span> (<span class="kw">length</span> pattern))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">when</span> (<span class="op">=</span> (<span class="kw">nth</span> <span class="kw">step</span> pattern) <span class="dv">1</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">setf</span> out (sim out </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                   (at (<span class="op">*</span> <span class="kw">step</span> step-dur) </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                       (cue (make-pulse <span class="dv">1200</span> <span class="fl">0.04</span>)))))))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
+<p><em>Customization:</em> Adjust <code>step-dur</code> to change tempo
+(e.g., <code>0.15</code> for slower, <code>0.1</code> for faster) or
+alter the list in <code>(setf pattern ...)</code> to introduce custom
+syncopations.</p>
+<hr />
+<h2 id="2-polyrhythmic-cross-pulse-generator">2. Polyrhythmic
+Cross-Pulse Generator</h2>
+<p>Polyrhythms involve playing two contrasting rhythmic subdivisions
+simultaneously over the same total duration (such as 3 against 4). This
+Nyquist script calculates mathematically exact subdivisions across a
+fixed measure length.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Polyrhythm Generator (e.g., 3 against 4)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> click </span>(pitch dur)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  (mult (hzosc pitch)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        (pwlv <span class="dv">1</span> dur <span class="dv">0</span>)))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> measure-len <span class="fl">2.0</span>) <span class="co">; Total duration of the measure in seconds</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> div-a <span class="dv">3</span>)         <span class="co">; 3-beat rhythm (Low tone)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> div-b <span class="dv">4</span>)         <span class="co">; 4-beat rhythm (High tone)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> layer-a (s-rest <span class="dv">0</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> layer-b (s-rest <span class="dv">0</span>))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">;; Generate First Subdivision</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>(<span class="kw">dotimes</span> (i div-a)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">setf</span> <span class="kw">time</span> (<span class="op">*</span> i (<span class="op">/</span> measure-len div-a)))</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">setf</span> layer-a (sim layer-a (at <span class="kw">time</span> (cue (click <span class="dv">440</span> <span class="fl">0.03</span>))))))</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">;; Generate Second Subdivision</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>(<span class="kw">dotimes</span> (i div-b)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">setf</span> <span class="kw">time</span> (<span class="op">*</span> i (<span class="op">/</span> measure-len div-b)))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">setf</span> layer-b (sim layer-b (at <span class="kw">time</span> (cue (click <span class="dv">880</span> <span class="fl">0.03</span>))))))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">;; Combine both layers</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>(sim layer-a layer-b)</span></code></pre></div>
+<p><em>Customization:</em> Change <code>div-a</code> and
+<code>div-b</code> to any desired integers (such as 5 and 4 or 7 and 3)
+to produce complex metric overlays.</p>
+<hr />
+<h2 id="3-accented-dynamic-beat-generator">3. Accented Dynamic Beat
+Generator</h2>
+<p>To make synthetic patterns feel less robotic, dynamic volume
+envelopes and accented beats can be scripted. This Nyquist snippet
+generates a repeating four-bar grid with automated velocity variation on
+downbeats.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Accented 16th-Note Grid</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> accented-click </span>(freq amp)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  (mult amp </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        (hzosc freq)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        (pwlv <span class="dv">1</span> <span class="fl">0.03</span> <span class="dv">0</span>)))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> total-steps <span class="dv">16</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> tempo-bpm <span class="fl">130.0</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> step-time (<span class="op">/</span> <span class="fl">60.0</span> (<span class="op">*</span> tempo-bpm <span class="dv">4</span>))) <span class="co">; Sixteenth note duration</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setf</span> output (s-rest <span class="dv">0</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">dotimes</span> (i total-steps)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((t-pos (<span class="op">*</span> i step-time)))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">cond</span> </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; Downbeat (Beat 1, 5, 9, 13) gets a lower, louder click</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      ((<span class="op">=</span> (<span class="kw">rem</span> i <span class="dv">4</span>) <span class="dv">0</span>) </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">setf</span> output (sim output (at t-pos (cue (accented-click <span class="dv">300</span> <span class="fl">0.9</span>))))))</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; Off-beats get a quiet, higher frequency tick</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">t</span> </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">setf</span> output (sim output (at t-pos (cue (accented-click <span class="dv">1500</span> <span class="fl">0.25</span>)))))))))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>output</span></code></pre></div>
+<p><em>Customization:</em> Change the conditions inside the
+<code>cond</code> block to place accents on specific subdivisions, such
+as swing patterns or backbeats on beats 2 and 4.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

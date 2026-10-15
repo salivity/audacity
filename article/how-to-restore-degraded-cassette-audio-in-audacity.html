@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Restore Degraded Cassette Audio in Audacity - audacity</title>
+    <meta name="description" content="Restoring degraded cassette tape recordings requires a structured digital audio workflow to address magnetic loss, tape hiss, dynamic instability, and physical wear. Using Audacity—a free, open-source audio editor—you can systematically clean up analog tr">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-restore-degraded-cassette-audio-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Restore Degraded Cassette Audio in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-restore-degraded-cassette-audio-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Restoring degraded cassette tape recordings requires a structured digital audio workflow to address magnetic loss, tape hiss, dynamic instability, and physical wear. Using Audacity—a free, open-source audio editor—you can systematically clean up analog tr" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-restore-degraded-cassette-audio-in-audacity">How to
+Restore Degraded Cassette Audio in Audacity</h1>
+<p>Restoring degraded cassette tape recordings requires a structured
+digital audio workflow to address magnetic loss, tape hiss, dynamic
+instability, and physical wear. Using Audacity—a free, open-source audio
+editor—you can systematically clean up analog transfers by eliminating
+background noise, rebalancing muffled frequencies, repairing dropouts,
+and correcting pitch or speed drift. By applying Audacity’s native
+processing tools in a specific sequence, you can breathe new life into
+vintage voice recordings, home demos, and aging music cassettes without
+introducing distracting digital artifacts.</p>
+<h3 id="1-digitize-with-headroom-and-correct-phase">1. Digitize with
+Headroom and Correct Phase</h3>
+<p>Before applying any software tools, record the cassette into Audacity
+via your audio interface or line-in jack. Set your recording levels to
+peak between -6 dB and -3 dB to prevent digital clipping while leaving
+enough dynamic headroom for processing.</p>
+<p>Once imported, check for channel phase misalignment caused by
+improper tape deck azimuth. If one channel lags:</p>
+<ol type="1">
+<li>Click the track dropdown menu and select <strong>Split Stereo
+Track</strong>.</li>
+<li>Zoom in closely to identify the transient peaks of both
+channels.</li>
+<li>Use the <strong>Time Shift Tool</strong> to nudge the lagging
+channel until the waveforms align.</li>
+<li>From the top track's menu, select <strong>Make Stereo
+Track</strong>.</li>
+</ol>
+<h3 id="2-eliminate-tape-hiss-with-noise-reduction">2. Eliminate Tape
+Hiss with Noise Reduction</h3>
+<p>Cassette tapes inherently suffer from tape hiss, which becomes more
+pronounced as magnetic particles degrade over time.</p>
+<ol type="1">
+<li>Highlight a section of the recording that contains only background
+hiss (typically 1 to 3 seconds of silence at the beginning or end).</li>
+<li>Go to <strong>Effect &gt; Noise Removal and Repair &gt; Noise
+Reduction</strong>.</li>
+<li>Click <strong>Get Noise Profile</strong>.</li>
+<li>Select the entire audio track (<code>Ctrl + A</code> or
+<code>Cmd + A</code>), reopen the <strong>Noise Reduction</strong>
+window, and apply these baseline parameters:
+<ul>
+<li><strong>Noise reduction (dB):</strong> 6 to 12 (avoid values higher
+than 12 to prevent metallic, "watery" artifacts).</li>
+<li><strong>Sensitivity:</strong> 6.00.</li>
+<li><strong>Frequency smoothing (bands):</strong> 3.</li>
+</ul></li>
+<li>Click <strong>OK</strong>. For heavily degraded tapes, applying two
+subtle passes is cleaner than applying one aggressive pass.</li>
+</ol>
+<h3 id="3-remove-clicks-pops-and-physical-dropouts">3. Remove Clicks,
+Pops, and Physical Dropouts</h3>
+<p>Physical tape degradation, dust, and static often produce distinct
+clicks and pops.</p>
+<ul>
+<li><strong>Broad cleanup:</strong> Select the track and navigate to
+<strong>Effect &gt; Noise Removal and Repair &gt; Click
+Removal</strong>. Set the <strong>Threshold</strong> to 200 and
+<strong>Max Spike Width</strong> to 20 to automatically suppress
+isolated transients without dulling percussion.</li>
+<li><strong>Manual repair:</strong> For severe, localized pops or tape
+seams, zoom in to the sample level until you see the individual dots on
+the waveform. Highlight the damaged section (up to 128 samples) and
+select <strong>Effect &gt; Noise Removal and Repair &gt; Repair</strong>
+to allow Audacity to interpolate the missing data from surrounding
+samples.</li>
+</ul>
+<h3 id="4-restore-tonal-balance-with-filter-curve-eq">4. Restore Tonal
+Balance with Filter Curve EQ</h3>
+<p>Aged cassettes lose high-frequency response (above 8 kHz) and often
+capture low-frequency mechanical rumble from the tape motor (below 40
+Hz).</p>
+<ol type="1">
+<li>Go to <strong>Effect &gt; EQ and Filters &gt; Filter Curve
+EQ</strong>.</li>
+<li><strong>High-Pass Filter:</strong> Create a steep drop-off below 40
+Hz to remove inaudible sub-bass hum and mechanical deck motor
+rumble.</li>
+<li><strong>Low-Pass Filter:</strong> If high-end tape hiss remains
+persistent after noise reduction, place a gentle roll-off around 12 kHz
+to 14 kHz.</li>
+<li><strong>Treble Recovery:</strong> Add a wide, subtle boost (2 dB to
+4 dB) between 3 kHz and 7 kHz to restore vocal clarity and presence lost
+to magnetic fading.</li>
+</ol>
+<h3 id="5-correct-pitch-and-speed-drift">5. Correct Pitch and Speed
+Drift</h3>
+<p>Cassette mechanisms inevitably suffer from stretched belts and motor
+drift, leading to recordings that playback too fast, too slow, or
+slightly off-key.</p>
+<ol type="1">
+<li>Identify a segment of the recording with a known reference frequency
+(such as a 60 Hz hum, dial tone, or a musical pitch you can match with
+an instrument).</li>
+<li>Select the entire track and choose <strong>Effect &gt; Pitch and
+Tempo &gt; Change Speed</strong>.</li>
+<li>Adjust the percentage slider until the pitch and tempo match the
+intended original performance. <em>(Note: Use "Change Speed" rather than
+"Change Pitch" alone, as physical tape motor issues alter pitch and
+tempo concurrently).</em></li>
+</ol>
+<h3 id="6-balance-dynamics-and-normalize">6. Balance Dynamics and
+Normalize</h3>
+<p>Degraded tapes often exhibit volume fluctuations, fading, or channel
+imbalance.</p>
+<ol type="1">
+<li><strong>Compression:</strong> Go to <strong>Effect &gt; Volume and
+Compression &gt; Compressor</strong>. Set a gentle ratio of 2:1 or 3:1
+with a high threshold (around -12 dB) to smooth out erratic volume
+swings.</li>
+<li><strong>Loudness Normalization:</strong> Select <strong>Effect &gt;
+Volume and Compression &gt; Loudness Normalization</strong> or standard
+<strong>Normalize</strong>. Set the peak amplitude to -1.0 dB to
+maximize playback volume while guaranteeing the audio will not distort
+during export to MP3, WAV, or FLAC.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

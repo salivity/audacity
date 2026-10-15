@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Sliding Stretch: Create Smooth Tempo Transitions - audacity</title>
+    <meta name="description" content="The Sliding Stretch effect in Audacity allows you to gradually change the tempo, pitch, or both across a selected region of audio. Unlike standard time-stretching tools that apply a uniform speed change, Sliding Stretch dynamically ramps the speed up or d">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-sliding-stretch-create-smooth-tempo-transitions">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Sliding Stretch: Create Smooth Tempo Transitions - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-sliding-stretch-create-smooth-tempo-transitions" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Sliding Stretch effect in Audacity allows you to gradually change the tempo, pitch, or both across a selected region of audio. Unlike standard time-stretching tools that apply a uniform speed change, Sliding Stretch dynamically ramps the speed up or d" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1
+id="audacity-sliding-stretch-create-smooth-tempo-transitions">Audacity
+Sliding Stretch: Create Smooth Tempo Transitions</h1>
+<p>The Sliding Stretch effect in Audacity allows you to gradually change
+the tempo, pitch, or both across a selected region of audio. Unlike
+standard time-stretching tools that apply a uniform speed change,
+Sliding Stretch dynamically ramps the speed up or down over time without
+altering the musical pitch. This guide provides a direct, step-by-step
+walkthrough for configuring this effect to achieve seamless
+accelerandos, decelerandos, and DJ-style tempo transitions between
+tracks.</p>
+<h3 id="step-1-select-the-audio-region">Step 1: Select the Audio
+Region</h3>
+<ol type="1">
+<li>Open your project in Audacity and identify the section of audio
+where you want the tempo to shift.</li>
+<li>Using the <strong>Selection Tool</strong> (F1), click and drag
+across the timeline to highlight the region that will bridge the tempo
+change.</li>
+<li>For the smoothest transition between two distinct tracks, align the
+end of the first track with the beginning of the second track on
+separate tracks or within a crossfade zone before applying the
+stretch.</li>
+</ol>
+<h3 id="step-2-open-the-sliding-stretch-tool">Step 2: Open the Sliding
+Stretch Tool</h3>
+<ol type="1">
+<li>With your audio selected, go to the top menu bar.</li>
+<li>Click <strong>Effect</strong>.</li>
+<li>Depending on your Audacity version:
+<ul>
+<li>In Audacity 3.2 and newer, navigate to <strong>Pitch and
+Tempo</strong> &gt; <strong>Sliding Stretch...</strong></li>
+<li>In older versions, select <strong>Sliding Stretch...</strong>
+directly from the drop-down list.</li>
+</ul></li>
+</ol>
+<h3 id="step-3-configure-the-tempo-settings">Step 3: Configure the Tempo
+Settings</h3>
+<p>The Sliding Stretch interface is divided into two main categories:
+<strong>Tempo</strong> and <strong>Pitch</strong>. To alter speed
+without creating a chipmunk or slowed-down vocal effect, modify only the
+tempo controls:</p>
+<ul>
+<li><strong>Initial Tempo Change (%):</strong> Enter the starting speed
+percentage relative to the original audio. If the audio is already at
+its base tempo, leave this at <code>0.0</code>. If you are transitioning
+<em>from</em> an already modified track, enter that track's percentage
+offset.</li>
+<li><strong>Final Tempo Change (%):</strong> Enter the target speed
+percentage you want the audio to reach by the end of the selection. A
+positive value increases speed (accelerando), while a negative value
+decreases speed (ritardando).</li>
+<li><strong>Pitch Controls:</strong> Ensure both <strong>Initial Pitch
+Shift</strong> and <strong>Final Pitch Shift</strong> are set to
+<code>0.0</code> (semitones/cents) unless you intentionally want a
+vinyl-stop or pitch-dive effect.</li>
+</ul>
+<h3 id="calculating-percentage-changes-between-known-bpms">Calculating
+Percentage Changes Between Known BPMs</h3>
+<p>If you are matching two tracks with known Beats Per Minute (BPM), use
+this formula to find the percentage change:</p>
+<p><span class="math display">\[\text{Percentage Change} =
+\left(\frac{\text{Target BPM} - \text{Original BPM}}{\text{Original
+BPM}}\right) \times 100\]</span></p>
+<p><em>Example:</em> Transitioning from 120 BPM to 126 BPM: <span
+class="math inline">\(((126 - 120) / 120) \times 100 = +5.0\%\)</span>
+You would set the <strong>Initial Tempo Change</strong> to
+<code>0.0%</code> and the <strong>Final Tempo Change</strong> to
+<code>5.0%</code>.</p>
+<h3 id="step-4-preview-and-apply">Step 4: Preview and Apply</h3>
+<ol type="1">
+<li>Click the <strong>Preview</strong> button in the lower-left corner
+of the dialog to listen to a brief section of the modified audio.</li>
+<li>If the transition sounds natural, click <strong>Apply</strong> to
+render the effect.</li>
+<li>Audacity will recalculate the audio samples. Play back the timeline
+across the boundaries of the selection to ensure the beat continuity
+matches the incoming and outgoing sections smoothly.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Audacity AUP3 Files Between Windows and Mac - audacity</title>
+    <meta name="description" content="Audacity&#39;s .aup3 project format is fully cross-platform, allowing users to seamlessly move and edit audio projects between Windows, macOS, and Linux without file conversion. This guide explains how cross-platform compatibility works with Audacity 3.0 and">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/share-audacity-aup-3-files-between-windows-and-mac">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Share Audacity AUP3 Files Between Windows and Mac - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/share-audacity-aup-3-files-between-windows-and-mac" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity&#39;s .aup3 project format is fully cross-platform, allowing users to seamlessly move and edit audio projects between Windows, macOS, and Linux without file conversion. This guide explains how cross-platform compatibility works with Audacity 3.0 and" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="share-audacity-aup3-files-between-windows-and-mac">Share
+Audacity AUP3 Files Between Windows and Mac</h1>
+<p>Audacity's <code>.aup3</code> project format is fully cross-platform,
+allowing users to seamlessly move and edit audio projects between
+Windows, macOS, and Linux without file conversion. This guide explains
+how cross-platform compatibility works with Audacity 3.0 and newer,
+along with the essential steps and precautions required to ensure your
+projects transfer smoothly without errors or data loss.</p>
+<h2 id="cross-platform-compatibility-of-the-aup3-format">Cross-Platform
+Compatibility of the AUP3 Format</h2>
+<p>Starting with Audacity 3.0.0, the software switched from its legacy
+format (which used an <code>.aup</code> file alongside a separate
+<code>_data</code> folder) to the unified <code>.aup3</code> format. An
+<code>.aup3</code> file is an SQLite 3 database that stores all audio
+clips, edits, labels, and project metadata inside a single file.</p>
+<p>Because SQLite is an open, cross-platform database architecture, an
+<code>.aup3</code> file created on Windows can be opened natively on
+macOS, and vice versa. There is no need to export tracks to WAV or use
+special conversion software.</p>
+<h2 id="key-considerations-for-sharing-projects">Key Considerations for
+Sharing Projects</h2>
+<p>While the file format itself is completely compatible, you must
+observe several best practices to prevent errors when moving projects
+between operating systems:</p>
+<h3 id="1-match-audacity-versions">1. Match Audacity Versions</h3>
+<p>Always ensure that both the Windows and macOS systems are running
+identical or closely matched versions of Audacity. A project saved in a
+newer release may contain features or database schema updates that older
+versions cannot read. At a minimum, both computers must run Audacity
+3.0.0 or higher.</p>
+<h3 id="2-close-the-project-completely-before-transferring">2. Close the
+Project Completely Before Transferring</h3>
+<p>When an <code>.aup3</code> project is open, Audacity generates
+temporary companion files in the same directory (typically ending in
+<code>.aup3-wal</code> and <code>.aup3-shm</code>). These write-ahead
+log files hold active project changes.</p>
+<p>Never copy or transfer a project while Audacity is running. Save your
+work and exit the application completely. This action commits all
+temporary data into the primary <code>.aup3</code> file and removes the
+temporary files, leaving one clean file ready for transfer.</p>
+<h3 id="3-account-for-third-party-plugins">3. Account for Third-Party
+Plugins</h3>
+<p>While standard Audacity effects will translate between operating
+systems seamlessly, third-party effects may not.</p>
+<ul>
+<li>Audio Units (AU) plugins are exclusive to macOS and will not load on
+Windows.</li>
+<li>VST plugins must be installed on both systems to maintain editable
+effect settings.</li>
+<li>If a session uses third-party processing that the other computer
+lacks, apply or render the effect directly to the audio track before
+sharing the project.</li>
+</ul>
+<h3 id="4-use-compatible-storage-media">4. Use Compatible Storage
+Media</h3>
+<p>If transferring files via an external hard drive or USB flash drive,
+ensure the drive is formatted with the <strong>exFAT</strong> file
+system. Windows and macOS can both natively read and write to exFAT
+drives without file size limitations. Avoid FAT32, which cannot support
+individual files larger than 4 GB—a common threshold for multi-track
+audio projects.</p>
+<p>If using cloud storage (such as Google Drive, OneDrive, or Dropbox),
+ensure the file has completely finished syncing on the source computer
+before attempting to download and open it on the destination computer.
+Never open an <code>.aup3</code> file directly inside an active cloud
+synchronization folder, as the continuous syncing can interfere with
+SQLite database operations and corrupt the project. Always copy the file
+to a local drive before opening it.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

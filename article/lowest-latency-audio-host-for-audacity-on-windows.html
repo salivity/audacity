@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowest Latency Audio Host for Audacity on Windows - audacity</title>
+    <meta name="description" content="Selecting the correct audio host setting in Audacity is essential for minimizing input and output delay during recording and playback on modern Windows systems. Out of the available default hosts—MME, Windows DirectSound, and Windows WASAPI—Windows WASAPI">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/lowest-latency-audio-host-for-audacity-on-windows">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lowest Latency Audio Host for Audacity on Windows - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/lowest-latency-audio-host-for-audacity-on-windows" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Selecting the correct audio host setting in Audacity is essential for minimizing input and output delay during recording and playback on modern Windows systems. Out of the available default hosts—MME, Windows DirectSound, and Windows WASAPI—Windows WASAPI" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="lowest-latency-audio-host-for-audacity-on-windows">Lowest
+Latency Audio Host for Audacity on Windows</h1>
+<p>Selecting the correct audio host setting in Audacity is essential for
+minimizing input and output delay during recording and playback on
+modern Windows systems. Out of the available default hosts—MME, Windows
+DirectSound, and Windows WASAPI—Windows WASAPI is the definitive choice
+for achieving the lowest latency and best audio performance.</p>
+<h3 id="the-best-audio-host-windows-wasapi">The Best Audio Host: Windows
+WASAPI</h3>
+<p>On modern versions of Windows (Windows 10 and Windows 11),
+<strong>Windows WASAPI (Windows Audio Session API)</strong> provides the
+lowest latency among Audacity’s pre-compiled options.</p>
+<p>WASAPI was introduced to replace legacy audio pathways, allowing
+communication directly with the audio driver. By bypassing the software
+emulation and mixing layers associated with older protocols, WASAPI
+delivers lower latency, higher fidelity, and support for 24-bit
+recording. It also enables the unique "WASAPI Loopback" feature for
+recording computer audio without third-party virtual cables.</p>
+<h3 id="why-avoid-mme-and-directsound">Why Avoid MME and
+DirectSound?</h3>
+<p>Audacity includes three standard Windows host options, but the other
+two introduce significant latency:</p>
+<ul>
+<li><strong>MME (Multimedia Extensions):</strong> Introduced in Windows
+3.1, MME is the oldest and most compatible host setting. However, it
+relies heavily on system-level processing, resulting in high latency
+(often exceeding 100 milliseconds). It should only be used as a fallback
+if other hosts fail to detect your hardware.</li>
+<li><strong>Windows DirectSound:</strong> Designed in the DirectX era,
+DirectSound offered lower latency than MME in older operating systems
+like Windows XP. On modern Windows platforms, DirectSound is simply
+emulated on top of WASAPI, adding an unnecessary layer of processing
+that increases latency compared to native WASAPI.</li>
+</ul>
+<h3 id="how-to-configure-audacity-for-minimum-latency">How to Configure
+Audacity for Minimum Latency</h3>
+<p>To enable WASAPI and tune your setup for the lowest possible
+delay:</p>
+<ol type="1">
+<li>Open Audacity and click the <strong>Audio Setup</strong> button on
+the top toolbar.</li>
+<li>Hover over <strong>Host</strong> and select <strong>Windows
+WASAPI</strong>.</li>
+<li>Ensure your preferred <strong>Recording Device</strong> and
+<strong>Playback Device</strong> are selected under the same menu.</li>
+<li>Navigate to <strong>Edit &gt; Preferences &gt; Audio
+Settings</strong> (or press <code>Ctrl + P</code>).</li>
+<li>Locate the <strong>Buffer length</strong> setting under the
+<em>Latency</em> section. By default, this is set to 100 ms. Reduce this
+value in small increments (e.g., 50 ms, 30 ms, or 20 ms) to reduce
+latency further. Test playback after each reduction to ensure the audio
+does not exhibit clicks, pops, or dropouts.</li>
+<li>Use the <strong>Latency compensation</strong> setting to correct for
+any fixed delay between recorded tracks.</li>
+</ol>
+<h3 id="a-note-on-asio">A Note on ASIO</h3>
+<p>While Steinberg's ASIO (Audio Stream Input/Output) standard offers
+even lower latency than WASAPI, it is not included in standard public
+releases of Audacity due to licensing incompatibilities between the GPL
+license and the proprietary Steinberg SDK. Unless you compile a custom
+build of Audacity with ASIO support enabled, Windows WASAPI remains the
+fastest and most efficient host available out of the box.</p></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

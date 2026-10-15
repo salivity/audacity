@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Recording vs Append Record in Audacity - audacity</title>
+    <meta name="description" content="Audacity provides two distinct methods for capturing audio: standard recording and Append Record. While standard recording generates a completely new audio track every time you hit record, Append Record adds the new audio directly to the end of your exist">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/standard-recording-vs-append-record-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Standard Recording vs Append Record in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/standard-recording-vs-append-record-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity provides two distinct methods for capturing audio: standard recording and Append Record. While standard recording generates a completely new audio track every time you hit record, Append Record adds the new audio directly to the end of your exist" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="standard-recording-vs-append-record-in-audacity">Standard
+Recording vs Append Record in Audacity</h1>
+<p>Audacity provides two distinct methods for capturing audio: standard
+recording and Append Record. While standard recording generates a
+completely new audio track every time you hit record, Append Record adds
+the new audio directly to the end of your existing track. Understanding
+the functional differences, keyboard shortcuts, and specific use cases
+for each method will help you streamline your editing process and keep
+your project timeline organized.</p>
+<h3 id="what-is-standard-recording">What is Standard Recording?</h3>
+<p>Standard recording creates an independent, new audio track below any
+existing tracks in your timeline whenever you initiate recording.</p>
+<ul>
+<li><strong>Behavior:</strong> The recording begins at the current
+playhead position on a separate track, running parallel to existing
+audio.</li>
+<li><strong>Default Shortcut:</strong> In modern versions of Audacity,
+recording to a new track is triggered by pressing <code>Shift + R</code>
+(or holding <code>Shift</code> while clicking the Record button).</li>
+<li><strong>Best Used For:</strong> Multitrack projects, musical
+layering, recording different speakers on separate channels, or
+capturing alternate takes that you want to compare side by side.</li>
+</ul>
+<h3 id="what-is-append-record">What is Append Record?</h3>
+<p>Append Record allows you to continue recording on an existing track
+by placing the new audio directly after the last recorded section on
+that specific track.</p>
+<ul>
+<li><strong>Behavior:</strong> Audacity automatically moves the cursor
+to the exact end of the currently active or selected track and resumes
+recording there, regardless of where the playhead was previously
+positioned.</li>
+<li><strong>Default Shortcut:</strong> In modern versions of Audacity,
+Append Record is the default behavior when pressing <code>R</code> (or
+clicking the standard Record button).</li>
+<li><strong>Best Used For:</strong> Single-track spoken word projects,
+audiobooks, podcasts, and voiceovers. It enables you to pause, fix
+mistakes, or take a break without generating dozens of separate tracks
+for a single continuous recording session.</li>
+</ul>
+<h3 id="key-differences-at-a-glance">Key Differences at a Glance</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Standard Recording</th>
+<th style="text-align: left;">Append Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Track Placement</strong></td>
+<td style="text-align: left;">Creates a new track underneath</td>
+<td style="text-align: left;">Continues on the existing track</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Positioning</strong></td>
+<td style="text-align: left;">Starts at the playhead / cursor</td>
+<td style="text-align: left;">Starts at the end of the existing
+audio</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Modern Shortcut</strong></td>
+<td style="text-align: left;"><code>Shift + R</code></td>
+<td style="text-align: left;"><code>R</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Timeline Impact</strong></td>
+<td style="text-align: left;">Expands vertically (multitrack)</td>
+<td style="text-align: left;">Expands horizontally (single
+timeline)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mixing Requirement</strong></td>
+<td style="text-align: left;">Requires balancing and combining
+tracks</td>
+<td style="text-align: left;">Keeps the audio sequence unified on one
+channel</td>
+</tr>
+</tbody>
+</table>
+<h3 id="changing-the-default-behavior">Changing the Default
+Behavior</h3>
+<p>If you prefer the classic Audacity behavior—where pressing
+<code>R</code> always creates a new track instead of appending—you can
+change this in the program preferences:</p>
+<ol type="1">
+<li>Navigate to <strong>Edit</strong> &gt; <strong>Preferences</strong>
+(or <code>Cmd + ,</code> on macOS).</li>
+<li>Select the <strong>Recording</strong> tab from the left menu.</li>
+<li>Check or uncheck <strong>Record on a new track</strong> under the
+<em>Options</em> section to set your preferred default action for the
+primary Record button.</li>
+</ol></article>
+        <div id="comments-container"></div>
+        <script>
+            const utterancesScript = document.createElement('script');
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/audacity'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            utterancesScript.setAttribute('theme', currentTheme === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
