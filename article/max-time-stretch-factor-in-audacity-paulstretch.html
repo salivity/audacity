@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Time-Stretch Factor in Audacity Paulstretch - audacity</title>
+    <meta name="description" content="This article explains the maximum time-stretch capabilities of the Paulstretch effect within Audacity. It covers the specific numerical limits imposed by the software in a single pass, how users can achieve extreme stretch ratios beyond those interface li">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/max-time-stretch-factor-in-audacity-paulstretch">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Max Time-Stretch Factor in Audacity Paulstretch - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/max-time-stretch-factor-in-audacity-paulstretch" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article explains the maximum time-stretch capabilities of the Paulstretch effect within Audacity. It covers the specific numerical limits imposed by the software in a single pass, how users can achieve extreme stretch ratios beyond those interface li" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="max-time-stretch-factor-in-audacity-paulstretch">Max
+Time-Stretch Factor in Audacity Paulstretch</h1>
+<p>This article explains the maximum time-stretch capabilities of the
+Paulstretch effect within Audacity. It covers the specific numerical
+limits imposed by the software in a single pass, how users can achieve
+extreme stretch ratios beyond those interface limits, and key practical
+considerations regarding project file sizes and rendering
+performance.</p>
+<p>In Audacity, the maximum time-stretch factor achievable in a single
+application of the Paulstretch effect is <strong>100x</strong> (a
+stretch factor of 100.0). The software restricts the "Stretch Factor"
+input field and slider to a range between 1.0 and 100.0. Applying this
+maximum setting extends one second of source audio into 100 seconds, or
+a three-minute song into a five-hour ambient wash.</p>
+<h3 id="exceeding-the-100x-limit-through-chaining">Exceeding the 100x
+Limit Through Chaining</h3>
+<p>While the dialog restricts a single pass to 100x, there is no
+technical limit preventing users from applying the effect multiple times
+to the same audio. By chaining consecutive passes, the stretch factors
+multiply:</p>
+<ul>
+<li><strong>Two passes at 100x:</strong> Yields a 10,000x stretch factor
+(1 minute becomes ~6.9 days).</li>
+<li><strong>Three passes at 100x:</strong> Yields a 1,000,000x stretch
+factor.</li>
+</ul>
+<p>To achieve factors higher than 100, apply the Paulstretch effect at
+100x, select the resulting stretched waveform, and apply the effect
+again at your desired multiplier.</p>
+<h3 id="audacity-vs-standalone-paulxstretch">Audacity vs. Standalone
+PaulXStretch</h3>
+<p>The 100x limit is unique to Audacity’s native implementation of the
+algorithm. The original standalone software developed by Nasca Octavian
+Paul (<em>Paul’s Extreme Sound Stretch</em>) and the modern
+<em>PaulXStretch</em> plugin allow stretch factors exceeding <span
+class="math inline">\(10^{18}\)</span> in a single session. If extreme
+stretch values are needed without manual chaining, using the standalone
+version or VST plugin is often more efficient.</p>
+<h3 id="practical-limitations">Practical Limitations</h3>
+<p>When pushing Audacity's Paulstretch tool to its upper limits, several
+practical constraints arise:</p>
+<ul>
+<li><strong>Processing Time:</strong> Extreme stretch factors require
+the spectral phase randomization algorithm to calculate thousands of
+overlapping fast Fourier transform (FFT) windows, resulting in
+significant render times.</li>
+<li><strong>Track Length Limits:</strong> Audacity supports long tracks,
+but extreme stretching can create file sizes that exceed format
+standards (such as WAV's standard 4 GB limit, requiring RF64 or export
+format adjustments).</li>
+<li><strong>Time Resolution Loss:</strong> At maximum stretch values,
+all original attack and rhythmic transients are completely dissolved,
+leaving only continuous spectral pads and drone textures.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/max-time-stretch-factor-in-audacity-paulstretch';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

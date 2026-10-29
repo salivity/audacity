@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dependencies to Compile Audacity on Ubuntu - audacity</title>
+    <meta name="description" content="Compiling Audacity from source on Ubuntu requires a collection of core build tools, graphical toolkit libraries, and audio processing packages to complete the configuration and build process successfully. This guide provides a clear, categorized breakdown">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/dependencies-to-compile-audacity-on-ubuntu">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dependencies to Compile Audacity on Ubuntu - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/dependencies-to-compile-audacity-on-ubuntu" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Compiling Audacity from source on Ubuntu requires a collection of core build tools, graphical toolkit libraries, and audio processing packages to complete the configuration and build process successfully. This guide provides a clear, categorized breakdown" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="dependencies-to-compile-audacity-on-ubuntu">Dependencies to
+Compile Audacity on Ubuntu</h1>
+<p>Compiling Audacity from source on Ubuntu requires a collection of
+core build tools, graphical toolkit libraries, and audio processing
+packages to complete the configuration and build process successfully.
+This guide provides a clear, categorized breakdown of every dependency
+that must be pre-installed via the Ubuntu package manager before running
+CMake to build the software.</p>
+<h3 id="1-essential-build-tools">1. Essential Build Tools</h3>
+<p>Before configuring Audacity, your system must have the standard C/C++
+compilation toolchain, version control, and build automation software
+installed:</p>
+<ul>
+<li><strong>build-essential</strong>: Installs GCC, G++,
+<code>make</code>, and standard C runtime libraries.</li>
+<li><strong>cmake</strong>: Required build system generator (Audacity
+requires CMake 3.16 or newer).</li>
+<li><strong>git</strong>: Needed to clone the Audacity repository and
+retrieve submodules.</li>
+<li><strong>python3</strong> and <strong>python3-pip</strong>: Used by
+build scripts and the Conan package manager (if compiling with
+Conan-managed dependencies).</li>
+<li><strong>pkg-config</strong>: Helps the build system find installed
+libraries on the system.</li>
+</ul>
+<h3 id="2-graphical-toolkit-and-desktop-libraries">2. Graphical Toolkit
+and Desktop Libraries</h3>
+<p>Audacity uses wxWidgets with a GTK+ 3 backend for its graphical
+interface, as well as desktop integration libraries:</p>
+<ul>
+<li><strong>libwxgtk3.2-dev</strong> (or
+<strong>libwxgtk3.0-gtk3-dev</strong> on older Ubuntu releases): The
+wxWidgets development libraries.</li>
+<li><strong>libgtk-3-dev</strong>: The GTK+ 3 development headers and
+libraries.</li>
+<li><strong>libglib2.0-dev</strong>: Core application building blocks
+for GTK.</li>
+</ul>
+<h3 id="3-audio-system-and-driver-interfaces">3. Audio System and Driver
+Interfaces</h3>
+<p>To interact with Linux audio subsystems, you must install the
+development packages for ALSA and JACK:</p>
+<ul>
+<li><strong>libasound2-dev</strong>: Advanced Linux Sound Architecture
+(ALSA) development files.</li>
+<li><strong>libjack-jackd2-dev</strong>: JACK Audio Connection Kit
+development files for low-latency audio support.</li>
+</ul>
+<h3 id="4-audio-formats-and-processing-libraries">4. Audio Formats and
+Processing Libraries</h3>
+<p>Audacity relies on specialized libraries to decode, encode, and
+manipulate various audio formats:</p>
+<ul>
+<li><strong>libsndfile1-dev</strong>: Essential library for reading and
+writing sampled sound files.</li>
+<li><strong>libsoxr-dev</strong>: High-quality audio resampler
+library.</li>
+<li><strong>libflac-dev</strong>: Free Lossless Audio Codec
+library.</li>
+<li><strong>libogg-dev</strong> and <strong>libvorbis-dev</strong>: Ogg
+Vorbis compressed audio libraries.</li>
+<li><strong>libmpg123-dev</strong>: Fast MPEG Audio Layer 1, 2, and 3
+decoding library.</li>
+<li><strong>libid3tag0-dev</strong>: ID3 tag reading library.</li>
+<li><strong>libsoundtouch-dev</strong>: Audio tempo and pitch
+modification library.</li>
+<li><strong>libvamp-hostsdk3v5</strong>: Vamp audio analysis plugin
+SDK.</li>
+<li><strong>libtwolame-dev</strong>: MPEG Audio Layer 2 encoder.</li>
+</ul>
+<h3 id="complete-installation-command">Complete Installation
+Command</h3>
+<p>You can install the entire set of required build tools and libraries
+on modern Ubuntu releases by running the following command in the
+terminal:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    build-essential <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    cmake <span class="dt">\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    git <span class="dt">\</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    pkg-config <span class="dt">\</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    python3 <span class="dt">\</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    python3-pip <span class="dt">\</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    libwxgtk3.2-dev <span class="dt">\</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    libgtk-3-dev <span class="dt">\</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    libglib2.0-dev <span class="dt">\</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    libasound2-dev <span class="dt">\</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    libjack-jackd2-dev <span class="dt">\</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    libsndfile1-dev <span class="dt">\</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    libsoxr-dev <span class="dt">\</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    libflac-dev <span class="dt">\</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    libogg-dev <span class="dt">\</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    libvorbis-dev <span class="dt">\</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    libmpg123-dev <span class="dt">\</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    libid3tag0-dev <span class="dt">\</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    libsoundtouch-dev <span class="dt">\</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    libtwolame-dev</span></code></pre></div>
+<p>Once these packages are installed, your Ubuntu system will be
+prepared to clone the Audacity repository and proceed with CMake
+configuration and compilation.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/dependencies-to-compile-audacity-on-ubuntu';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

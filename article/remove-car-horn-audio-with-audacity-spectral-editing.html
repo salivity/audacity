@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Car Horn Audio with Audacity Spectral Editing - audacity</title>
+    <meta name="description" content="Audacity’s spectral editing tools allow you to visualize sound frequencies to isolate and eliminate harsh, intrusive noises without destroying the underlying vocal track. This guide explains how to switch to the Spectrogram view, identify the distinct fre">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/remove-car-horn-audio-with-audacity-spectral-editing">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Remove Car Horn Audio with Audacity Spectral Editing - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/remove-car-horn-audio-with-audacity-spectral-editing" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity’s spectral editing tools allow you to visualize sound frequencies to isolate and eliminate harsh, intrusive noises without destroying the underlying vocal track. This guide explains how to switch to the Spectrogram view, identify the distinct fre" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="remove-car-horn-audio-with-audacity-spectral-editing">Remove Car
+Horn Audio with Audacity Spectral Editing</h1>
+<p>Audacity’s spectral editing tools allow you to visualize sound
+frequencies to isolate and eliminate harsh, intrusive noises without
+destroying the underlying vocal track. This guide explains how to switch
+to the Spectrogram view, identify the distinct frequency bands of a car
+horn, define the exact problem area, and apply spectral filters to erase
+the noise cleanly while preserving voice clarity.</p>
+<h3 id="step-1-switch-to-the-spectrogram-view">Step 1: Switch to the
+Spectrogram View</h3>
+<p>By default, Audacity displays audio as a standard waveform, which
+only shows amplitude over time. To target specific frequencies, you must
+switch to the Spectrogram.</p>
+<ol type="1">
+<li>Open your project containing the voice recording.</li>
+<li>Locate the track control panel on the left side of the audio
+track.</li>
+<li>Click the track name to open the drop-down menu.</li>
+<li>Select <strong>Spectrogram</strong>.</li>
+</ol>
+<p>Your audio track will now display a heat map. Time runs along the
+horizontal axis, frequency runs vertically (low pitch at the bottom,
+high pitch at the top), and volume is indicated by color brightness.</p>
+<h3 id="step-2-locate-the-car-horn">Step 2: Locate the Car Horn</h3>
+<p>Because car horns produce loud, sustained, and harmonically rich
+tones, they are easy to spot visually.</p>
+<ol type="1">
+<li>Play the section of the audio where the horn occurs.</li>
+<li>Look for bright, solid horizontal lines running through the audio. A
+car horn typically consists of a fundamental frequency (often between
+300 Hz and 500 Hz) along with one or more prominent horizontal harmonics
+stacked evenly above it (between 1 kHz and 4 kHz).</li>
+<li>Zoom in horizontally using <strong>Ctrl + 1</strong> (or <strong>Cmd
++ 1</strong> on Mac) to focus on the exact duration of the horn.</li>
+</ol>
+<h3 id="step-3-make-a-spectral-selection">Step 3: Make a Spectral
+Selection</h3>
+<p>Spectral selection allows you to select both a window of time and a
+specific range of frequencies.</p>
+<ol type="1">
+<li>Ensure the <strong>Selection Tool</strong> (keyboard shortcut
+<strong>F1</strong>) is active.</li>
+<li>Click and drag horizontally across the time segment where the horn
+sound exists.</li>
+<li>Move your cursor near the center horizontal frequency line of the
+horn until the cursor changes to an up-and-down arrow.</li>
+<li>Click and drag vertically to adjust the top and bottom frequency
+boundaries so that the box tightly encloses the bright frequency band of
+the horn.</li>
+</ol>
+<h3 id="step-4-apply-the-spectral-filter">Step 4: Apply the Spectral
+Filter</h3>
+<p>Audacity provides built-in spectral edit effects to attenuate or
+remove the selected frequency band.</p>
+<ol type="1">
+<li>Go to the top menu and select <strong>Effect</strong> &gt;
+<strong>Spectral tools</strong>.</li>
+<li>Choose one of the following methods depending on the severity of the
+horn:
+<ul>
+<li><strong>Spectral Delete</strong>: Completely removes the selected
+frequency band. This is the fastest way to eliminate loud, sharp horn
+bursts.</li>
+<li><strong>Spectral Edit Parametric EQ</strong>: Allows you to reduce
+the gain of the selected frequency without fully deleting it. This is
+ideal if the car horn overlaps directly with the primary frequencies of
+the voice, as it creates a more natural-sounding result.</li>
+</ul></li>
+<li>If the car horn has multiple visible harmonic layers, repeat this
+selection and removal process for each horizontal band from the lowest
+harmonic to the highest.</li>
+</ol>
+<h3 id="step-5-preview-and-fine-tune">Step 5: Preview and Fine-Tune</h3>
+<ol type="1">
+<li>Press the <strong>Spacebar</strong> to listen to the edited
+section.</li>
+<li>Check whether the voice sounds hollow or robotic. If removing the
+horn scooped out too much vocal presence, press <strong>Ctrl +
+Z</strong> (<strong>Cmd + Z</strong> on Mac) to undo.</li>
+<li>Re-select the area with narrower vertical frequency boundaries or
+switch from <strong>Spectral Delete</strong> to <strong>Spectral Edit
+Parametric EQ</strong> to apply a milder reduction.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/remove-car-horn-audio-with-audacity-spectral-editing';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

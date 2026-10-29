@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compressor Before or After EQ in Audacity - audacity</title>
+    <meta name="description" content="Deciding whether to place a compressor before or after equalization in Audacity depends on whether you want to clean up problem frequencies before controlling dynamics, or shape the overall tone after balancing volume levels. Modern versions of Audacity s">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/compressor-before-or-after-eq-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Compressor Before or After EQ in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/compressor-before-or-after-eq-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Deciding whether to place a compressor before or after equalization in Audacity depends on whether you want to clean up problem frequencies before controlling dynamics, or shape the overall tone after balancing volume levels. Modern versions of Audacity s" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="compressor-before-or-after-eq-in-audacity">Compressor Before or
+After EQ in Audacity</h1>
+<p>Deciding whether to place a compressor before or after equalization
+in Audacity depends on whether you want to clean up problem frequencies
+before controlling dynamics, or shape the overall tone after balancing
+volume levels. Modern versions of Audacity support non-destructive
+real-time effect chains, while earlier versions rely on applying effects
+sequentially directly to the waveform. This guide explains how effect
+order impacts your sound and how to implement both workflows in
+Audacity.</p>
+<h3 id="eq-before-compression-vs-compression-before-eq">EQ Before
+Compression vs. Compression Before EQ</h3>
+<ul>
+<li><strong>EQ Before Compressor (Corrective Workflow):</strong> Use
+this approach to cut unwanted frequencies, such as low-frequency rumble,
+plosives, or harsh boxy tones. Because compressors react to signal
+peaks, cutting problem frequencies first ensures the compressor triggers
+only on the frequencies you want to keep.</li>
+<li><strong>Compressor Before EQ (Tonal Workflow):</strong> Use this
+approach to tame wide dynamic swings first, creating a steady,
+consistent performance. Applying an EQ afterward allows you to boost
+pleasant frequencies (like high-end "air" or vocal presence) without
+driving the compressor into over-compression.</li>
+<li><strong>The "Sandwich" Method:</strong> A common industry standard
+is using a corrective EQ first (high-pass filter, narrow cuts), followed
+by a compressor to control dynamics, and ending with a musical EQ to
+boost desired bands.</li>
+</ul>
+<hr />
+<h3 id="method-1-using-real-time-effects-audacity-32-and-later">Method
+1: Using Real-Time Effects (Audacity 3.2 and Later)</h3>
+<p>Modern versions of Audacity feature a non-destructive real-time
+effects stack that processes audio from top to bottom.</p>
+<ol type="1">
+<li><strong>Select the Track:</strong> Click the track header on the
+left side of your waveform.</li>
+<li><strong>Open the Effects Panel:</strong> Click the
+<strong>Effects</strong> button located in the track control panel on
+the far left.</li>
+<li><strong>Add the First Effect:</strong> Click <strong>+ Add
+Effect</strong>.
+<ul>
+<li>To EQ first: Navigate to <strong>EQ and Filters</strong> and select
+<strong>Filter Curve EQ</strong> or a third-party parametric EQ
+plugin.</li>
+<li>To Compress first: Navigate to <strong>Volume and
+Compression</strong> and choose <strong>Compressor</strong>.</li>
+</ul></li>
+<li><strong>Add the Second Effect:</strong> Click <strong>+ Add
+Effect</strong> directly below the first slot to insert your
+complementary plugin.</li>
+<li><strong>Adjust the Order:</strong> Audacity processes audio from the
+top slot downward. To change the chain order, click the three dots next
+to an effect and select <strong>Move Up</strong> or <strong>Move
+Down</strong> to swap their positions.</li>
+<li><strong>Playback and Adjust:</strong> Press
+<strong>Spacebar</strong> to preview playback while adjusting sliders in
+real time until you achieve the desired balance.</li>
+</ol>
+<hr />
+<h3 id="method-2-sequential-processing-destructive-workflow">Method 2:
+Sequential Processing (Destructive Workflow)</h3>
+<p>If you prefer using Audacity’s legacy built-in effects or are running
+an older version, effects are applied sequentially and permanently alter
+the waveform.</p>
+<ol type="1">
+<li><strong>Select the Audio:</strong> Click and drag across the audio
+clip, or press <strong>Ctrl + A</strong> (Windows) / <strong>Cmd +
+A</strong> (Mac) to select the entire track.</li>
+<li><strong>Apply the First Process:</strong>
+<ul>
+<li>For EQ first: Go to the top menu, select <strong>Effect</strong>
+&gt; <strong>EQ and Filters</strong> &gt; <strong>Filter Curve
+EQ</strong> (or <strong>Graphic EQ</strong>). Cut the problematic
+frequencies, preview the sound, and click <strong>Apply</strong>.</li>
+<li>For Compression first: Select <strong>Effect</strong> &gt;
+<strong>Volume and Compression</strong> &gt;
+<strong>Compressor</strong>. Adjust your threshold, ratio, attack, and
+release, then click <strong>Apply</strong>.</li>
+</ul></li>
+<li><strong>Apply the Second Process:</strong> With the audio still
+selected, return to the <strong>Effect</strong> menu and apply the
+remaining processor.</li>
+<li><strong>Undo if Needed:</strong> If the balance does not sound
+right, press <strong>Ctrl + Z</strong> / <strong>Cmd + Z</strong>
+repeatedly to roll back each process in reverse order.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/compressor-before-or-after-eq-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

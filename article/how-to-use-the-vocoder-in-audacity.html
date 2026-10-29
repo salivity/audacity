@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use the Vocoder in Audacity - audacity</title>
+    <meta name="description" content="The Vocoder effect in Audacity allows you to blend two separate audio sources to create classic robotic speech, synthesized vocal harmonies, and unique sound design textures. This article explains what the Vocoder effect does, defines the specific roles o">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-use-the-vocoder-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use the Vocoder in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-use-the-vocoder-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Vocoder effect in Audacity allows you to blend two separate audio sources to create classic robotic speech, synthesized vocal harmonies, and unique sound design textures. This article explains what the Vocoder effect does, defines the specific roles o" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-use-the-vocoder-in-audacity">How to Use the Vocoder in
+Audacity</h1>
+<p>The Vocoder effect in Audacity allows you to blend two separate audio
+sources to create classic robotic speech, synthesized vocal harmonies,
+and unique sound design textures. This article explains what the Vocoder
+effect does, defines the specific roles of the carrier and modulator
+signals, and provides a direct, step-by-step walkthrough on how to
+properly route both channels in Audacity to generate the effect.</p>
+<h2 id="what-is-the-vocoder-effect">What Is the Vocoder Effect?</h2>
+<p>A vocoder (voice encoder) works by analyzing the frequency
+characteristics of one audio signal and applying them to the harmonic
+structure of another.</p>
+<p>The effect requires two inputs:</p>
+<ul>
+<li><strong>The Modulator:</strong> This is typically a dynamic,
+articulate sound such as a spoken or sung vocal track. It acts as the
+filter, dictating the phrasing, rhythm, and consonant shapes.</li>
+<li><strong>The Carrier:</strong> This is a harmonically rich sound with
+continuous frequency content, such as a synthesizer chord, a saw-wave
+tone, or white noise. It provides the pitch, tone, and musical
+timbre.</li>
+</ul>
+<p>When processed, the vocoder analyzes the spectral envelope of the
+modulator through a bank of band-pass filters and uses those levels to
+shape the carrier. The result is an instrument that appears to "speak"
+or "sing."</p>
+<h2 id="how-to-route-carrier-and-modulator-signals-in-audacity">How to
+Route Carrier and Modulator Signals in Audacity</h2>
+<p>Audacity's built-in Vocoder effect does not use sidechain routing
+like standard digital audio workstations (DAWs). Instead, it processes a
+single <strong>stereo track</strong>, where one channel serves as the
+carrier and the other serves as the modulator. By default, Audacity
+expects the <strong>Left channel to be the Carrier</strong> and the
+<strong>Right channel to be the Modulator</strong>.</p>
+<p>Follow these steps to route and combine your tracks:</p>
+<h3 id="step-1-prepare-two-mono-tracks">Step 1: Prepare Two Mono
+Tracks</h3>
+<ol type="1">
+<li>Import or record your carrier signal (synthesizer, sustained pad, or
+noise) on one track.</li>
+<li>Import or record your modulator signal (vocal speech or singing) on
+a second track.</li>
+<li>Ensure both tracks are set to <strong>Mono</strong>. If a track is
+in stereo, go to <strong>Tracks &gt; Mix &gt; Mix Stereo Down to
+Mono</strong>.</li>
+</ol>
+<h3 id="step-2-arrange-the-track-order">Step 2: Arrange the Track
+Order</h3>
+<ol type="1">
+<li>Place the <strong>Carrier</strong> track directly above the
+<strong>Modulator</strong> track in the timeline.</li>
+<li>Align the timing of both tracks so the carrier plays continuously
+across the duration of the vocal track.</li>
+</ol>
+<h3 id="step-3-combine-tracks-into-a-single-stereo-track">Step 3:
+Combine Tracks into a Single Stereo Track</h3>
+<ol type="1">
+<li>Click the downward-pointing arrow next to the track name on the top
+track (the Carrier) to open its track control menu.</li>
+<li>Select <strong>Make Stereo Track</strong>.</li>
+<li>Audacity will merge the two mono tracks into a single stereo track.
+The top track (Carrier) automatically becomes the <strong>Left
+Channel</strong>, and the bottom track (Modulator) becomes the
+<strong>Right Channel</strong>.</li>
+</ol>
+<h2 id="applying-the-vocoder-effect">Applying the Vocoder Effect</h2>
+<p>Once your stereo track is created, apply the effect:</p>
+<ol type="1">
+<li>Select the entire combined stereo track by clicking in the track
+control panel on the left.</li>
+<li>Go to the top menu and select <strong>Effect &gt; Vocoder</strong>
+(in newer Audacity versions, it may be categorized under <strong>Effect
+&gt; Special &gt; Vocoder</strong>).</li>
+<li>In the Vocoder dialogue box, configure your settings:
+<ul>
+<li><strong>Distance:</strong> Adjusts the output stereo widening.</li>
+<li><strong>Number of bands:</strong> Sets how many filter bands are
+used. Higher values (e.g., 40 to 100) yield more intelligible speech,
+while lower values (e.g., 8 to 16) produce a more vintage, robotic
+sound.</li>
+<li><strong>Carrier choice:</strong> Confirm this matches your routing
+(default is "Left").</li>
+</ul></li>
+<li>Click <strong>Preview</strong> to audition the sound, then click
+<strong>Apply</strong> to render the vocoded audio.</li>
+</ol>
+<p>The resulting audio will output as a processed stereo track featuring
+the synthesizer's pitch articulated by the vocal track's words.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-use-the-vocoder-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

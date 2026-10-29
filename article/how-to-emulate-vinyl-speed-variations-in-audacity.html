@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Emulate Vinyl Speed Variations in Audacity - audacity</title>
+    <meta name="description" content="Audacity&#39;s Change Speed effect accurately emulates vinyl turntable speed variations by simultaneously altering both the pitch and tempo of an audio track, directly mimicking the physical mechanics of a spinning record. While modern digital audio workstati">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-emulate-vinyl-speed-variations-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Emulate Vinyl Speed Variations in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-emulate-vinyl-speed-variations-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity&#39;s Change Speed effect accurately emulates vinyl turntable speed variations by simultaneously altering both the pitch and tempo of an audio track, directly mimicking the physical mechanics of a spinning record. While modern digital audio workstati" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-emulate-vinyl-speed-variations-in-audacity">How to
+Emulate Vinyl Speed Variations in Audacity</h1>
+<p>Audacity's Change Speed effect accurately emulates vinyl turntable
+speed variations by simultaneously altering both the pitch and tempo of
+an audio track, directly mimicking the physical mechanics of a spinning
+record. While modern digital audio workstations often separate pitch
+from playback speed using complex time-stretching algorithms, the Change
+Speed tool couples them together. This article explains the underlying
+digital processing, the built-in vinyl RPM conversion presets, and how
+to apply these mechanics to recreate classic vinyl playback
+artifacts.</p>
+<h2
+id="the-relationship-between-vinyl-mechanics-and-digital-resampling">The
+Relationship Between Vinyl Mechanics and Digital Resampling</h2>
+<p>When a physical vinyl record spins faster or slower on a turntable,
+the stylus traverses the microscopic grooves at a varying rate.
+Increasing the motor speed causes the stylus to read more waveforms per
+second, which raises the frequency (pitch) and reduces the total
+playback duration (tempo). Conversely, slowing the turntable down
+stretches the waveforms out, dropping the pitch and dragging out the
+duration.</p>
+<p>Audacity’s Change Speed effect replicates this physical phenomenon
+through mathematical resampling rather than algorithmic phase vocoding.
+Instead of attempting to keep the pitch steady while altering length
+(like the "Change Tempo" effect) or keeping length steady while altering
+key (like the "Change Pitch" effect), Change Speed recalculates the
+relationship between the audio samples and the project sample rate. This
+mimics an analog motor speeding up or slowing down.</p>
+<h2 id="built-in-vinyl-rpm-presets">Built-In Vinyl RPM Presets</h2>
+<p>Audacity includes dedicated vinyl presets within the Change Speed
+interface to instantly replicate standard turntable RPM (revolutions per
+minute) switches. The interface provides standard conversions
+between:</p>
+<ul>
+<li><strong>33⅓ RPM</strong> (standard LP speed)</li>
+<li><strong>45 RPM</strong> (standard singles/EP speed)</li>
+<li><strong>78 RPM</strong> (vintage shellac record speed)</li>
+</ul>
+<p>By selecting a source speed and a target speed, Audacity applies the
+exact mathematical ratio of the physical speed change:</p>
+<ul>
+<li><strong>33⅓ RPM to 45 RPM:</strong> Multiplies the speed by 1.35,
+resulting in a 35% speed increase and a corresponding pitch shift upward
+of approximately 5.18 semitones. This accurately recreates the classic
+"chipmunk" effect heard when playing an LP at single speed.</li>
+<li><strong>45 RPM to 33⅓ RPM:</strong> Multiplies the speed by roughly
+0.74, lowering both tempo and pitch by about 26%, recreating the deep,
+dragged-out sound of a 45 played on an LP setting.</li>
+</ul>
+<h2 id="emulating-dynamic-speed-fluctuations">Emulating Dynamic Speed
+Fluctuations</h2>
+<p>Mechanical turntables do not just switch between fixed speeds; they
+also suffer from dynamic imperfections like motor drag, startup/stop
+friction, and subtle speed drift (wow and flutter).</p>
+<p>To emulate these dynamic variations rather than a flat, static speed
+switch, Audacity’s <strong>Time Track</strong> feature can be combined
+with the Change Speed methodology:</p>
+<ol type="1">
+<li><strong>Turntable Spin-Down / Tape Stop:</strong> Applying a
+decelerating speed envelope drops the pitch continuously to near-zero
+while simultaneously slowing the audio to a halt, capturing the sound of
+cutting power to a turntable motor while the needle is down.</li>
+<li><strong>Wow and Flutter:</strong> Minor, oscillating adjustments to
+speed (deviations of 0.1% to 1%) replicate belt-drive instability,
+warped vinyl discs, or off-center spindle holes, giving modern digital
+recordings an authentic vintage pitch waver.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-emulate-vinyl-speed-variations-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

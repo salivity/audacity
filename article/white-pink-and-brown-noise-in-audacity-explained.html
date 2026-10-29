@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White, Pink, and Brown Noise in Audacity Explained - audacity</title>
+    <meta name="description" content="Audacity includes a built-in noise generation tool capable of producing white, pink, and brown noise. While these options may seem similar at first glance, each type is defined by a distinct mathematical distribution of frequencies across the audio spectr">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/white-pink-and-brown-noise-in-audacity-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="White, Pink, and Brown Noise in Audacity Explained - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/white-pink-and-brown-noise-in-audacity-explained" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity includes a built-in noise generation tool capable of producing white, pink, and brown noise. While these options may seem similar at first glance, each type is defined by a distinct mathematical distribution of frequencies across the audio spectr" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="white-pink-and-brown-noise-in-audacity-explained">White, Pink,
+and Brown Noise in Audacity Explained</h1>
+<p>Audacity includes a built-in noise generation tool capable of
+producing white, pink, and brown noise. While these options may seem
+similar at first glance, each type is defined by a distinct mathematical
+distribution of frequencies across the audio spectrum. This article
+outlines the key differences in energy distribution, sound profile, and
+practical applications among the three noise types available in
+Audacity's generator menu.</p>
+<h3 id="accessing-the-generators-in-audacity">Accessing the Generators
+in Audacity</h3>
+<p>To create any of these noise profiles in Audacity, navigate to
+<strong>Generate &gt; Noise...</strong> from the top menu. In the dialog
+box that appears, you can choose between White, Pink, and Brownian
+(commonly referred to as Brown) from the <strong>Noise type</strong>
+dropdown, as well as set the amplitude and duration.</p>
+<h3 id="white-noise">White Noise</h3>
+<ul>
+<li><strong>Energy Distribution:</strong> White noise has equal energy
+per hertz across all audible frequencies from 20 Hz to 20,000 Hz. Its
+power spectral density is completely flat (0 dB per octave slope).</li>
+<li><strong>Perceived Sound:</strong> Because the human ear hears
+frequencies logarithmically, having equal energy at every single hertz
+means higher octaves contain significantly more total energy than lower
+octaves. As a result, white noise sounds bright, sharp, and hissy,
+similar to an untuned analog television or radio static.</li>
+<li><strong>Common Uses in Audacity:</strong>
+<ul>
+<li>Audio gear calibration and testing.</li>
+<li>Creating percussion elements in synthesis, such as synthesized snare
+drums, hi-hats, and wind effects.</li>
+<li>Testing microphone frequency response and measuring room
+reverberation times.</li>
+</ul></li>
+</ul>
+<h3 id="pink-noise">Pink Noise</h3>
+<ul>
+<li><strong>Energy Distribution:</strong> Pink noise decreases in power
+by 3 dB per octave (or roughly 10 dB per decade) as frequency increases.
+This creates equal energy per octave rather than equal energy per single
+hertz.</li>
+<li><strong>Perceived Sound:</strong> Human hearing perceives sound on a
+logarithmic scale, making pink noise sound balanced, even, and natural
+across all frequency ranges. It lacks the harsh, piercing high end of
+white noise and sounds similar to steady, rushing rainfall or moderate
+wind.</li>
+<li><strong>Common Uses in Audacity:</strong>
+<ul>
+<li>Room acoustic calibration and equalization, as it matches how human
+ears naturally perceive volume across the spectrum.</li>
+<li>Audio mastering references to verify spectral balance.</li>
+<li>Sound masking for focus, study environments, and treating
+hyperacusis or tinnitus.</li>
+</ul></li>
+</ul>
+<h3 id="brown-brownian-noise">Brown (Brownian) Noise</h3>
+<ul>
+<li><strong>Energy Distribution:</strong> Brown noise—labeled as
+<strong>Brownian</strong> in Audacity—drops by 6 dB per octave (or 20 dB
+per decade) as frequency rises. Its name originates from Brownian motion
+(the random motion of particles) rather than a color association.</li>
+<li><strong>Perceived Sound:</strong> Due to the steep high-frequency
+roll-off, brown noise possesses the lowest energy in the treble range
+and the highest energy in the bass range. It sounds deep, warm, and
+muffled, closely resembling distant thunder, heavy surf, or the low roar
+of an airplane cabin.</li>
+<li><strong>Common Uses in Audacity:</strong>
+<ul>
+<li>Background soundscapes for deep sleep, meditation, and blocking
+low-frequency interruptions like traffic.</li>
+<li>Sound design bases for simulating natural phenomena such as
+avalanches, explosions, or heavy waterfalls.</li>
+<li>Masking internal ear sounds (such as low-pitch tinnitus) without
+causing ear fatigue.</li>
+</ul></li>
+</ul>
+<h3 id="summary-comparison">Summary Comparison</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">White Noise</th>
+<th style="text-align: left;">Pink Noise</th>
+<th style="text-align: left;">Brown (Brownian) Noise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Frequency Roll-Off</strong></td>
+<td style="text-align: left;">0 dB / octave</td>
+<td style="text-align: left;">-3 dB / octave</td>
+<td style="text-align: left;">-6 dB / octave</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Energy Profile</strong></td>
+<td style="text-align: left;">Equal per Hertz</td>
+<td style="text-align: left;">Equal per Octave</td>
+<td style="text-align: left;">Heavily low-frequency weighted</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sound Quality</strong></td>
+<td style="text-align: left;">Bright, harsh hiss</td>
+<td style="text-align: left;">Balanced, soft rain</td>
+<td style="text-align: left;">Deep, muffled rumble</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary Audacity Use</strong></td>
+<td style="text-align: left;">Equipment testing, synthesizers</td>
+<td style="text-align: left;">Acoustic tuning, reference curves</td>
+<td style="text-align: left;">Relaxation tracks, low ambient FX</td>
+</tr>
+</tbody>
+</table></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/white-pink-and-brown-noise-in-audacity-explained';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

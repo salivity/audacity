@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Vinyl Crackle and Tape Saturation in Audacity - audacity</title>
+    <meta name="description" content="This guide details how to recreate the vintage warmth of analog audio by generating synthetic vinyl crackle and tape saturation directly inside Audacity. Without needing third-party commercial plugins, you can use Audacity’s native noise generation, equal">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/create-vinyl-crackle-and-tape-saturation-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Create Vinyl Crackle and Tape Saturation in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/create-vinyl-crackle-and-tape-saturation-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide details how to recreate the vintage warmth of analog audio by generating synthetic vinyl crackle and tape saturation directly inside Audacity. Without needing third-party commercial plugins, you can use Audacity’s native noise generation, equal" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="create-vinyl-crackle-and-tape-saturation-in-audacity">Create
+Vinyl Crackle and Tape Saturation in Audacity</h1>
+<p>This guide details how to recreate the vintage warmth of analog audio
+by generating synthetic vinyl crackle and tape saturation directly
+inside Audacity. Without needing third-party commercial plugins, you can
+use Audacity’s native noise generation, equalization, distortion, and
+modulation tools to simulate the imperfections of analog media.
+Following these steps will allow you to add authentic lo-fi texture,
+harmonic warmth, and subtle pitch instability to any audio project.</p>
+<hr />
+<h2 id="part-1-how-to-generate-synthetic-vinyl-crackle">Part 1: How to
+Generate Synthetic Vinyl Crackle</h2>
+<p>Vinyl record surface noise consists of two main elements: steady
+low-level hiss and irregular, sharp clicks and pops. You can synthesize
+both from scratch.</p>
+<h3 id="step-1-generate-the-base-hiss">Step 1: Generate the Base
+Hiss</h3>
+<ol type="1">
+<li>Open Audacity and create a new mono track by going to <strong>Tracks
+&gt; Add New &gt; Mono Track</strong>.</li>
+<li>Go to <strong>Generate &gt; Noise...</strong>.</li>
+<li>Set the noise type to <strong>Pink</strong> and set the amplitude to
+<strong>0.05</strong> to keep it subtle. Set the duration to match your
+project length, then click <strong>Apply</strong>.</li>
+<li>To shape the hiss into an authentic vinyl frequency profile, open
+<strong>Effect &gt; EQ and Filters &gt; Filter Curve EQ</strong>.</li>
+<li>Apply a high-pass filter cutting off frequencies below <strong>200
+Hz</strong> and a low-pass filter gently rolling off frequencies above
+<strong>7,000 Hz</strong>.</li>
+</ol>
+<h3 id="step-2-create-the-pops-and-clicks">Step 2: Create the Pops and
+Clicks</h3>
+<ol type="1">
+<li>Create a second new mono track (<strong>Tracks &gt; Add New &gt;
+Mono Track</strong>).</li>
+<li>Go to <strong>Generate &gt; Noise...</strong> and select
+<strong>White</strong> noise at an amplitude of
+<strong>0.8</strong>.</li>
+<li>Highlight this white noise track and select <strong>Effect &gt;
+Volume and Compression &gt; Noise Gate</strong>.</li>
+<li>Set the <strong>Gate threshold</strong> very high (around <strong>-2
+dB</strong> to <strong>-4 dB</strong>) and set the
+<strong>Attack</strong> and <strong>Release</strong> times to their
+absolute minimums (1 ms). This removes almost all the audio, leaving
+behind random, erratic spikes of noise that mimic dust pops.</li>
+<li>Soften the harshness of the clicks by opening <strong>Effect &gt; EQ
+and Filters &gt; Low-Pass Filter</strong> and setting the cutoff
+frequency to <strong>4,000 Hz</strong> with a 12 dB rolloff.</li>
+</ol>
+<h3 id="step-3-blend-and-mix">Step 3: Blend and Mix</h3>
+<ol type="1">
+<li>Pan the hiss slightly to one side and the pops slightly to the other
+if you prefer a wider field, or keep them centered for a vintage mono
+record effect.</li>
+<li>Lower the overall track sliders of both noise tracks so they sit
+unobtrusively beneath your main mix.</li>
+</ol>
+<hr />
+<h2 id="part-2-how-to-create-tape-saturation">Part 2: How to Create Tape
+Saturation</h2>
+<p>Analog tape saturation naturally compresses dynamic peaks, rolls off
+extreme frequency extremes, and adds subtle harmonic distortion along
+with slight pitch variations (flutter).</p>
+<h3 id="step-1-shape-the-frequency-curve">Step 1: Shape the Frequency
+Curve</h3>
+<ol type="1">
+<li>Select the track you want to treat with tape saturation.</li>
+<li>Go to <strong>Effect &gt; EQ and Filters &gt; Filter Curve
+EQ</strong>.</li>
+<li>Replicate tape's frequency limits:
+<ul>
+<li>Roll off extreme low-end rumble with a gentle slope starting below
+<strong>35 Hz</strong>.</li>
+<li>Add a subtle wide boost (+1 dB to +2 dB) around <strong>100 Hz – 250
+Hz</strong> for low-end warmth.</li>
+<li>Roll off the extreme high-end fizz starting around <strong>14,000 Hz
+– 16,000 Hz</strong>.</li>
+</ul></li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<h3 id="step-2-add-harmonic-distortion-drive">Step 2: Add Harmonic
+Distortion (Drive)</h3>
+<ol type="1">
+<li>With the track still selected, go to <strong>Effect &gt; Distortion
+and Modulation &gt; Distortion</strong>.</li>
+<li>Set the <strong>Distortion Type</strong> dropdown to <strong>Soft
+Clipping</strong> or <strong>Tape Emulation</strong> (if available in
+your version).</li>
+<li>Adjust the <strong>Drive</strong> control to between <strong>2 and
+5</strong>. This rounds off sharp transient peaks and introduces the
+odd-order harmonics characteristic of overdriven tape.</li>
+<li>Keep the <strong>Output Level</strong> around <strong>-1 dB</strong>
+to prevent digital clipping (0 dBFS overs).</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<h3 id="step-3-add-dynamic-smoothing-tape-compression">Step 3: Add
+Dynamic Smoothing (Tape Compression)</h3>
+<ol type="1">
+<li>Go to <strong>Effect &gt; Volume and Compression &gt;
+Compressor</strong>.</li>
+<li>Set the <strong>Threshold</strong> to roughly <strong>-12
+dB</strong>, the <strong>Ratio</strong> to <strong>2:1</strong>, and the
+<strong>Attack Time</strong> to around <strong>20 ms</strong>.</li>
+<li>Set the <strong>Release Time</strong> to around <strong>100
+ms</strong>.</li>
+<li>Click <strong>Apply</strong>. This glues the audio together,
+mimicking how magnetic tape gently smooths loud passages.</li>
+</ol>
+<h3 id="step-4-add-tape-wow-and-flutter-optional">Step 4: Add Tape Wow
+and Flutter (Optional)</h3>
+<ol type="1">
+<li>Go to <strong>Effect &gt; Distortion and Modulation &gt;
+Vibrato</strong>.</li>
+<li>Set the <strong>Frequency</strong> to roughly <strong>1 Hz to 3
+Hz</strong> (simulating slow motor speed irregularities).</li>
+<li>Set the <strong>Depth</strong> to a very low value, between
+<strong>0.02 and 0.05</strong>.</li>
+<li>Click <strong>Apply</strong>. A microscopic amount gives the
+impression of an aging tape motor without making the pitch sound audibly
+out of tune.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/create-vinyl-crackle-and-tape-saturation-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

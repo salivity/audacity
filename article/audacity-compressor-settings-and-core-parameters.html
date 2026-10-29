@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Compressor Settings and Core Parameters - audacity</title>
+    <meta name="description" content="Audacity’s stock Compressor reduces the dynamic range of audio by attenuating loud peaks and evening out the overall volume level. This guide provides a straightforward breakdown of the tool&#39;s core parameters—Threshold, Noise Floor, Ratio, Attack Time, an">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-compressor-settings-and-core-parameters">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Compressor Settings and Core Parameters - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-compressor-settings-and-core-parameters" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity’s stock Compressor reduces the dynamic range of audio by attenuating loud peaks and evening out the overall volume level. This guide provides a straightforward breakdown of the tool&#39;s core parameters—Threshold, Noise Floor, Ratio, Attack Time, an" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-compressor-settings-and-core-parameters">Audacity
+Compressor Settings and Core Parameters</h1>
+<p>Audacity’s stock Compressor reduces the dynamic range of audio by
+attenuating loud peaks and evening out the overall volume level. This
+guide provides a straightforward breakdown of the tool's core
+parameters—Threshold, Noise Floor, Ratio, Attack Time, and Release
+Time—along with its key processing options, enabling you to dial in
+clean, balanced audio for podcasts, music, and voiceovers.</p>
+<h3 id="threshold">Threshold</h3>
+<p>The Threshold setting determines the volume level (measured in
+decibels, or dB) at which compression begins. Any audio that exceeds
+this level is attenuated, while audio below it remains unaffected. For
+example, a threshold set to -12 dB means that only audio louder than -12
+dB will trigger the compressor.</p>
+<h3 id="noise-floor">Noise Floor</h3>
+<p>The Noise Floor slider sets the lower volume boundary for the effect.
+Audacity uses this parameter to prevent quiet background hiss, room
+tone, or low-level bleed from being artificially boosted when dynamic
+range is reduced. Any signal below this threshold is treated as silence
+or noise and is not amplified.</p>
+<h3 id="ratio">Ratio</h3>
+<p>The Ratio dictates the amount of gain reduction applied to audio
+exceeding the Threshold. Expressed as a ratio (such as 2:1, 4:1, or
+10:1), it indicates how much input level is needed to produce a 1 dB
+increase in output level. A 2:1 ratio represents gentle, transparent
+compression, while higher ratios like 6:1 or above provide aggressive
+limiting.</p>
+<h3 id="attack-time">Attack Time</h3>
+<p>Attack Time controls how quickly the compressor responds once the
+audio signal crosses the Threshold. A fast attack time (e.g., 0.1
+seconds) clamps down immediately on sudden transients like drum hits or
+loud plosives, while a slower attack allows the initial punch of the
+sound to pass through before gain reduction engages.</p>
+<h3 id="release-time">Release Time</h3>
+<p>Release Time determines how long it takes for the compressor to stop
+attenuating the signal once the audio drops back below the Threshold. A
+short release time quickly restores the volume, which can create a
+pumping effect if set too fast, whereas a longer release creates a
+smooth, natural transition back to unity gain.</p>
+<h3 id="additional-compression-options">Additional Compression
+Options</h3>
+<ul>
+<li><strong>Make-up gain for 0 dB after compressing:</strong>
+Automatically amplifies the processed signal so that the highest peak
+reaches 0 dB, restoring perceived loudness lost during gain
+reduction.</li>
+<li><strong>Compress based on Peaks:</strong> When unchecked, Audacity
+applies RMS (Root Mean Square) compression, which responds to perceived
+average volume. When checked, the compressor reacts directly to the
+absolute peak volume levels.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/audacity-compressor-settings-and-core-parameters';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

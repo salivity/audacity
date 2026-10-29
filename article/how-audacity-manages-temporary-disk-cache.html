@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Audacity Manages Temporary Disk Cache - audacity</title>
+    <meta name="description" content="Audacity relies on a dynamic temporary disk cache system to ensure fast, responsive audio processing and non-destructive editing without overwhelming system RAM. During intensive editing sessions, the software continuously writes audio data, waveform grap">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-audacity-manages-temporary-disk-cache">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Audacity Manages Temporary Disk Cache - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-audacity-manages-temporary-disk-cache" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity relies on a dynamic temporary disk cache system to ensure fast, responsive audio processing and non-destructive editing without overwhelming system RAM. During intensive editing sessions, the software continuously writes audio data, waveform grap" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-audacity-manages-temporary-disk-cache">How Audacity Manages
+Temporary Disk Cache</h1>
+<p>Audacity relies on a dynamic temporary disk cache system to ensure
+fast, responsive audio processing and non-destructive editing without
+overwhelming system RAM. During intensive editing sessions, the software
+continuously writes audio data, waveform graphics, and complete
+undo/redo states directly to the hard drive as uncompressed data chunks.
+Understanding how this cache operates—from its storage architecture to
+undo-history tracking and session cleanup—is essential for maintaining
+system stability and preventing data loss during resource-heavy
+production workflows.</p>
+<h3 id="the-temporary-storage-architecture">The Temporary Storage
+Architecture</h3>
+<p>Audacity does not keep entire audio projects in physical RAM.
+Instead, it streams audio to and from disk. In modern versions of
+Audacity (v3.0 and later), projects use a unified SQLite-based database
+format (<code>.aup3</code>). When working on an unsaved project,
+Audacity allocates a temporary working directory specified in the
+application's preferences.</p>
+<p>Within this temporary space, Audacity creates temporary database
+files along with auxiliary files:</p>
+<ul>
+<li><strong>Write-Ahead Log (<code>.aup3-wal</code>):</strong> Captures
+real-time changes and audio processing instructions before committing
+them to the primary database file.</li>
+<li><strong>Shared Memory (<code>.aup3-shm</code>):</strong> Manages
+index states and coordination between read and write threads.</li>
+</ul>
+<p>By breaking audio into small, indexed block files inside this
+database cache, Audacity reads and writes only the specific segments
+being played, processed, or recorded.</p>
+<h3 id="impact-of-intensive-editing-on-cache-size">Impact of Intensive
+Editing on Cache Size</h3>
+<p>Audio editing in Audacity is non-destructive, which directly affects
+disk usage. Every action—such as applying an effect, cutting a clip, or
+pasting audio—generates a new state in the undo history.</p>
+<p>Audacity manages this by storing the altered audio blocks in the
+temporary cache while retaining the original blocks to allow instant
+reversion via the Undo command. In an intensive session involving long
+recordings or multi-track projects, multiple layers of effects can cause
+the cache to balloon by several gigabytes within minutes. The cache only
+purges these historical states when the undo stack is cleared or the
+project is closed.</p>
+<h3 id="cache-location-and-disk-space-monitoring">Cache Location and
+Disk Space Monitoring</h3>
+<p>By default, Audacity designates the temporary cache location within
+the operating system’s standard temporary directory (e.g.,
+<code>AppData\Local\Audacity\SessionData</code> on Windows, or
+<code>/var/tmp/</code> on macOS and Linux).</p>
+<p>Because high-resolution multitrack projects can quickly exhaust
+available storage, Audacity continuously monitors the free space of the
+drive hosting the cache directory. If the disk runs dangerously low on
+space, Audacity issues low-disk-space warnings and may restrict
+operations like recording or effect processing to prevent corrupting the
+open session. Editors can change the temporary directory path to a
+dedicated high-speed drive (such as an NVMe SSD) via <strong>Preferences
+&gt; Directories</strong> to avoid filling the primary operating system
+drive.</p>
+<h3 id="session-termination-auto-recovery-and-cleanup">Session
+Termination, Auto-Recovery, and Cleanup</h3>
+<p>When an editing session concludes normally, Audacity manages cache
+clearance based on user action:</p>
+<ul>
+<li><strong>Saving the Project:</strong> The temporary database is
+consolidated, the WAL file is merged, and the finalized file is saved to
+the chosen destination. Temporary scratch files are then deleted.</li>
+<li><strong>Discarding Changes:</strong> The temporary files and undo
+states are immediately wiped from the disk.</li>
+</ul>
+<p>If Audacity or the operating system terminates unexpectedly during an
+intensive session, the temporary cache remains intact on the disk. Upon
+restarting, Audacity reads the leftover temporary database and WAL
+files, detects the abnormal shutdown, and initiates the automatic
+project recovery prompt, reconstructing the session up to the last
+written block.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-audacity-manages-temporary-disk-cache';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

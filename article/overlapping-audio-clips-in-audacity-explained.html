@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlapping Audio Clips in Audacity Explained - audacity</title>
+    <meta name="description" content="Modern versions of Audacity handle overlapping audio clips through non-destructive editing and multi-track summing, replacing the destructive behaviors found in legacy releases. This guide explains precisely what happens when audio clips overlap on the sa">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/overlapping-audio-clips-in-audacity-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Overlapping Audio Clips in Audacity Explained - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/overlapping-audio-clips-in-audacity-explained" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Modern versions of Audacity handle overlapping audio clips through non-destructive editing and multi-track summing, replacing the destructive behaviors found in legacy releases. This guide explains precisely what happens when audio clips overlap on the sa" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="overlapping-audio-clips-in-audacity-explained">Overlapping Audio
+Clips in Audacity Explained</h1>
+<p>Modern versions of Audacity handle overlapping audio clips through
+non-destructive editing and multi-track summing, replacing the
+destructive behaviors found in legacy releases. This guide explains
+precisely what happens when audio clips overlap on the same track, how
+Audacity processes overlaps across separate tracks, and how to manage
+these interactions during editing and export.</p>
+<h2 id="overlapping-clips-on-the-same-track">Overlapping Clips on the
+Same Track</h2>
+<p>In modern Audacity (version 3.1 and later), audio clips feature
+non-destructive smart clipping. If you drag one clip over another on the
+same track:</p>
+<ul>
+<li><strong>Audio Masking (Non-Destructive Trimming):</strong> The clip
+being covered is not deleted or permanently merged. Instead, the
+incoming clip visually hides (trims) the underlying section.</li>
+<li><strong>Recoverable Audio:</strong> Because edits are
+non-destructive, the covered audio remains intact in the project data.
+If you move the top clip away or drag the edge handles of the covered
+clip outward, the original audio reappears completely unaltered.</li>
+<li><strong>No Simultaneous Playback:</strong> A single track cannot
+play two clips at the exact same point in time. Audacity will only play
+the visible audio data of whichever clip occupies that timeline
+space.</li>
+</ul>
+<h2 id="overlapping-clips-across-multiple-tracks">Overlapping Clips
+Across Multiple Tracks</h2>
+<p>When audio clips overlap at the same point on the timeline across two
+or more separate tracks, Audacity treats them as simultaneous
+layers:</p>
+<ul>
+<li><strong>Real-Time Mixing:</strong> During playback, Audacity
+combines (sums) the audio from each track simultaneously. This allows
+background music, voiceovers, and sound effects to play together.</li>
+<li><strong>Risk of Digital Clipping:</strong> Summing multiple
+overlapping signals increases the overall output volume. If the combined
+levels exceed 0 dBFS on the playback meter, digital distortion
+(clipping) will occur. This requires reducing individual track gain
+sliders or applying a limiter to the master output.</li>
+</ul>
+<h2 id="crossfading-overlapping-audio">Crossfading Overlapping
+Audio</h2>
+<p>Audacity does not automatically crossfade clips that touch or overlap
+on the same track. To create a smooth transition between overlapping
+segments:</p>
+<ol type="1">
+<li>Place the two clips on separate tracks, positioning the tail of the
+first clip to overlap with the head of the second.</li>
+<li>Apply a fade-out to the upper clip and a fade-in to the lower clip,
+or select both overlapping areas and use the <strong>Crossfade
+Clips</strong> effect found under the <strong>Effect</strong> menu.</li>
+</ol>
+<h2 id="exporting-overlapping-clips">Exporting Overlapping Clips</h2>
+<p>When you export your final project to a standard audio format like
+WAV or MP3, Audacity bounces the timeline down according to track
+layout:</p>
+<ul>
+<li>Overlaps contained on distinct tracks are permanently mixed into a
+unified stereo or mono file.</li>
+<li>Any masked or hidden portions of clips on the same track are
+excluded from the exported render, ensuring the output matches exactly
+what is heard during timeline playback.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/overlapping-audio-clips-in-audacity-explained';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

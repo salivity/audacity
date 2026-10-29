@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Parametric EQ VST Plugins in Audacity - audacity</title>
+    <meta name="description" content="Audacity fully supports third-party parametric equalizer VST plugins, allowing users to perform precise, real-time frequency shaping beyond the capabilities of the native equalization tools. Modern versions of Audacity support both VST2 and VST3 formats o">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/using-parametric-eq-vst-plugins-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Using Parametric EQ VST Plugins in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/using-parametric-eq-vst-plugins-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity fully supports third-party parametric equalizer VST plugins, allowing users to perform precise, real-time frequency shaping beyond the capabilities of the native equalization tools. Modern versions of Audacity support both VST2 and VST3 formats o" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="using-parametric-eq-vst-plugins-in-audacity">Using Parametric EQ
+VST Plugins in Audacity</h1>
+<p>Audacity fully supports third-party parametric equalizer VST plugins,
+allowing users to perform precise, real-time frequency shaping beyond
+the capabilities of the native equalization tools. Modern versions of
+Audacity support both VST2 and VST3 formats on Windows, macOS, and
+Linux. This article outlines plugin compatibility requirements, the
+step-by-step process for installing and activating a third-party
+parametric equalizer, and how to use non-destructive, real-time
+processing within your audio projects.</p>
+<h3 id="plugin-compatibility-requirements">Plugin Compatibility
+Requirements</h3>
+<p>Before installing a third-party parametric EQ, ensure the plugin
+matches your Audacity installation architecture:</p>
+<ul>
+<li><strong>Bit Architecture:</strong> If you run a 64-bit version of
+Audacity (standard for recent releases), you must install 64-bit VST
+plugins. A 32-bit plugin will not be recognized by a 64-bit Audacity
+host.</li>
+<li><strong>Plugin Formats:</strong> Audacity supports VST2
+(<code>.dll</code> on Windows, <code>.vst</code> on macOS) and VST3
+(<code>.vst3</code>) formats. VST3 is recommended for better performance
+and native support for real-time adjustments.</li>
+</ul>
+<h3 id="how-to-install-and-enable-a-parametric-eq">How to Install and
+Enable a Parametric EQ</h3>
+<ol type="1">
+<li><strong>Install the Plugin:</strong> Run the installer provided by
+the plugin manufacturer. Most VST3 plugins automatically install into
+the standard system directory
+(<code>C:\Program Files\Common Files\VST3</code> on Windows,
+<code>/Library/Audio/Plug-Ins/VST3</code> on macOS).</li>
+<li><strong>Rescan Plugins in Audacity:</strong> Open Audacity and
+navigate to <strong>Effect &gt; Plugin Manager</strong>.</li>
+<li><strong>Locate the EQ:</strong> Find your new equalizer in the list.
+If it does not appear, click <strong>Rescan</strong> to detect newly
+added files.</li>
+<li><strong>Enable the Plugin:</strong> Select the equalizer, click
+<strong>Enable</strong>, and click <strong>OK</strong>.</li>
+</ol>
+<h3 id="using-real-time-parametric-equalization">Using Real-Time
+Parametric Equalization</h3>
+<p>Starting with Audacity 3.2, non-destructive real-time effects are
+natively supported, which is essential for adjusting parametric EQ bands
+while listening to playback:</p>
+<ol type="1">
+<li>Import or record your audio track.</li>
+<li>Click the <strong>Effects</strong> button located on the track
+control panel on the left side of the track.</li>
+<li>Click <strong>Add Effect</strong> in the Realtime Effects
+sidebar.</li>
+<li>Select your third-party parametric EQ from the list.</li>
+<li>Click the plugin name to open its graphical interface. You can now
+tweak frequency, Q (bandwidth), and gain nodes in real time during
+playback.</li>
+</ol>
+<h3 id="applying-destructive-processing-alternative">Applying
+Destructive Processing (Alternative)</h3>
+<p>If you prefer to render the equalization permanently into the
+waveform:</p>
+<ol type="1">
+<li>Highlight the section of audio you wish to process.</li>
+<li>Go to the top menu and select <strong>Effect</strong>.</li>
+<li>Locate your third-party equalizer under its designated category or
+manufacturer folder.</li>
+<li>Adjust your parameters in the plugin window, preview the audio, and
+click <strong>Apply</strong>.</li>
+</ol>
+<h3 id="common-free-parametric-eq-options">Common Free Parametric EQ
+Options</h3>
+<p>If you need a capable third-party parametric EQ to get started, the
+following options are fully compatible with Audacity:</p>
+<ul>
+<li><strong>Tokyo Dawn Records (TDR) Nova:</strong> A powerful dynamic
+parametric equalizer offering standard EQ control alongside multi-band
+compression features.</li>
+<li><strong>Voxengo PrimeEQ:</strong> A straightforward, user-friendly
+parametric equalizer optimized for clean tonal balance.</li>
+<li><strong>Cockos ReaEQ:</strong> Part of the ReaPlugs suite, this is a
+lightweight, unlimited-band parametric EQ ideal for high efficiency and
+low CPU usage.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/using-parametric-eq-vst-plugins-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

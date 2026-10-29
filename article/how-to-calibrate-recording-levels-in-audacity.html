@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calibrate Recording Levels in Audacity - audacity</title>
+    <meta name="description" content="Calibrating your recording input levels in Audacity ensures clean, professional audio by preventing digital clipping—a harsh form of distortion that occurs when an incoming signal exceeds the maximum volume limit. This guide explains how to monitor incomi">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-calibrate-recording-levels-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Calibrate Recording Levels in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-calibrate-recording-levels-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Calibrating your recording input levels in Audacity ensures clean, professional audio by preventing digital clipping—a harsh form of distortion that occurs when an incoming signal exceeds the maximum volume limit. This guide explains how to monitor incomi" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-calibrate-recording-levels-in-audacity">How to Calibrate
+Recording Levels in Audacity</h1>
+<p>Calibrating your recording input levels in Audacity ensures clean,
+professional audio by preventing digital clipping—a harsh form of
+distortion that occurs when an incoming signal exceeds the maximum
+volume limit. This guide explains how to monitor incoming signals,
+adjust hardware and software gain, and identify the optimal target
+decibel range to safeguard your recordings against distortion.</p>
+<h3 id="understand-the-target-decibel-range">Understand the Target
+Decibel Range</h3>
+<p>Digital audio meters measure volume in decibels full scale (dBFS),
+where 0 dB is the absolute maximum limit. Exceeding 0 dB causes
+clipping, which squares off the audio waveform and permanently ruins the
+audio data.</p>
+<p>To maintain clean audio with adequate headroom for unexpected loud
+peaks, calibrate your levels to these standards:</p>
+<ul>
+<li><strong>Target Peaks:</strong> Aim for the loudest parts of your
+performance to peak between <strong>-12 dB and -6 dB</strong>.</li>
+<li><strong>Average Level:</strong> Normal speaking or playing volume
+should fluctuate between <strong>-18 dB and -12 dB</strong>.</li>
+<li><strong>Noise Floor:</strong> When silent, your meter should ideally
+drop below <strong>-60 dB</strong>.</li>
+</ul>
+<h3 id="step-1-turn-on-meter-monitoring">Step 1: Turn on Meter
+Monitoring</h3>
+<p>Before hitting the record button, monitor your live input levels in
+Audacity:</p>
+<ol type="1">
+<li>Locate the <strong>Recording Meter Toolbar</strong> (the meter
+displaying the microphone icon).</li>
+<li>Click directly on the meter where it says <strong>"Click to Start
+Monitoring"</strong>.</li>
+<li>The meter will become active, showing real-time green, yellow, and
+red bars reflecting any sound picked up by your microphone.</li>
+</ol>
+<h3 id="step-2-adjust-hardware-gain-first">Step 2: Adjust Hardware Gain
+First</h3>
+<p>Always adjust your physical equipment before modifying software
+sliders in Audacity to maintain a strong signal-to-noise ratio.</p>
+<ol type="1">
+<li>Perform a sound check by speaking, singing, or playing at your
+absolute loudest intended volume.</li>
+<li>Locate the physical gain knob on your audio interface, mixer, or USB
+microphone.</li>
+<li>Turn the physical gain up or down until the loudest moments
+consistently bounce into the <strong>-12 dB to -6 dB</strong> zone on
+Audacity’s meter.</li>
+<li>If the meter enters the red zone (above -3 dB), lower the hardware
+gain immediately.</li>
+</ol>
+<h3 id="step-3-fine-tune-audacitys-recording-slider">Step 3: Fine-Tune
+Audacity’s Recording Slider</h3>
+<p>If your hardware does not have a physical gain knob, or if you still
+need minor adjustments:</p>
+<ol type="1">
+<li>Locate the <strong>Recording Volume Slider</strong> in Audacity (the
+slider next to the microphone icon, scaled 0 to 100%).</li>
+<li>Keep this slider at 100% (1.0) by default if using an external audio
+interface, controlling the volume strictly via hardware.</li>
+<li>If using a basic USB microphone or built-in input without physical
+gain controls, drag the slider down until your loudest vocal or
+instrument tests peak safely below -6 dB.</li>
+</ol>
+<h3 id="step-4-perform-a-test-recording-and-detect-clipping">Step 4:
+Perform a Test Recording and Detect Clipping</h3>
+<p>Once the meters look stable, verify the calibration with a test
+track:</p>
+<ol type="1">
+<li>Press <strong>Record</strong> (R) and deliver a few seconds of
+standard and loud audio.</li>
+<li>Press <strong>Stop</strong> (Spacebar).</li>
+<li>Enable visual clipping detection by going to the top menu and
+selecting <strong>View &gt; Show Clipping (on/off)</strong>.</li>
+<li>If clipping occurred, Audacity will display distinct vertical red
+lines across the waveform where the signal hit 0 dB.</li>
+<li>If you see red lines, decrease your input gain and repeat the test
+until the recorded waveform remains clear of clipping indicators.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-calibrate-recording-levels-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

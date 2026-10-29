@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can You Record MIDI Data Directly into Audacity? - audacity</title>
+    <meta name="description" content="Audacity cannot record MIDI performance data directly from a MIDI keyboard, controller, or electronic instrument. While Audacity is a powerful open-source audio editor, it is primarily designed to manipulate digitized audio waveforms rather than process r">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/can-you-record-midi-data-directly-into-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Can You Record MIDI Data Directly into Audacity? - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/can-you-record-midi-data-directly-into-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity cannot record MIDI performance data directly from a MIDI keyboard, controller, or electronic instrument. While Audacity is a powerful open-source audio editor, it is primarily designed to manipulate digitized audio waveforms rather than process r" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="can-you-record-midi-data-directly-into-audacity">Can You Record
+MIDI Data Directly into Audacity?</h1>
+<p>Audacity cannot record MIDI performance data directly from a MIDI
+keyboard, controller, or electronic instrument. While Audacity is a
+powerful open-source audio editor, it is primarily designed to
+manipulate digitized audio waveforms rather than process real-time MIDI
+event data. This guide explains Audacity’s specific limitations
+regarding MIDI, what you can do with MIDI files inside the software, and
+the best workarounds for capturing your instrument's performance.</p>
+<h2 id="audacitys-midi-limitations">Audacity’s MIDI Limitations</h2>
+<p>Audacity lacks a built-in MIDI sequencer and cannot receive incoming
+MIDI messages (such as Note On, Note Off, velocity, or pitch bend) via
+USB or standard MIDI interfaces. When you strike a key on a MIDI
+controller connected to your computer, Audacity cannot log those
+performance commands onto a track.</p>
+<p>To capture raw MIDI data for sequencing or editing, you must use a
+full-featured Digital Audio Workstation (DAW) such as Cakewalk, Reaper,
+GarageBand, Ableton Live, or Tracktion Waveform.</p>
+<h2 id="what-midi-features-audacity-does-support">What MIDI Features
+Audacity Does Support</h2>
+<p>Although Audacity cannot record MIDI input, it does offer rudimentary
+support for pre-existing MIDI files:</p>
+<ul>
+<li><strong>Importing and Viewing:</strong> You can import standard MIDI
+files (<code>.mid</code> format) into Audacity by navigating to
+<strong>File &gt; Import &gt; MIDI</strong>. The software displays the
+data as a "Note Track."</li>
+<li><strong>Basic Playback:</strong> Audacity can play back these Note
+Tracks using your operating system's built-in software synthesizer.</li>
+<li><strong>Limited Editing:</strong> Users can perform basic cut, copy,
+paste, and transposition adjustments on existing Note Tracks, though the
+editing interface is basic compared to dedicated piano-roll
+editors.</li>
+</ul>
+<h2 id="workarounds-to-capture-your-performance-in-audacity">Workarounds
+to Capture Your Performance in Audacity</h2>
+<p>If you want to use Audacity in your production workflow, you can
+still record the sound of your performance using one of the following
+methods:</p>
+<h3 id="1-record-the-instruments-audio-output">1. Record the
+Instrument's Audio Output</h3>
+<p>If your MIDI keyboard or synthesizer contains its own built-in sound
+engine and has audio outputs (such as a 1/4-inch line out or a 3.5mm
+headphone jack), connect those outputs to your computer's audio
+interface or line-in port. In Audacity, select the interface as your
+recording device and hit Record. You will capture the audio rendition of
+your performance, though not the editable MIDI notes.</p>
+<h3 id="2-route-software-instruments-via-audio-loopback">2. Route
+Software Instruments via Audio Loopback</h3>
+<p>If you are using a MIDI controller to play a standalone virtual
+instrument (VSTi) on your computer, you can record that instrument's
+sound into Audacity using software loopback:</p>
+<ul>
+<li>Enable <strong>Windows WASAPI</strong> as your Audio Host in
+Audacity.</li>
+<li>Select your speakers or headphones with the label
+<strong>(loopback)</strong> as the recording device.</li>
+<li>Arm Audacity to record while playing the standalone software
+instrument.</li>
+</ul>
+<h3 id="3-record-midi-in-a-dedicated-daw-and-export">3. Record MIDI in a
+Dedicated DAW and Export</h3>
+<p>The standard workflow for musicians is to record MIDI data directly
+into a dedicated DAW that features full MIDI sequencing and virtual
+instrument hosting. Once the MIDI performance is recorded and edited to
+your liking, render or export the track as a WAV or MP3 file, which can
+then be imported into Audacity for final mixing, mastering, or
+cleanup.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/can-you-record-midi-data-directly-into-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

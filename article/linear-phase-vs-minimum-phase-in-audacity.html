@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Phase vs Minimum Phase in Audacity - audacity</title>
+    <meta name="description" content="When processing audio in Audacity, choosing between linear phase and minimum phase filtering determines how an equalizer affects the timing and phase relationships of your sound. While minimum phase filters mimic analog circuits by altering phase to prese">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/linear-phase-vs-minimum-phase-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Linear Phase vs Minimum Phase in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/linear-phase-vs-minimum-phase-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When processing audio in Audacity, choosing between linear phase and minimum phase filtering determines how an equalizer affects the timing and phase relationships of your sound. While minimum phase filters mimic analog circuits by altering phase to prese" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="linear-phase-vs-minimum-phase-in-audacity">Linear Phase vs
+Minimum Phase in Audacity</h1>
+<p>When processing audio in Audacity, choosing between linear phase and
+minimum phase filtering determines how an equalizer affects the timing
+and phase relationships of your sound. While minimum phase filters mimic
+analog circuits by altering phase to preserve natural transient impact
+without pre-ringing, linear phase filters maintain perfect time
+alignment across all frequencies at the cost of processing latency and
+potential pre-echo artifacts. Understanding the technical differences
+and trade-offs between these two filter types will help you achieve
+cleaner mixes and transparent mastering results in Audacity.</p>
+<h2 id="understanding-phase-in-digital-audio">Understanding Phase in
+Digital Audio</h2>
+<p>Every time an equalizer boosts or cuts a frequency, it must
+manipulate time to alter that frequency's amplitude. This timing shift
+alters the audio signal's phase response—the relationship in time
+between different frequency components. How an algorithm handles this
+timing shift defines whether it operates as a minimum phase or linear
+phase filter.</p>
+<h2 id="what-is-minimum-phase-filtering">What Is Minimum Phase
+Filtering?</h2>
+<p>Minimum phase is the traditional method of digital filtering and
+closely mirrors how analog hardware behaves.</p>
+<ul>
+<li><strong>Phase Shift:</strong> As frequency bands are adjusted, the
+filter introduces varying degrees of phase shift across the frequency
+spectrum. Different frequencies are delayed by slightly different
+amounts.</li>
+<li><strong>Transient Response:</strong> Minimum phase filters only
+produce "post-ringing" (resonance that occurs immediately <em>after</em>
+a transient). Because human hearing naturally masks quieter sounds that
+immediately follow loud ones (temporal forward masking), post-ringing is
+usually imperceptible.</li>
+<li><strong>Latency:</strong> It operates with the lowest possible
+latency (delay), making it computationally lightweight and
+responsive.</li>
+</ul>
+<p>In Audacity, standard equalization tasks—such as shaping individual
+vocal takes or removing low-end rumble—benefit from minimum phase
+processing because it preserves the sharp, punchy attack of percussive
+instruments.</p>
+<h2 id="what-is-linear-phase-filtering">What Is Linear Phase
+Filtering?</h2>
+<p>Linear phase filtering uses Finite Impulse Response (FIR) algorithms
+to delay all frequencies by the exact same amount of time, resulting in
+a constant group delay.</p>
+<ul>
+<li><strong>Phase Shift:</strong> Because every frequency shifts
+uniformly, the relative phase between frequencies remains completely
+unchanged. There is zero relative phase distortion.</li>
+<li><strong>Transient Response:</strong> To keep phase symmetrical,
+linear phase filters split the ringing artifacts evenly. This introduces
+"pre-ringing"—subtle, backwards-echo resonance that occurs
+<em>before</em> a transient sound. On sharp, isolated transients (like a
+dry kick drum or snare), pre-ringing can soften the attack and make the
+sound appear smeared or muddy.</li>
+<li><strong>Latency:</strong> Linear phase filtering requires a larger
+processing buffer to analyze the signal ahead of time, which
+significantly increases latency.</li>
+</ul>
+<p>In Audacity's equalization tools, such as the Filter Curve EQ, linear
+phase algorithms are often the default or selectable approach to prevent
+phase cancellation across complex material.</p>
+<h2 id="key-differences-at-a-glance">Key Differences at a Glance</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Minimum Phase</th>
+<th style="text-align: left;">Linear Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Phase Coherence</strong></td>
+<td style="text-align: left;">Alters phase non-linearly across
+frequencies</td>
+<td style="text-align: left;">Preserves exact phase relationships</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ringing Artifacts</strong></td>
+<td style="text-align: left;">Post-ringing only (naturally masked)</td>
+<td style="text-align: left;">Symmetrical: both pre-ringing and
+post-ringing</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Transient Impact</strong></td>
+<td style="text-align: left;">Retains punchy, distinct transient
+attacks</td>
+<td style="text-align: left;">Can soften transients due to
+pre-ringing</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Latency</strong></td>
+<td style="text-align: left;">Extremely low / near-zero</td>
+<td style="text-align: left;">High (requires lookahead buffer)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Best Used For</strong></td>
+<td style="text-align: left;">Individual tracks, tracking, percussive
+sounds</td>
+<td style="text-align: left;">Mastering, parallel processing, multi-mic
+setups</td>
+</tr>
+</tbody>
+</table>
+<h2 id="when-to-choose-each-in-audacity">When to Choose Each in
+Audacity</h2>
+<h3 id="choose-minimum-phase-when">Choose Minimum Phase When:</h3>
+<ul>
+<li><strong>Working with drums and percussion:</strong> Snare hits, kick
+drums, and acoustic guitar plucks stay sharper because there is no
+pre-ringing to soften the initial transient.</li>
+<li><strong>Mixing individual tracks:</strong> For typical tone-shaping
+duties on single instruments or vocals, minimum phase is the most
+natural-sounding choice.</li>
+<li><strong>System resources are a concern:</strong> Minimum phase
+requires significantly less CPU overhead to process in Audacity.</li>
+</ul>
+<h3 id="choose-linear-phase-when">Choose Linear Phase When:</h3>
+<ul>
+<li><strong>Mastering full mixes:</strong> When applying gentle
+broad-stroke EQ adjustments to an entire stereo mix, linear phase
+prevents shifting the stereo image or smearing the balance between
+instruments.</li>
+<li><strong>Working with multi-mic recordings:</strong> If you recorded
+a drum kit or acoustic instrument with multiple microphones, minimum
+phase EQ can alter the phase alignment between the tracks, causing comb
+filtering and a hollow sound. Linear phase prevents this.</li>
+<li><strong>Parallel processing:</strong> When blending an EQ’d track
+with an identical dry track, linear phase ensures the two signals do not
+cancel each other out at the crossover frequencies.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/linear-phase-vs-minimum-phase-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

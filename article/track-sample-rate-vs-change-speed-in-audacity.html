@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Sample Rate vs Change Speed in Audacity - audacity</title>
+    <meta name="description" content="In Audacity, altering an audio clip&#39;s playback via track sample rate and using the &quot;Change Speed&quot; effect both link pitch and tempo together, meaning speeding up raises the pitch and slowing down lowers it. However, the underlying mechanisms, quality impli">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/track-sample-rate-vs-change-speed-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Track Sample Rate vs Change Speed in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/track-sample-rate-vs-change-speed-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Audacity, altering an audio clip&#39;s playback via track sample rate and using the &quot;Change Speed&quot; effect both link pitch and tempo together, meaning speeding up raises the pitch and slowing down lowers it. However, the underlying mechanisms, quality impli" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="track-sample-rate-vs-change-speed-in-audacity">Track Sample Rate
+vs Change Speed in Audacity</h1>
+<p>In Audacity, altering an audio clip's playback via track sample rate
+and using the "Change Speed" effect both link pitch and tempo together,
+meaning speeding up raises the pitch and slowing down lowers it.
+However, the underlying mechanisms, quality implications, and levels of
+control differ significantly: changing the track sample rate
+reinterprets the existing audio data at a different playback frequency
+without modifying the file's samples, whereas the Change Speed effect
+actively recalculates and resamples the audio data while keeping the
+track's defined sample rate intact.</p>
+<h3 id="changing-sample-rate-via-track-properties">Changing Sample Rate
+via Track Properties</h3>
+<p>Every digital audio track consists of a specific number of samples
+played back every second (such as 44,100 Hz or 48,000 Hz). When you
+change the track rate directly through the track control panel dropdown
+menu:</p>
+<ul>
+<li><strong>Reinterpretation, Not Processing:</strong> Audacity does not
+rewrite the audio data or calculate new values. It simply tells the
+audio engine to play the existing sequence of samples faster or slower.
+For example, if you change a 44,100 Hz track to 22,050 Hz, the audio
+will play at half speed, and the pitch will drop by an octave.</li>
+<li><strong>Limited Control:</strong> You are generally constrained to
+standard sample rate values (such as 8,000 Hz, 22,050 Hz, 44,100 Hz,
+48,000 Hz, or 96,000 Hz). This makes precise tempo or pitch adjustments
+difficult to calculate.</li>
+<li><strong>Real-Time Resampling:</strong> If the new track sample rate
+does not match your project's overall sample rate (the Project Rate
+displayed in the bottom status bar), Audacity must perform real-time
+sample rate conversion during playback and final export. Depending on
+your quality preferences, this on-the-fly conversion can cause
+unintended aliasing or high-frequency degradation.</li>
+</ul>
+<h3 id="using-the-change-speed-effect">Using the Change Speed
+Effect</h3>
+<p>The Change Speed effect
+(<code>Effect &gt; Pitch and Tempo &gt; Change Speed</code>) is a
+dedicated audio processing tool designed to alter tempo and pitch
+proportionally:</p>
+<ul>
+<li><strong>Algorithmic Resampling:</strong> The effect processes the
+waveform using high-quality interpolation algorithms, creating a newly
+calculated set of samples that represent the sped-up or slowed-down
+waveform.</li>
+<li><strong>Preserves Project Architecture:</strong> The track retains
+its original sample rate (e.g., remaining at 44,100 Hz). Because the
+track rate continues to match standard export settings, there is no risk
+of mismatched track rates causing playback artifacts or real-time
+conversion bottlenecks.</li>
+<li><strong>Granular Precision:</strong> Change Speed allows you to
+specify exact percentage changes, target durations, or speed shifts
+modeled after vinyl record playback (such as 33⅓ RPM to 45 RPM).</li>
+</ul>
+<h3 id="summary-of-differences">Summary of Differences</h3>
+<ul>
+<li><strong>Audio Data:</strong> Changing the track rate alters playback
+instructions without editing raw data. Change Speed renders newly
+interpolated audio samples directly onto the track.</li>
+<li><strong>Flexibility:</strong> Track rate adjustment is confined to
+preset sample frequencies. Change Speed offers fractional percentage and
+duration control.</li>
+<li><strong>Workflow Consistency:</strong> Changing track rate creates a
+mismatched rate within your project timeline, necessitating real-time
+conversion. Change Speed keeps your timeline unified at a consistent
+standard sample rate.</li>
+</ul>
+<p>For standard audio editing, creative sound design, and precise timing
+adjustments, using the <strong>Change Speed</strong> effect is the
+recommended approach. Adjusting the track sample rate directly is
+primarily useful for correcting audio files that imported at the wrong
+header frequency or for quick, low-overhead pitch experiments.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/track-sample-rate-vs-change-speed-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

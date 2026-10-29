@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Draw Custom EQ Curves in Audacity - audacity</title>
+    <meta name="description" content="Achieving professional voice recordings often requires compensating for a microphone&#39;s natural tonal imbalances, room resonances, or proximity effect. Audacity provides a built-in tool called Filter Curve EQ that allows users to manually draw and customiz">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-draw-custom-eq-curves-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Draw Custom EQ Curves in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-draw-custom-eq-curves-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Achieving professional voice recordings often requires compensating for a microphone&#39;s natural tonal imbalances, room resonances, or proximity effect. Audacity provides a built-in tool called Filter Curve EQ that allows users to manually draw and customiz" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-draw-custom-eq-curves-in-audacity">How to Draw Custom EQ
+Curves in Audacity</h1>
+<p>Achieving professional voice recordings often requires compensating
+for a microphone's natural tonal imbalances, room resonances, or
+proximity effect. Audacity provides a built-in tool called Filter Curve
+EQ that allows users to manually draw and customize frequency response
+curves to tailor audio to perfection. This guide explains how to open
+the Filter Curve EQ, manipulate custom curve points, apply essential
+microphone corrections, and save the settings as reusable presets.</p>
+<h3 id="accessing-the-filter-curve-eq">Accessing the Filter Curve
+EQ</h3>
+<ol type="1">
+<li>Open your audio project in Audacity.</li>
+<li>Select the audio track you want to adjust by clicking its track
+panel, or press <code>Ctrl + A</code> (<code>Cmd + A</code> on Mac) to
+select the entire project.</li>
+<li>Navigate to the top menu and select <strong>Effect</strong> &gt;
+<strong>EQ and Filters</strong> &gt; <strong>Filter Curve
+EQ</strong>.</li>
+</ol>
+<h3 id="understanding-the-interface">Understanding the Interface</h3>
+<p>The Filter Curve EQ window displays a graph where:</p>
+<ul>
+<li>The <strong>horizontal axis</strong> represents frequency in Hertz
+(Hz), spanning from sub-bass (20 Hz) to upper treble (20,000 Hz).</li>
+<li>The <strong>vertical axis</strong> represents volume adjustment in
+decibels (dB), allowing you to boost (positive dB) or cut (negative dB)
+specific frequency bands.</li>
+<li>The green line across the center at 0 dB represents your audio's
+current, unaltered state.</li>
+</ul>
+<h3 id="how-to-draw-and-edit-custom-curves">How to Draw and Edit Custom
+Curves</h3>
+<ul>
+<li><strong>Add a point:</strong> Click anywhere directly on the green
+line to create a new control point.</li>
+<li><strong>Adjust gain and frequency:</strong> Click and drag an
+existing point up or down to boost or cut the signal, or drag it left
+and right to shift the target frequency.</li>
+<li><strong>Delete a point:</strong> Click and drag a point off the top,
+bottom, or sides of the graph grid to remove it.</li>
+<li><strong>Flatten the curve:</strong> Click the
+<strong>Flatten</strong> button at the bottom of the window if you need
+to reset the curve to 0 dB and start over.</li>
+</ul>
+<h3 id="common-microphone-corrections-to-draw">Common Microphone
+Corrections to Draw</h3>
+<p>Every microphone model interacts differently with voice types, but
+several standard adjustments can be drawn to clean up most vocal
+tracks:</p>
+<ul>
+<li><strong>Low-End Rumble Removal (High-Pass):</strong> Create a point
+at approximately 80 Hz and pull the line to the left of it down to -30
+dB or lower. This eliminates mic handling noise, desk thumps, and
+low-frequency electrical hum without thinning out the voice.</li>
+<li><strong>Clearing Mud (Proximity Effect):</strong> Microphones placed
+close to the mouth often capture excessive boominess. Add a point around
+250 Hz to 350 Hz and pull it down by 2 to 4 dB in a gentle dip to
+clarify speech.</li>
+<li><strong>Reducing Harshness and Sibilance:</strong> Cheap or overly
+bright condenser microphones often produce piercing "s" sounds. Place a
+gentle dip between 5 kHz and 7 kHz of around 2 to 3 dB to soften sharp
+consonants.</li>
+<li><strong>Adding Presence or "Air":</strong> If a dynamic microphone
+sounds dull or muffled, place a point at roughly 10 kHz to 12 kHz and
+gently elevate it by 1 to 3 dB using a broad, smooth rise to enhance
+vocal breath and clarity.</li>
+</ul>
+<h3 id="previewing-saving-and-applying">Previewing, Saving, and
+Applying</h3>
+<ol type="1">
+<li>Click the <strong>Preview</strong> button in the lower-left corner
+to listen to a short sample of your audio with the custom curve
+applied.</li>
+<li>To save the curve for future recordings, click <strong>Presets &amp;
+Settings</strong> &gt; <strong>Save Preset...</strong>, name the preset
+according to your microphone model, and click <strong>OK</strong>.</li>
+<li>Once satisfied with the curve, click <strong>Apply</strong> to
+render the tonal changes onto your selected audio track.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-draw-custom-eq-curves-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
