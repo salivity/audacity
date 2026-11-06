@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Scan and Enable VST3 Plugins in Audacity - audacity</title>
+    <meta name="description" content="Audacity supports 64-bit VST3 audio plugins natively, allowing you to expand your audio editing toolkit with modern third-party equalizers, compressors, reverbs, and creative effects. This guide provides a straightforward walkthrough on how to ensure your">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-scan-and-enable-vst-3-plugins-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Scan and Enable VST3 Plugins in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-scan-and-enable-vst-3-plugins-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity supports 64-bit VST3 audio plugins natively, allowing you to expand your audio editing toolkit with modern third-party equalizers, compressors, reverbs, and creative effects. This guide provides a straightforward walkthrough on how to ensure your" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-scan-and-enable-vst3-plugins-in-audacity">How to Scan and
+Enable VST3 Plugins in Audacity</h1>
+<p>Audacity supports 64-bit VST3 audio plugins natively, allowing you to
+expand your audio editing toolkit with modern third-party equalizers,
+compressors, reverbs, and creative effects. This guide provides a
+straightforward walkthrough on how to ensure your VST3 plugins are
+correctly placed on your computer, scanned by Audacity, and enabled for
+use in your recording and mixing projects.</p>
+<h3 id="step-1-ensure-compatibility-and-placement">Step 1: Ensure
+Compatibility and Placement</h3>
+<p>Before scanning, make sure your software meets the requirements:</p>
+<ul>
+<li>You must use Audacity version 3.2 or later, as native VST3 support
+was introduced in this version.</li>
+<li>Your plugin architecture must match your Audacity architecture
+(typically 64-bit).</li>
+</ul>
+<p>Standard third-party installers place VST3 files automatically into
+dedicated system directories. If you installed a plugin manually, ensure
+the <code>.vst3</code> file or folder is located in the standard
+directory:</p>
+<ul>
+<li><strong>Windows:</strong>
+<code>C:\Program Files\Common Files\VST3</code></li>
+<li><strong>macOS:</strong> <code>/Library/Audio/Plug-Ins/VST3</code>
+(System) or <code>~/Library/Audio/Plug-Ins/VST3</code> (User)</li>
+<li><strong>Linux:</strong> <code>~/.vst3</code> or
+<code>/usr/lib/vst3</code></li>
+</ul>
+<h3 id="step-2-open-the-plugin-manager">Step 2: Open the Plugin
+Manager</h3>
+<ol type="1">
+<li>Launch Audacity.</li>
+<li>Click on the <strong>Effect</strong> menu in the top menu bar.</li>
+<li>Select <strong>Plugin Manager</strong> from the dropdown list.</li>
+</ol>
+<h3 id="step-3-scan-for-newly-installed-plugins">Step 3: Scan for Newly
+Installed Plugins</h3>
+<ol type="1">
+<li>In the Plugin Manager window, click the <strong>Rescan</strong>
+button located at the top or bottom of the window.</li>
+<li>Audacity will search the system VST3 directories for any newly
+installed or modified plugins.</li>
+<li>Once the scan is complete, locate your new plugin in the list. You
+can filter the list by changing the "Show" dropdown menu to
+<strong>New</strong> to view only recently detected plugins.</li>
+</ol>
+<h3 id="step-4-enable-the-vst3-plugin">Step 4: Enable the VST3
+Plugin</h3>
+<ol type="1">
+<li>Click on the plugin name to highlight it.</li>
+<li>Click the <strong>Enable</strong> button on the right side of the
+window. The state column for that plugin will change from
+<em>Disabled</em> or <em>New</em> to <em>Enabled</em>.</li>
+<li>Click <strong>OK</strong> to close the Plugin Manager and save your
+changes.</li>
+</ol>
+<h3 id="step-5-apply-the-plugin">Step 5: Apply the Plugin</h3>
+<p>Once enabled, your VST3 plugin is ready to use:</p>
+<ul>
+<li><strong>Destructive Processing:</strong> Highlight your audio track,
+open the <strong>Effect</strong> menu, locate your plugin (often sorted
+by category or publisher), and apply it.</li>
+<li><strong>Realtime Processing (Audacity 3.2+):</strong> Click the
+<strong>Effects</strong> button on the left track control panel of any
+audio track, select <strong>Add Effect</strong>, and choose your VST3
+plugin from the list to apply non-destructive, real-time effects.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-scan-and-enable-vst-3-plugins-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

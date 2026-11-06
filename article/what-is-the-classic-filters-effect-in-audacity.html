@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is the Classic Filters Effect in Audacity? - audacity</title>
+    <meta name="description" content="The Classic Filters effect in Audacity is an audio processing tool designed to attenuate specific frequency ranges using standard analog filter modeling. This article explains the core purpose of the Classic Filters tool, details how its Butterworth and C">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/what-is-the-classic-filters-effect-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Is the Classic Filters Effect in Audacity? - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/what-is-the-classic-filters-effect-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Classic Filters effect in Audacity is an audio processing tool designed to attenuate specific frequency ranges using standard analog filter modeling. This article explains the core purpose of the Classic Filters tool, details how its Butterworth and C" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="what-is-the-classic-filters-effect-in-audacity">What Is the
+Classic Filters Effect in Audacity?</h1>
+<p>The Classic Filters effect in Audacity is an audio processing tool
+designed to attenuate specific frequency ranges using standard analog
+filter modeling. This article explains the core purpose of the Classic
+Filters tool, details how its Butterworth and Chebyshev filter models
+function, and outlines the practical scenarios where audio editors use
+it to shape tone, remove unwanted noise, or sculpt sound design
+elements.</p>
+<h3 id="core-purpose-of-the-classic-filters-effect">Core Purpose of the
+Classic Filters Effect</h3>
+<p>The primary objective of the Classic Filters effect is to apply
+precise high-pass or low-pass filtering modeled after traditional
+electronic circuit designs. Unlike modern digital "brick-wall" filters
+that cut off frequencies abruptly, classic filters provide musical,
+analog-style attenuation slopes that gradually reduce signal levels
+above or below a chosen cutoff point.</p>
+<h3 id="supported-filter-designs">Supported Filter Designs</h3>
+<p>Audacity provides two distinct analog emulation designs within this
+effect:</p>
+<ul>
+<li><strong>Butterworth:</strong> Known for having a maximally flat
+frequency response in the passband. This means it preserves the original
+tonal character of the audio within the target frequency range without
+introducing volume peaks or dips before the cutoff slope begins. It is
+the preferred choice for transparent, natural-sounding audio
+cleanup.</li>
+<li><strong>Chebyshev Type I:</strong> Offers a steeper roll-off slope
+around the cutoff frequency compared to a Butterworth filter of the same
+order. However, it introduces an adjustable amount of ripple (variation
+in amplitude) within the passband. This filter is ideal when sharper
+cutoff precision is required and minor tonal coloration is
+acceptable.</li>
+</ul>
+<h3 id="key-adjustable-parameters">Key Adjustable Parameters</h3>
+<p>To achieve the desired sound, the Classic Filters interface provides
+several specific controls:</p>
+<ul>
+<li><strong>Filter Type:</strong> Switches the operation between a
+High-Pass filter (which lets high frequencies pass while reducing lows)
+and a Low-Pass filter (which lets low frequencies pass while reducing
+highs).</li>
+<li><strong>Filter Sub-type:</strong> Selects between the Butterworth
+and Chebyshev Type I response curves.</li>
+<li><strong>Order:</strong> Sets the steepness of the attenuation curve.
+Higher order values produce sharper roll-offs (more decibels of
+attenuation per octave), while lower orders yield gentler, more gradual
+transitions.</li>
+<li><strong>Cutoff Frequency (Hz):</strong> Defines the threshold
+frequency where the filter begins actively reducing the audio
+signal.</li>
+<li><strong>Passband Ripple (dB):</strong> Active only when using the
+Chebyshev filter, this sets the degree of allowable amplitude variation
+within the unattenuated frequency range.</li>
+</ul>
+<h3 id="practical-applications">Practical Applications</h3>
+<p>Audio editors commonly use the Classic Filters effect for several
+utility and creative tasks:</p>
+<ul>
+<li><strong>Low-End Cleanup:</strong> Using a high-pass setting to
+eliminate low-frequency rumble, mic handling noise, or HVAC hum below 80
+Hz without thinning out a vocal performance.</li>
+<li><strong>Hiss and Sibilance Reduction:</strong> Using a low-pass
+setting to roll off harsh high-frequency noise or tape hiss above 10 kHz
+to 12 kHz.</li>
+<li><strong>Band Separation:</strong> Preparing audio tracks for
+multi-band processing by splitting frequencies at matching crossover
+points.</li>
+<li><strong>Creative Sound Design:</strong> Simulating vintage radio,
+telephone speakers, or distant audio by heavily restricting the
+operational bandwidth.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/what-is-the-classic-filters-effect-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calibrate Latency in Audacity - audacity</title>
+    <meta name="description" content="Hardware latency causes newly recorded audio tracks to fall out of sync with pre-existing tracks during multi-track recording. This guide explains how to eliminate this delay by setting up Audacity&#39;s recording options, measuring your hardware&#39;s exact audi">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-calibrate-latency-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Calibrate Latency in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-calibrate-latency-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Hardware latency causes newly recorded audio tracks to fall out of sync with pre-existing tracks during multi-track recording. This guide explains how to eliminate this delay by setting up Audacity&#39;s recording options, measuring your hardware&#39;s exact audi" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-calibrate-latency-in-audacity">How to Calibrate Latency
+in Audacity</h1>
+<p>Hardware latency causes newly recorded audio tracks to fall out of
+sync with pre-existing tracks during multi-track recording. This guide
+explains how to eliminate this delay by setting up Audacity's recording
+options, measuring your hardware's exact audio lag using a loopback
+test, and applying that value to Audacity's latency compensation
+settings for perfectly synchronized audio.</p>
+<h3 id="step-1-enable-overdubbing">Step 1: Enable Overdubbing</h3>
+<p>Before measuring latency, Audacity must be configured to play
+existing tracks while recording new ones.</p>
+<ol type="1">
+<li>Open Audacity.</li>
+<li>Go to the top menu and select <strong>Transport</strong> &gt;
+<strong>Transport Options</strong>.</li>
+<li>Ensure that <strong>Overdub (on/off)</strong> is checked.</li>
+</ol>
+<h3 id="step-2-set-up-a-click-track">Step 2: Set Up a Click Track</h3>
+<p>You need an audio reference with sharp, precise peaks to measure the
+timing difference accurately.</p>
+<ol type="1">
+<li>Go to <strong>Generate</strong> &gt; <strong>Rhythm Track</strong>
+(or <strong>Click Track</strong> in older versions).</li>
+<li>Set the number of bars to <strong>2</strong> or <strong>3</strong>
+and click <strong>OK</strong>.</li>
+<li>Change your project selection format to milliseconds by clicking the
+menu on the <strong>Selection Toolbar</strong> at the bottom of the
+window and selecting <strong>Start and Length of Selection</strong>,
+then choosing <strong>hh:mm:ss + milliseconds</strong>.</li>
+</ol>
+<h3 id="step-3-perform-the-loopback-test">Step 3: Perform the Loopback
+Test</h3>
+<p>The loopback test records the output audio back into the input
+hardware to capture the time delay.</p>
+<ol type="1">
+<li>If you are using a microphone, take off your headphones, turn up the
+volume, and place the headphones directly against the microphone so the
+mic can clearly pick up the click sound. If you are using an audio
+interface, you can connect an output channel back into an input channel
+using a patch cable.</li>
+<li>Press the <strong>Record</strong> button (or press
+<strong>R</strong>).</li>
+<li>Let the click track play completely and record onto a new
+track.</li>
+<li>Press <strong>Stop</strong> (or the spacebar).</li>
+</ol>
+<h3 id="step-4-measure-the-delay">Step 4: Measure the Delay</h3>
+<ol type="1">
+<li>Zoom in closely on the first click of both tracks using the
+<strong>Zoom Tool</strong> or <strong>Ctrl + 1</strong> (Cmd + 1 on
+macOS).</li>
+<li>Locate the sharp initial peak of the click on Track 1 (the original
+generated track).</li>
+<li>Locate the corresponding peak on Track 2 (the recorded track), which
+will appear slightly to the right of the original track.</li>
+<li>Click and drag the cursor from the peak of Track 1 to the peak of
+Track 2.</li>
+<li>Check the <strong>Length</strong> field in the Selection Toolbar at
+the bottom of the screen. This number represents the latency in
+milliseconds (for example, 45 ms).</li>
+</ol>
+<h3 id="step-5-adjust-latency-compensation">Step 5: Adjust Latency
+Compensation</h3>
+<ol type="1">
+<li>Open preferences by navigating to <strong>Edit</strong> &gt;
+<strong>Preferences</strong> (or <strong>Audacity</strong> &gt;
+<strong>Preferences</strong> on macOS).</li>
+<li>Select <strong>Audio Settings</strong> (or <strong>Devices</strong>
+in older versions) from the left sidebar.</li>
+<li>Locate the <strong>Latency</strong> section.</li>
+<li>Find the <strong>Latency compensation</strong> field. This field
+normally contains a default negative number (such as -130 ms).</li>
+<li>Add your measured delay to the existing number. Because compensation
+requires shifting the track further back, subtract the measured
+milliseconds:
+<ul>
+<li><em>Formula:</em>
+<code>Current Value - Measured Latency = New Latency Compensation Value</code></li>
+<li><em>Example:</em> If the current setting is <code>-130 ms</code> and
+your measured delay was <code>45 ms</code>, enter
+<code>-175 ms</code>.</li>
+</ul></li>
+<li>Click <strong>OK</strong> to save the changes.</li>
+</ol>
+<h3 id="step-6-verify-the-calibration">Step 6: Verify the
+Calibration</h3>
+<ol type="1">
+<li>Delete the recorded test track by clicking the <strong>X</strong> in
+the top-left corner of its track control panel.</li>
+<li>Press <strong>Record</strong> again to re-record the click track
+using the same loopback setup.</li>
+<li>Zoom in on the peaks. The sharp transients of both tracks should now
+align directly on top of each other. If a slight discrepancy remains,
+fine-tune the latency compensation number by a few milliseconds until
+alignment is exact.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-calibrate-latency-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

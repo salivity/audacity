@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Real-Time Effects in Audacity - audacity</title>
+    <meta name="description" content="Modern Audacity versions (3.2 and later) support real-time, non-destructive effects processing, allowing you to apply, adjust, reorder, and bypass plugins without permanently altering the underlying waveform. This guide walks you through setting up real-t">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-use-real-time-effects-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use Real-Time Effects in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-use-real-time-effects-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Modern Audacity versions (3.2 and later) support real-time, non-destructive effects processing, allowing you to apply, adjust, reorder, and bypass plugins without permanently altering the underlying waveform. This guide walks you through setting up real-t" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-use-real-time-effects-in-audacity">How to Use Real-Time
+Effects in Audacity</h1>
+<p>Modern Audacity versions (3.2 and later) support real-time,
+non-destructive effects processing, allowing you to apply, adjust,
+reorder, and bypass plugins without permanently altering the underlying
+waveform. This guide walks you through setting up real-time effects
+stacks on individual tracks, tweaking plugin parameters during live
+playback, and managing your processing chain efficiently.</p>
+<h3 id="1-open-the-real-time-effects-sidebar">1. Open the Real-Time
+Effects Sidebar</h3>
+<ol type="1">
+<li>Open your project in Audacity and ensure your track is loaded.</li>
+<li>Navigate to the Track Control Panel on the left side of your audio
+track.</li>
+<li>Click the <strong>Effects</strong> button located next to the Mute
+and Solo buttons.</li>
+<li>Clicking this toggles the dedicated Effects sidebar on the left side
+of the track window, displaying an empty effects stack for that specific
+track.</li>
+</ol>
+<h3 id="2-add-effects-to-the-stack">2. Add Effects to the Stack</h3>
+<ol type="1">
+<li>In the open Effects sidebar, click the <strong>Add effect</strong>
+button (marked with a plus sign).</li>
+<li>Browse through your installed plugins from the dropdown list.
+Audacity supports native effects, VST3, Audio Units (macOS), and LV2
+plugins.</li>
+<li>Select an effect (such as an EQ, compressor, or reverb) to assign it
+as the first slot in the stack.</li>
+<li>Repeat this process by clicking <strong>Add effect</strong> below
+the previous plugin to stack multiple processors in series.</li>
+</ol>
+<h3 id="3-adjust-parameters-in-real-time">3. Adjust Parameters in Real
+Time</h3>
+<ol type="1">
+<li>Press the <strong>Spacebar</strong> to begin audio playback.</li>
+<li>Click the name of any effect in the stack to open its graphical
+interface.</li>
+<li>Adjust sliders, knobs, and presets while the track is playing. The
+changes to the audio signal apply instantly, allowing you to fine-tune
+settings by ear without stopping playback or rendering.</li>
+<li>Close the plugin window when finished; your settings will remain
+active.</li>
+</ol>
+<h3 id="4-reorder-bypass-and-remove-effects">4. Reorder, Bypass, and
+Remove Effects</h3>
+<ul>
+<li><strong>Reordering (Signal Flow):</strong> Audacity processes audio
+from the top of the stack to the bottom. To change the order of
+processing, click and drag an effect slot up or down within the
+stack.</li>
+<li><strong>Bypassing (Muting):</strong> Click the power icon next to
+any individual effect to enable or disable it instantly. This helps you
+perform A/B testing to hear how a specific processor impacts the
+sound.</li>
+<li><strong>Removing:</strong> Click the three-dot menu icon on the
+right side of an effect slot and select <strong>Delete</strong> (or
+choose <strong>No Effect</strong> from the plugin menu) to remove it
+from the chain.</li>
+</ul>
+<h3 id="5-finalizing-the-audio">5. Finalizing the Audio</h3>
+<p>Because the effects stack is non-destructive, the original audio data
+remains untouched during your editing session. When you are satisfied
+with the sound:</p>
+<ul>
+<li><strong>Export Directly:</strong> Going to <strong>File &gt;
+Export</strong> will automatically render the effects chain into the
+final exported audio file (such as WAV or MP3).</li>
+<li><strong>Render In-Place (Optional):</strong> If you wish to commit
+the effects permanently to save system resources, select the track and
+navigate to <strong>Tracks &gt; Mix &gt; Mix and Render</strong>.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-use-real-time-effects-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

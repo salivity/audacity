@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Audacity with Python Using Mod-Script-Pipe - audacity</title>
+    <meta name="description" content="Audacity&#39;s mod-script-pipe is a built-in module that opens an inter-process communication (IPC) channel, allowing external programming languages like Python to control the digital audio workstation. This article explains what mod-script-pipe is, how its u">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/control-audacity-with-python-using-mod-script-pipe">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Control Audacity with Python Using Mod-Script-Pipe - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/control-audacity-with-python-using-mod-script-pipe" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity&#39;s mod-script-pipe is a built-in module that opens an inter-process communication (IPC) channel, allowing external programming languages like Python to control the digital audio workstation. This article explains what mod-script-pipe is, how its u" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="control-audacity-with-python-using-mod-script-pipe">Control
+Audacity with Python Using Mod-Script-Pipe</h1>
+<p>Audacity's mod-script-pipe is a built-in module that opens an
+inter-process communication (IPC) channel, allowing external programming
+languages like Python to control the digital audio workstation. This
+article explains what mod-script-pipe is, how its underlying
+communication mechanism works, how to enable it within Audacity, and how
+Python scripts interact with it to automate complex audio editing and
+batch-processing tasks.</p>
+<h3 id="what-is-mod-script-pipe">What is mod-script-pipe?</h3>
+<p>Mod-script-pipe is an optional dynamic library module included with
+Audacity. By default, Audacity is operated via its graphical user
+interface (GUI). Mod-script-pipe bypasses manual GUI interaction by
+creating a standard named-pipe interface on the host operating system.
+This interface exposes Audacity’s internal scripting commands to
+external processes, allowing users to automate virtually any action that
+can be executed via menus, shortcuts, or macros.</p>
+<h3 id="how-the-named-pipe-mechanism-works">How the Named Pipe Mechanism
+Works</h3>
+<p>Once loaded, mod-script-pipe creates two unidirectional named pipes
+(FIFOs) in the operating system:</p>
+<ol type="1">
+<li><strong>ToSrvPipe (To Server Pipe):</strong> The external client
+(such as a Python script) writes text-based commands into this pipe to
+send instructions to Audacity.</li>
+<li><strong>FromSrvPipe (From Server Pipe):</strong> Audacity writes
+command execution statuses, error codes, and returned data into this
+pipe for the client to read.</li>
+</ol>
+<p>Communication is purely text-based. A command string is sent
+terminated by a newline character (<code>\n</code>), and Audacity
+processes the instruction and returns a response string (such as
+<code>BatchCommand finished: OK</code> or an error message) followed by
+a null character or newline to indicate completion.</p>
+<h3 id="enabling-mod-script-pipe-in-audacity">Enabling mod-script-pipe
+in Audacity</h3>
+<p>To use the interface, it must first be activated within Audacity's
+settings:</p>
+<ol type="1">
+<li>Launch Audacity.</li>
+<li>Navigate to <strong>Edit</strong> &gt; <strong>Preferences</strong>
+(or <strong>Audacity</strong> &gt; <strong>Preferences</strong> on
+macOS).</li>
+<li>Select the <strong>Modules</strong> tab from the left sidebar.</li>
+<li>Locate <strong>mod-script-pipe</strong> in the list and change its
+state from <em>New</em> or <em>Disabled</em> to
+<strong>Enabled</strong>.</li>
+<li>Click <strong>OK</strong> and restart Audacity.</li>
+</ol>
+<p>Upon restarting, Audacity initializes the named pipes, making them
+available in the system's temporary directory or local pipe
+registry.</p>
+<h3 id="interfacing-with-python">Interfacing with Python</h3>
+<p>Python connects to mod-script-pipe using standard file input/output
+operations or platform-specific pipe wrappers.</p>
+<p>On Windows, the pipes are located under
+<code>\\.\pipe\ToSrvPipe</code> and <code>\\.\pipe\FromSrvPipe</code>.
+On macOS and Linux, they are standard FIFO files typically created in
+<code>/tmp/audacity_script_pipe.to.</code> and
+<code>/tmp/audacity_script_pipe.from.</code> (appended with the user's
+UID).</p>
+<p>A basic Python automation routine follows this lifecycle:</p>
+<ol type="1">
+<li><strong>Establish Connection:</strong> The script opens the write
+pipe to send data and opens the read pipe to capture feedback.</li>
+<li><strong>Send Commands:</strong> The script writes command strings to
+the write pipe. These commands include standard Audacity macro commands
+such as <code>SelectTime: Start=0 End=10</code>,
+<code>Normalize:</code>, or
+<code>Export2: Filename="output.wav"</code>.</li>
+<li><strong>Wait for Execution:</strong> Audacity handles the operation
+synchronously, writing back status lines to the read pipe.</li>
+<li><strong>Read Output:</strong> The Python script reads from the read
+pipe until it receives an completion message (<code>OK</code> or
+<code>Failed</code>), ensuring synchronization before the next command
+is sent.</li>
+<li><strong>Close Connection:</strong> The file descriptors are closed
+once the workflow completes.</li>
+</ol>
+<h3 id="common-capabilities-and-use-cases">Common Capabilities and Use
+Cases</h3>
+<p>Using Python via mod-script-pipe allows for headless operations,
+batch conversions, programmatically splitting tracks, applying effect
+chains to hundreds of files, analyzing audio metadata, and integrating
+Audacity into automated multimedia production pipelines.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/control-audacity-with-python-using-mod-script-pipe';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

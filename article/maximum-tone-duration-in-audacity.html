@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Tone Duration in Audacity - audacity</title>
+    <meta name="description" content="This article provides an overview of the maximum duration possible when generating a single tone in Audacity. It covers the technical constraints established by the software&#39;s sample-tracking architecture across different software versions, the input limi">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/maximum-tone-duration-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Maximum Tone Duration in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/maximum-tone-duration-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides an overview of the maximum duration possible when generating a single tone in Audacity. It covers the technical constraints established by the software&#39;s sample-tracking architecture across different software versions, the input limi" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="maximum-tone-duration-in-audacity">Maximum Tone Duration in
+Audacity</h1>
+<p>This article provides an overview of the maximum duration possible
+when generating a single tone in Audacity. It covers the technical
+constraints established by the software's sample-tracking architecture
+across different software versions, the input limits of the tone
+generator interface, and the practical storage limitations that affect
+audio generation.</p>
+<h3 id="software-architecture-limits">Software Architecture Limits</h3>
+<p>The maximum duration of a generated tone depends primarily on the
+version of Audacity in use:</p>
+<ul>
+<li><strong>Audacity 2.1.3 and Newer:</strong> Modern releases of
+Audacity use a 64-bit integer to track audio samples. Under this
+architecture, the theoretical sample limit is <span
+class="math inline">\(2^{63} - 1\)</span> samples. At a standard sample
+rate of 44,100 Hz, this allows for a continuous tone lasting millions of
+years, effectively making software duration limits infinite for
+practical use.</li>
+<li><strong>Audacity 2.1.2 and Older:</strong> Older legacy versions
+tracked samples using a signed 32-bit integer, capping track length at
+<span class="math inline">\(2^{31} - 1\)</span> samples (2,147,483,647
+samples). At a sample rate of 44,100 Hz, this capped the maximum single
+tone duration at approximately 13.5 hours. At higher sample rates, such
+as 96,000 Hz, the maximum duration was reduced to approximately 6.2
+hours.</li>
+</ul>
+<h3 id="tone-generator-interface-constraints">Tone Generator Interface
+Constraints</h3>
+<p>When using the <strong>Generate &gt; Tone</strong> tool, duration is
+determined by the selection format configured in the dialog box.
+Audacity allows users to define duration using formats such as
+<code>hh:mm:ss</code>, samples, or seconds. The numerical input fields
+accept arbitrarily large numbers of hours, meaning the user interface
+does not enforce an artificial cap below the engine's sample limit.</p>
+<h3 id="practical-storage-constraints">Practical Storage
+Constraints</h3>
+<p>While modern Audacity versions can calculate tone durations of
+virtually any length, real-world generation is constrained by system
+storage and file limits:</p>
+<ul>
+<li><strong>Disk Space:</strong> Audacity works with uncompressed 32-bit
+float audio by default. A mono tone generated at 44,100 Hz requires
+approximately 10.58 megabytes of disk space per minute, or roughly 635
+megabytes per hour. A stereo tone doubles this requirement to
+approximately 1.27 gigabytes per hour.</li>
+<li><strong>Project File Limits:</strong> Since Audacity 3.0.0, projects
+are stored in a single unified database file (<code>.aup3</code>).
+SQLite limits individual database files to 140 terabytes, which sets the
+ultimate hard limit on continuous project length based on drive capacity
+and file system support.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/maximum-tone-duration-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

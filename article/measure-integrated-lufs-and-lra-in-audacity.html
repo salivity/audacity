@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measure Integrated LUFS and LRA in Audacity - audacity</title>
+    <meta name="description" content="Measuring integrated LUFS (Loudness Units relative to Full Scale) and Loudness Range (LRA) is essential for preparing audio for streaming platforms, podcasts, and broadcast standards. This guide covers how to analyze both metrics within Audacity, explaini">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/measure-integrated-lufs-and-lra-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Measure Integrated LUFS and LRA in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/measure-integrated-lufs-and-lra-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Measuring integrated LUFS (Loudness Units relative to Full Scale) and Loudness Range (LRA) is essential for preparing audio for streaming platforms, podcasts, and broadcast standards. This guide covers how to analyze both metrics within Audacity, explaini" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="measure-integrated-lufs-and-lra-in-audacity">Measure Integrated
+LUFS and LRA in Audacity</h1>
+<p>Measuring integrated LUFS (Loudness Units relative to Full Scale) and
+Loudness Range (LRA) is essential for preparing audio for streaming
+platforms, podcasts, and broadcast standards. This guide covers how to
+analyze both metrics within Audacity, explaining how to install and
+apply compliant measurement tools, interpret the resulting data, and
+ensure your mix meets modern dynamic standards.</p>
+<h2 id="understanding-integrated-lufs-and-lra">Understanding Integrated
+LUFS and LRA</h2>
+<ul>
+<li><strong>Integrated LUFS:</strong> Measures the overall average
+perceived loudness of an entire audio track from start to finish,
+filtered to reflect human hearing sensitivity. Standard targets include
+-14 LUFS for music streaming services like Spotify and YouTube, and -16
+LUFS for podcasts.</li>
+<li><strong>Loudness Range (LRA):</strong> Expressed in Loudness Units
+(LU), LRA quantifies the dynamic difference between the softest and
+loudest passages of a program, excluding extreme outliers like silent
+gaps.</li>
+</ul>
+<h2 id="setting-up-a-measurement-tool-in-audacity">Setting Up a
+Measurement Tool in Audacity</h2>
+<p>Audacity includes basic loudness normalization, but detailed readouts
+for both Integrated LUFS and LRA require an ITU-R BS.1770/EBU
+R128-compliant meter plug-in (such as the free Youlean Loudness Meter
+VST or dpMeter).</p>
+<ol type="1">
+<li>Download a compatible VST or VST3 loudness meter plug-in.</li>
+<li>Place the plug-in file in your operating system's standard audio
+plug-in directory, or run the installer.</li>
+<li>Open Audacity and go to <strong>Effect &gt; Plugin Manager</strong>
+(or <strong>Tools &gt; Plugin Manager</strong> depending on your
+version).</li>
+<li>Locate the meter plug-in in the list, click <strong>Enable</strong>,
+and click <strong>OK</strong>.</li>
+</ol>
+<h2 id="step-by-step-measurement">Step-by-Step Measurement</h2>
+<h3 id="method-1-using-real-time-effects-audacity-32-and-later">Method
+1: Using Real-Time Effects (Audacity 3.2 and Later)</h3>
+<ol type="1">
+<li>Open your audio file in Audacity.</li>
+<li>Click the <strong>Realtime Effects</strong> button on the left panel
+of the track.</li>
+<li>Select <strong>Add effect</strong>, navigate to your installed
+loudness meter, and click to insert it.</li>
+<li>Click on the effect name to open its interface.</li>
+<li>Hit <strong>Play</strong> (or press the Spacebar) to let the track
+run from beginning to end.</li>
+<li>Observe the display:
+<ul>
+<li><strong>Integrated Loudness:</strong> Shows the total LUFS
+measurement for the played audio.</li>
+<li><strong>Loudness Range (LRA):</strong> Shows the dynamic spread in
+LU.</li>
+</ul></li>
+</ol>
+<h3 id="method-2-measuring-via-the-analyze-menu">Method 2: Measuring via
+the Analyze Menu</h3>
+<p>If using an analyzer registered as an Audacity analysis effect or
+Nyquist plug-in:</p>
+<ol type="1">
+<li>Select the entire audio track by pressing <strong>Ctrl + A</strong>
+(Windows) or <strong>Cmd + A</strong> (macOS).</li>
+<li>Go to the top menu and select <strong>Analyze</strong>.</li>
+<li>Choose your loudness measurement tool from the dropdown list.</li>
+<li>Click <strong>Apply</strong> or <strong>Measure</strong>. The tool
+will process the selected audio and present a report detailing the
+Integrated LUFS and Loudness Range (LRA) without altering the audio
+waveform.</li>
+</ol>
+<h2 id="adjusting-audio-to-match-target-targets">Adjusting Audio to
+Match Target Targets</h2>
+<p>If your measured Integrated LUFS does not meet your required
+specification:</p>
+<ol type="1">
+<li>Select the entire track.</li>
+<li>Go to <strong>Effect &gt; Volume and Compression &gt; Loudness
+Normalization</strong>.</li>
+<li>Set the measurement standard to <strong>perceived loudness
+(LUFS)</strong>.</li>
+<li>Enter your target level (e.g., -14.0 LUFS for streaming or -16.0
+LUFS for podcasting) and click <strong>Apply</strong>.</li>
+<li>Re-run your analyzer to verify that both the Integrated LUFS and LRA
+fall within your project parameters.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/measure-integrated-lufs-and-lra-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

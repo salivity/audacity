@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Missing Audio Dependencies in Legacy Files - audacity</title>
+    <meta name="description" content="When opening legacy Audacity project files (.aup) that rely on externally referenced audio, missing dependencies can cause playback failures or silent gaps. This article explains why legacy projects depend on external audio, how Audacity detects and repor">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-missing-audio-dependencies-in-legacy-files">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Missing Audio Dependencies in Legacy Files - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-missing-audio-dependencies-in-legacy-files" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When opening legacy Audacity project files (.aup) that rely on externally referenced audio, missing dependencies can cause playback failures or silent gaps. This article explains why legacy projects depend on external audio, how Audacity detects and repor" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-missing-audio-dependencies-in-legacy-files">Audacity
+Missing Audio Dependencies in Legacy Files</h1>
+<p>When opening legacy Audacity project files (.aup) that rely on
+externally referenced audio, missing dependencies can cause playback
+failures or silent gaps. This article explains why legacy projects
+depend on external audio, how Audacity detects and reports missing data
+blocks, the choices available in the missing dependency dialog, and how
+to recover or migrate these projects into modern Audacity versions.</p>
+<h3 id="why-legacy-projects-have-dependencies">Why Legacy Projects Have
+Dependencies</h3>
+<p>Prior to version 3.0.0, Audacity saved projects as an XML-based
+<code>.aup</code> file linked to an accompanying <code>_data</code>
+folder. To save disk space and processing time, Audacity offered a
+default setting to read uncompressed audio files (such as WAV or AIFF)
+directly from their original location on your hard drive rather than
+copying the complete audio data into the project folder.</p>
+<p>If the original external files are renamed, moved, deleted, or stored
+on an unmounted external drive, the <code>.aup</code> file can no longer
+locate the audio data it requires to render the waveform.</p>
+<h3 id="the-missing-dependency-alert">The Missing Dependency Alert</h3>
+<p>When you open a legacy <code>.aup</code> project with unresolvable
+links, Audacity halts the loading sequence and displays a warning dialog
+titled <strong>Missing Audio Data Block Files</strong> or
+<strong>Dependencies List</strong>.</p>
+<p>This alert lists:</p>
+<ul>
+<li>The exact names of the missing audio files.</li>
+<li>The original file path where Audacity expects them to be.</li>
+<li>The number of audio block files affected by the missing media.</li>
+</ul>
+<h3 id="resolution-options-in-the-dialog">Resolution Options in the
+Dialog</h3>
+<p>Audacity provides distinct choices on how to handle the project
+during that session:</p>
+<ol type="1">
+<li><strong>Close Project Immediately with No Changes:</strong> This
+terminates the loading process without modifying the <code>.aup</code>
+file or the <code>_data</code> folder. This is the safest option if you
+accidentally moved or unmounted the source drive and need to reconnect
+it.</li>
+<li><strong>Treat Missing Audio as Silence (Temporary):</strong>
+Audacity opens the project and replaces missing sections with absolute
+silence for the current editing session. The original data linkages
+remain intact in the project file, meaning that if the missing media is
+later restored to its original directory, the audio will return on
+subsequent loads.</li>
+<li><strong>Replace Missing Audio with Silence (Permanent):</strong>
+Audacity permanently overwrites the missing blocks with silent data.
+Saving the project after selecting this option will strip the original
+dependency links, permanently destroying the reference to the original
+source files.</li>
+</ol>
+<h3 id="fixing-missing-dependencies">Fixing Missing Dependencies</h3>
+<p>To restore the audio rather than accepting silence, use the following
+steps:</p>
+<ul>
+<li><strong>Restore the File Path:</strong> Close Audacity without
+saving. Locate the missing external WAV or AIFF files on your system and
+move them back to the exact folder path listed in the initial error
+prompt. Reopen the <code>.aup</code> file.</li>
+<li><strong>Use the "Check Dependencies" Tool:</strong> Once a project
+is open, navigate to <strong>File &gt; Check Dependencies</strong>. If
+any files are still read directly from outside the project, Audacity
+displays them here. Click the <strong>Copy Selected Audio Into
+Project</strong> option to import the external files directly into the
+project's internal data storage, removing external reliance
+entirely.</li>
+</ul>
+<h3 id="migration-to-modern-audacity-aup3">Migration to Modern Audacity
+(.aup3)</h3>
+<p>Audacity 3.0.0 and newer uses a single, unified SQLite database
+format (<code>.aup3</code>). When opening an old <code>.aup</code>
+project in a modern version of Audacity, the program converts the
+project into a <code>.aup3</code> file.</p>
+<p>If dependencies are missing during this migration, Audacity will
+still display the missing dependency prompt. You must resolve these
+dependencies before saving the new <code>.aup3</code> file; otherwise,
+the converted project will permanently bake the silence into the new
+unified database. Once successfully converted with all files present,
+all audio dependencies are bundled inside the <code>.aup3</code>
+container, eliminating missing dependency issues for future
+sessions.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/audacity-missing-audio-dependencies-in-legacy-files';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

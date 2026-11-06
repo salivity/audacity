@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIAA Equalization in Audacity for Vinyl Transfers - audacity</title>
+    <meta name="description" content="Applying the RIAA phono equalization curve to vinyl transfers in Audacity restores the original tonal balance of a record when it is digitized without a hardware phono preamplifier. Vinyl records are physically cut with significantly reduced bass and boos">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/riaa-equalization-in-audacity-for-vinyl-transfers">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RIAA Equalization in Audacity for Vinyl Transfers - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/riaa-equalization-in-audacity-for-vinyl-transfers" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Applying the RIAA phono equalization curve to vinyl transfers in Audacity restores the original tonal balance of a record when it is digitized without a hardware phono preamplifier. Vinyl records are physically cut with significantly reduced bass and boos" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="riaa-equalization-in-audacity-for-vinyl-transfers">RIAA
+Equalization in Audacity for Vinyl Transfers</h1>
+<p>Applying the RIAA phono equalization curve to vinyl transfers in
+Audacity restores the original tonal balance of a record when it is
+digitized without a hardware phono preamplifier. Vinyl records are
+physically cut with significantly reduced bass and boosted treble to fit
+the audio into the physical grooves. When recording a "flat" transfer
+directly from a turntable cartridge into an audio interface, applying
+the inverse RIAA curve in Audacity artificially performs the job of a
+phono stage, bringing back natural bass frequencies and attenuating
+surface noise.</p>
+<h3 id="why-the-riaa-curve-exists">Why the RIAA Curve Exists</h3>
+<p>Gramophone records have physical limitations that prevent them from
+storing raw, uncompressed audio signals. Bass frequencies generate
+large, wide physical groove swings. If cut at full volume, these low
+frequencies would cause the stylus to jump out of the groove and
+dramatically reduce available recording time per side. Conversely, high
+frequencies correspond to tiny physical details that can easily be
+overwhelmed by the background noise of the vinyl material itself.</p>
+<p>To solve this, the Recording Industry Association of America (RIAA)
+standardized an equalization curve in the 1950s:</p>
+<ul>
+<li><strong>During mastering (cutting):</strong> Low frequencies are
+heavily cut (down by up to 20 dB at 20 Hz), and high frequencies are
+boosted (up to roughly 20 dB at 20 kHz).</li>
+<li><strong>During playback:</strong> The signal must pass through an
+inverse filter that boosts the bass back to its original level and
+reduces the treble by the exact same amount.</li>
+</ul>
+<h3 id="the-purpose-of-applying-riaa-in-audacity">The Purpose of
+Applying RIAA in Audacity</h3>
+<p>In a traditional playback setup, a hardware phono preamplifier
+applies this inverse equalization curve before the audio reaches your
+speakers or recording device. However, many modern archivists
+deliberately record a "flat transfer," routing the turntable directly
+into a high-resolution audio interface or flat microphone
+preamplifier.</p>
+<p>Applying the RIAA curve digitally in Audacity serves several critical
+functions:</p>
+<ol type="1">
+<li><strong>Restoring Tonal Balance:</strong> Without RIAA de-emphasis,
+a raw transfer sounds thin, tinny, and devoid of bass. Digital RIAA EQ
+boosts the low end and tames the sharp, piercing highs to reveal the
+intended mix.</li>
+<li><strong>Noise Reduction:</strong> High-frequency vinyl surface
+noise, such as hiss and light crackle, occurs after the record is
+pressed. When Audacity rolls off the treble to reverse the cutting
+curve, it simultaneously suppresses this physical surface noise,
+improving the signal-to-noise ratio.</li>
+<li><strong>Superior Mathematical Precision:</strong> Analog phono
+preamps rely on physical capacitors and resistors, which can introduce
+phase distortion, component tolerance errors, and thermal noise.
+Software filters in Audacity execute the RIAA mathematical formula with
+near-zero component drift and symmetrical phase response, often yielding
+a cleaner result than budget analog hardware.</li>
+<li><strong>Preserving Headroom for Restoration:</strong> Capturing
+audio flat prevents an analog preamp from clipping dynamic
+high-frequency clicks and pops. Once digitized, these transients can be
+safely repaired with click-removal tools before the RIAA filter in
+Audacity boosts the bass and finishes the transfer.</li>
+</ol>
+<p>Applying the RIAA curve in Audacity—found under the Filter Curve EQ
+effect—is ultimately the digital equivalent of a phono preamp, ensuring
+accurate reproduction of the original master recording.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/riaa-equalization-in-audacity-for-vinyl-transfers';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

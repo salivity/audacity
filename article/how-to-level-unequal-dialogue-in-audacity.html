@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Level Unequal Dialogue in Audacity - audacity</title>
+    <meta name="description" content="Balancing dialogue between two speakers with unequal volume levels in Audacity ensures a comfortable, professional listening experience. This guide explains how to balance audio whether the speakers are recorded on separate tracks or combined onto a singl">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-level-unequal-dialogue-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Level Unequal Dialogue in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-level-unequal-dialogue-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Balancing dialogue between two speakers with unequal volume levels in Audacity ensures a comfortable, professional listening experience. This guide explains how to balance audio whether the speakers are recorded on separate tracks or combined onto a singl" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-level-unequal-dialogue-in-audacity">How to Level Unequal
+Dialogue in Audacity</h1>
+<p>Balancing dialogue between two speakers with unequal volume levels in
+Audacity ensures a comfortable, professional listening experience. This
+guide explains how to balance audio whether the speakers are recorded on
+separate tracks or combined onto a single track, using manual
+adjustments like the Envelope Tool as well as automated processing like
+Compression and Loudness Normalization.</p>
+<h3 id="method-1-if-speakers-are-on-separate-tracks">Method 1: If
+Speakers Are on Separate Tracks</h3>
+<p>If each speaker was recorded on their own microphone to separate
+tracks, leveling them is straightforward:</p>
+<ol type="1">
+<li><strong>Select Track 1:</strong> Click the track control panel on
+the left of the first speaker's track.</li>
+<li><strong>Apply Loudness Normalization:</strong> Go to <strong>Effect
+&gt; Volume and Compression &gt; Loudness Normalization</strong>. Set
+the target to <strong>Perceived Loudness</strong> at <strong>-19
+LUFS</strong> (for mono) or <strong>-16 LUFS</strong> (for
+stereo/podcasts), then click <strong>Apply</strong>.</li>
+<li><strong>Repeat for Track 2:</strong> Select the second speaker's
+track and apply the exact same Loudness Normalization settings.</li>
+<li><strong>Fine-Tune:</strong> Play both tracks back together. Use the
+<strong>Gain slider</strong> (- / +) on the left panel of either track
+to make small manual adjustments by ear if one voice still sounds
+slightly louder.</li>
+</ol>
+<hr />
+<h3 id="method-2-if-both-speakers-are-on-a-single-track">Method 2: If
+Both Speakers Are on a Single Track</h3>
+<p>When two voices share a single audio track, automated effects applied
+to the whole track can sometimes react unpredictably. You have two
+reliable solutions:</p>
+<h4 id="option-a-split-the-voices-onto-two-tracks-recommended">Option A:
+Split the Voices onto Two Tracks (Recommended)</h4>
+<ol type="1">
+<li><strong>Create a New Track:</strong> Go to <strong>Tracks &gt; Add
+New &gt; Mono Track</strong> (or Stereo, matching your source).</li>
+<li><strong>Isolate the Quieter Speaker:</strong> Use the
+<strong>Selection Tool (F1)</strong> to highlight the sections where the
+quieter speaker talks.</li>
+<li><strong>Move the Audio:</strong> Cut the selected audio
+(<strong>Ctrl + X</strong> on Windows or <strong>Cmd + X</strong> on
+Mac), click onto the new track at the exact same point in time, and
+paste it (<strong>Ctrl + V</strong> / <strong>Cmd + V</strong>).</li>
+<li><strong>Normalize Separately:</strong> Once all dialogue from
+Speaker B is on the new track, apply <strong>Loudness
+Normalization</strong> to both tracks independently as described in
+Method 1.</li>
+</ol>
+<h4 id="option-b-use-the-envelope-tool-for-manual-leveling">Option B:
+Use the Envelope Tool for Manual Leveling</h4>
+<p>If you do not want to split the tracks, you can adjust clip gain
+directly on the waveform:</p>
+<ol type="1">
+<li>Select the <strong>Envelope Tool (F2)</strong> from the
+toolbar.</li>
+<li>Click on the blue line at the top or bottom edge of the waveform
+where the volume difference begins. This creates a control point.</li>
+<li>Add another control point right where you want to boost or lower the
+volume.</li>
+<li>Drag the points upward to increase the volume of the quieter
+speaker, or drag downward to decrease the louder speaker.</li>
+<li>Switch back to the <strong>Selection Tool (F1)</strong> once the
+visible waveform sizes appear roughly equal.</li>
+</ol>
+<h4 id="option-c-automated-compression-and-limiting">Option C: Automated
+Compression and Limiting</h4>
+<p>If manual editing takes too long, you can use dynamics processing to
+automatically pull loud peaks down and lift softer speech up:</p>
+<ol type="1">
+<li><strong>Select the Entire Track:</strong> Double-click the
+waveform.</li>
+<li><strong>Apply Compressor:</strong> Go to <strong>Effect &gt; Volume
+and Compression &gt; Compressor</strong>.
+<ul>
+<li>Set <strong>Threshold</strong> to roughly halfway between the quiet
+speaker's peaks and the loud speaker's peaks (typically around
+<strong>-18 dB to -24 dB</strong>).</li>
+<li>Set <strong>Ratio</strong> between <strong>2:1</strong> and
+<strong>3:1</strong> for natural-sounding dialogue.</li>
+<li>Set <strong>Attack Time</strong> to <strong>0.20 secs</strong> and
+<strong>Release Time</strong> to <strong>1.0 secs</strong>.</li>
+<li>Check <strong>Make-up gain for 0 dB after compressing</strong> and
+click <strong>Apply</strong>.</li>
+</ul></li>
+<li><strong>Apply a Limiter:</strong> Go to <strong>Effect &gt; Volume
+and Compression &gt; Limiter</strong>.
+<ul>
+<li>Set <strong>Type</strong> to <strong>Soft Limit</strong>.</li>
+<li>Set <strong>Limit to (dB)</strong> to <strong>-2.0 dB</strong> to
+prevent any sudden loud spikes from clipping.</li>
+</ul></li>
+<li><strong>Normalize:</strong> Finally, run <strong>Effect &gt; Volume
+and Compression &gt; Loudness Normalization</strong> at <strong>-16
+LUFS</strong> to bring the overall finished dialogue to an
+industry-standard level.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-level-unequal-dialogue-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

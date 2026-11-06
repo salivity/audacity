@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncompressed Audio Formats Audacity Exports Natively - audacity</title>
+    <meta name="description" content="Audacity includes built-in support for exporting several uncompressed audio formats immediately after installation without the need for external libraries like FFmpeg. Because Audacity comes bundled with the open-source libsndfile library, users can rende">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/uncompressed-audio-formats-audacity-exports-natively">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Uncompressed Audio Formats Audacity Exports Natively - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/uncompressed-audio-formats-audacity-exports-natively" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity includes built-in support for exporting several uncompressed audio formats immediately after installation without the need for external libraries like FFmpeg. Because Audacity comes bundled with the open-source libsndfile library, users can rende" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1
+id="uncompressed-audio-formats-audacity-exports-natively">Uncompressed
+Audio Formats Audacity Exports Natively</h1>
+<p>Audacity includes built-in support for exporting several uncompressed
+audio formats immediately after installation without the need for
+external libraries like FFmpeg. Because Audacity comes bundled with the
+open-source <code>libsndfile</code> library, users can render pristine,
+lossless, and uncompressed pulse-code modulation (PCM) audio directly
+out of the box. This guide lists the uncompressed formats Audacity
+exports natively and explains the configuration options available for
+each.</p>
+<h3 id="1-wav-microsoft-32-bit-float-or-1624-bit-pcm">1. WAV (Microsoft
+32-bit float or 16/24-bit PCM)</h3>
+<p>WAV is the default and most widely used uncompressed format in
+Audacity. When selecting standard export options, Audacity can
+generate:</p>
+<ul>
+<li><strong>Signed 16-bit PCM:</strong> The standard CD-audio quality
+format.</li>
+<li><strong>Signed 24-bit PCM:</strong> The industry standard for studio
+recording and mastering.</li>
+<li><strong>32-bit float PCM:</strong> Matches Audacity’s internal
+32-bit processing engine, preserving full dynamic range and preventing
+digital clipping within the file.</li>
+</ul>
+<h3 id="2-aiff-applesgi">2. AIFF (Apple/SGI)</h3>
+<p>AIFF (Audio Interchange File Format) is Apple’s equivalent to WAV.
+Audacity handles AIFF natively, making it fully compatible with macOS
+workflows without extra software:</p>
+<ul>
+<li><strong>Signed 16-bit PCM</strong></li>
+<li><strong>Signed 24-bit PCM</strong></li>
+<li><strong>32-bit float PCM</strong></li>
+</ul>
+<h3 id="3-au-sunnext-audio">3. AU (Sun/NeXT Audio)</h3>
+<p>AU is a classic UNIX/Sun Microsystems audio container. Audacity
+relies on this format internally for block files, but it also allows
+users to export standard <code>.au</code> files natively using:</p>
+<ul>
+<li>16-bit, 24-bit, and 32-bit linear PCM</li>
+<li>32-bit floating-point PCM</li>
+</ul>
+<h3 id="4-raw-headerless-audio-data">4. RAW (Headerless Audio Data)</h3>
+<p>For specialized workflows, programming, or forensic audio analysis,
+Audacity can export pure uncompressed audio streams without headers:</p>
+<ul>
+<li><strong>Raw Data (<code>.raw</code> or custom extension):</strong>
+Contains only raw PCM samples.</li>
+<li>Configurable encoding schemes include signed/unsigned 8-bit, 16-bit,
+24-bit, 32-bit integers, and 32/64-bit floating-point formats, as well
+as customizable byte order (Little-Endian or Big-Endian).</li>
+</ul>
+<hr />
+<h3 id="how-to-access-native-uncompressed-exports-in-audacity">How to
+Access Native Uncompressed Exports in Audacity</h3>
+<ol type="1">
+<li>Go to <strong>File &gt; Export Audio</strong>.</li>
+<li>To export standard uncompressed formats quickly, select
+<strong>WAV</strong> or <strong>AIFF</strong> directly from the
+<strong>Format</strong> dropdown menu.</li>
+<li>To access custom uncompressed formats, raw PCM, or alternative bit
+depths, set the format to <strong>Other uncompressed
+files</strong>.</li>
+<li>Under the format options, choose the desired container (such as
+<strong>WAV</strong>, <strong>AIFF</strong>, <strong>AU</strong>, or
+<strong>RAW</strong>) and select the specific uncompressed
+<strong>Encoding</strong> (such as Signed 24-bit PCM or 32-bit
+float).</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/uncompressed-audio-formats-audacity-exports-natively';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

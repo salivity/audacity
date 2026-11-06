@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure Core Audio Inputs for Audacity on macOS - audacity</title>
+    <meta name="description" content="Setting up Core Audio inputs in Audacity on macOS allows you to capture clear, low-latency sound from your computer&#39;s built-in microphone, USB mics, or external audio interfaces. This guide walks you through granting necessary macOS privacy permissions, s">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/configure-core-audio-inputs-for-audacity-on-mac-os">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Configure Core Audio Inputs for Audacity on macOS - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/configure-core-audio-inputs-for-audacity-on-mac-os" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Setting up Core Audio inputs in Audacity on macOS allows you to capture clear, low-latency sound from your computer&#39;s built-in microphone, USB mics, or external audio interfaces. This guide walks you through granting necessary macOS privacy permissions, s" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="configure-core-audio-inputs-for-audacity-on-macos">Configure
+Core Audio Inputs for Audacity on macOS</h1>
+<p>Setting up Core Audio inputs in Audacity on macOS allows you to
+capture clear, low-latency sound from your computer's built-in
+microphone, USB mics, or external audio interfaces. This guide walks you
+through granting necessary macOS privacy permissions, selecting Core
+Audio as your host, choosing your recording hardware, and verifying your
+input levels for a seamless recording session.</p>
+<h3 id="1-enable-microphone-permissions-in-macos">1. Enable Microphone
+Permissions in macOS</h3>
+<p>Before opening Audacity, ensure macOS allows the application to
+access your audio inputs:</p>
+<ol type="1">
+<li>Open <strong>System Settings</strong> (or <strong>System
+Preferences</strong> on older macOS versions).</li>
+<li>Navigate to <strong>Privacy &amp; Security</strong> &gt;
+<strong>Microphone</strong>.</li>
+<li>Locate <strong>Audacity</strong> in the list and toggle the switch
+to the <strong>On</strong> position.</li>
+<li>If Audacity is already open, quit and restart the application to
+apply the changes.</li>
+</ol>
+<h3 id="2-connect-your-audio-hardware">2. Connect Your Audio
+Hardware</h3>
+<p>If you are using an external microphone, mixer, or audio
+interface:</p>
+<ol type="1">
+<li>Connect the device to your Mac via USB, Thunderbolt, or the 3.5mm
+jack.</li>
+<li>Confirm the Mac detects the hardware by checking <strong>System
+Settings</strong> &gt; <strong>Sound</strong> &gt;
+<strong>Input</strong>.</li>
+<li>For multi-channel interfaces, launch the macOS <strong>Audio MIDI
+Setup</strong> utility (located in Applications &gt; Utilities) to
+confirm the sample rate and channel layout.</li>
+</ol>
+<h3 id="3-configure-the-audio-host-in-audacity">3. Configure the Audio
+Host in Audacity</h3>
+<p>Audacity uses Core Audio by default on macOS, as it is Apple’s native
+audio infrastructure:</p>
+<ol type="1">
+<li>Open <strong>Audacity</strong>.</li>
+<li>Click the <strong>Audio Setup</strong> button located in the top
+toolbar.</li>
+<li>Select <strong>Host</strong> and ensure <strong>Core Audio</strong>
+is checked. (On macOS, Core Audio is typically the only available and
+required option).</li>
+</ol>
+<h3 id="4-select-the-recording-device-and-channels">4. Select the
+Recording Device and Channels</h3>
+<ol type="1">
+<li>Click the <strong>Audio Setup</strong> button again.</li>
+<li>Hover over <strong>Recording Device</strong> and select your
+hardware (e.g., <em>Built-in Microphone</em>, <em>USB Audio CODEC</em>,
+or your specific interface model).</li>
+<li>Hover over <strong>Recording Channels</strong> and choose either
+<strong>1 (Mono) Recording Channel</strong> for single
+microphones/instruments or <strong>2 (Stereo) Recording
+Channels</strong> for stereo setups.</li>
+</ol>
+<p><em>Note: You can also configure these options by navigating to
+<strong>Audacity</strong> &gt; <strong>Preferences</strong> &gt;
+<strong>Audio Settings</strong>.</em></p>
+<h3 id="5-verify-and-monitor-input-levels">5. Verify and Monitor Input
+Levels</h3>
+<ol type="1">
+<li>Look at the <strong>Recording Meter</strong> toolbar at the top of
+the Audacity interface.</li>
+<li>Click <strong>Click to Start Monitoring</strong> (or click the
+microphone icon on the meter).</li>
+<li>Speak into your microphone or play your instrument. The green meter
+bars should move actively.</li>
+<li>Adjust the <strong>Recording Volume slider</strong> (the microphone
+slider next to the meter) so that peaks consistently land between -12 dB
+and -6 dB to prevent audio clipping and distortion.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/configure-core-audio-inputs-for-audacity-on-mac-os';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

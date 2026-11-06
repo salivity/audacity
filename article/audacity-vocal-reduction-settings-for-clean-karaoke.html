@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Vocal Reduction Settings for Clean Karaoke - audacity</title>
+    <meta name="description" content="Creating a clean karaoke track in Audacity requires fine-tuning the built-in Vocal Reduction and Isolation effect to target vocal frequencies while preserving the backing instrumentation. This guide breaks down the optimal parameter settings—including Act">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-vocal-reduction-settings-for-clean-karaoke">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Vocal Reduction Settings for Clean Karaoke - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-vocal-reduction-settings-for-clean-karaoke" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Creating a clean karaoke track in Audacity requires fine-tuning the built-in Vocal Reduction and Isolation effect to target vocal frequencies while preserving the backing instrumentation. This guide breaks down the optimal parameter settings—including Act" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-vocal-reduction-settings-for-clean-karaoke">Audacity
+Vocal Reduction Settings for Clean Karaoke</h1>
+<p>Creating a clean karaoke track in Audacity requires fine-tuning the
+built-in Vocal Reduction and Isolation effect to target vocal
+frequencies while preserving the backing instrumentation. This guide
+breaks down the optimal parameter settings—including Action, Strength,
+and Low/High Cut frequencies—to remove center-panned lead vocals with
+minimal audio degradation and phase distortion.</p>
+<h3 id="1-the-core-effect-settings">1. The Core Effect Settings</h3>
+<p>To access the tool, select your entire stereo track
+(<code>Ctrl + A</code> or <code>Cmd + A</code>), navigate to
+<strong>Effect &gt; Special &gt; Vocal Reduction and Isolation</strong>
+(or <strong>Effect &gt; Vocal Reduction and Isolation</strong> in older
+versions), and apply the following baseline values:</p>
+<ul>
+<li><strong>Action:</strong> <strong>Remove Vocals</strong>
+<ul>
+<li><em>Why:</em> Unlike "Remove Center to Mono," which flattens your
+audio into a single channel, "Remove Vocals" preserves the original
+stereo separation of the instruments while subtracting audio identical
+in both channels (the center).</li>
+</ul></li>
+<li><strong>Strength:</strong> <strong>1.00</strong>
+<ul>
+<li><em>Why:</em> A value of 1.0 removes the calculated center channel
+completely. Raising this above 1.0 (e.g., to 1.1 or 1.2) can eliminate
+stubborn vocal remnants, but values above 1.3 usually introduce
+noticeable phase hollows and warbling artifacts into the
+instruments.</li>
+</ul></li>
+<li><strong>Low Cut for Vocals (Hz):</strong> <strong>100 Hz to 120
+Hz</strong>
+<ul>
+<li><em>Why:</em> Male and female vocals rarely fall below 100 Hz, but
+kick drums and bass guitars do. Setting this cutoff preserves your
+low-end rhythm section so the track keeps its punch.</li>
+</ul></li>
+<li><strong>High Cut for Vocals (Hz):</strong> <strong>7,000 Hz to 9,000
+Hz</strong>
+<ul>
+<li><em>Why:</em> Sibilance ("s" and "t" sounds) reaches high
+frequencies, but cymbals, hi-hats, and synth sparkle live primarily
+above 8,000 Hz. Capping the vocal reduction between 7,000 Hz and 9,000
+Hz removes most vocal presence while keeping the track's treble
+crisp.</li>
+</ul></li>
+</ul>
+<hr />
+<h3 id="2-fine-tuning-for-problem-tracks">2. Fine-Tuning for Problem
+Tracks</h3>
+<p>No two mixes are identical. If the baseline settings leave behind
+unwanted artifacts or vocals, adjust these parameters accordingly:</p>
+<h4 id="dealing-with-vocal-bleed-and-reverb">Dealing with Vocal Bleed
+and Reverb</h4>
+<p>Vocal reverb is typically spread across the left and right channels
+rather than centered. Vocal reduction tools cannot fully detect stereo
+reverb.</p>
+<ul>
+<li><strong>Adjustment:</strong> Increase <strong>Strength</strong> to
+<strong>1.15</strong>.</li>
+<li>If vocal echoes persist, apply a subtle noise gate or use Audacity's
+<strong>Noise Reduction</strong> tool on the leftover vocal tails in the
+instrumental sections.</li>
+</ul>
+<h4 id="restoring-missing-bass-or-drums">Restoring Missing Bass or
+Drums</h4>
+<p>If your kick drum or bassline sounds thin or hollow after applying
+the effect:</p>
+<ul>
+<li><strong>Adjustment:</strong> Raise the <strong>Low Cut for
+Vocals</strong> to <strong>150 Hz</strong> or <strong>180 Hz</strong>.
+This tells Audacity to ignore lower frequencies completely, protecting
+the bassline at the cost of leaving low-end vocal resonance
+untouched.</li>
+</ul>
+<h4 id="removing-high-sibilance-s-sounds">Removing High Sibilance ("S"
+Sounds)</h4>
+<p>If sharp vocal hisses remain audible:</p>
+<ul>
+<li><strong>Adjustment:</strong> Increase the <strong>High Cut for
+Vocals</strong> up to <strong>10,000 Hz</strong> or <strong>12,000
+Hz</strong>. Note that this may slightly dull high-frequency
+percussion.</li>
+</ul>
+<hr />
+<h3 id="3-step-by-step-execution-workflow">3. Step-by-Step Execution
+Workflow</h3>
+<ol type="1">
+<li>Import a high-quality, uncompressed audio file (WAV or FLAC). MP3
+compression adds stereo phase artifacts that degrade vocal removal
+results.</li>
+<li>Duplicate the track (<code>Ctrl + D</code> or <code>Cmd + D</code>)
+to keep a clean backup.</li>
+<li>Highlight the track and open <strong>Vocal Reduction and
+Isolation</strong>.</li>
+<li>Input the baseline values:
+<ul>
+<li><strong>Action:</strong> Remove Vocals</li>
+<li><strong>Strength:</strong> 1.00</li>
+<li><strong>Low Cut:</strong> 120 Hz</li>
+<li><strong>High Cut:</strong> 8000 Hz</li>
+</ul></li>
+<li>Click <strong>Preview</strong> to evaluate a loud section of the
+song containing both vocals and heavy instrumentation.</li>
+<li>Adjust the <strong>Strength</strong> in increments of 0.05 until you
+find the sweet spot between vocal suppression and instrumental
+clarity.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/audacity-vocal-reduction-settings-for-clean-karaoke';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

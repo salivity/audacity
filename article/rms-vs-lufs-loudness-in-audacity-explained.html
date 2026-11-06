@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMS vs. LUFS Loudness in Audacity Explained - audacity</title>
+    <meta name="description" content="When working with audio in Audacity, understanding volume measurement is critical for producing balanced mixes, podcasts, and master tracks that meet industry standards. While both Root Mean Square (RMS) and Loudness Units relative to Full Scale (LUFS) me">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/rms-vs-lufs-loudness-in-audacity-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RMS vs. LUFS Loudness in Audacity Explained - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/rms-vs-lufs-loudness-in-audacity-explained" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When working with audio in Audacity, understanding volume measurement is critical for producing balanced mixes, podcasts, and master tracks that meet industry standards. While both Root Mean Square (RMS) and Loudness Units relative to Full Scale (LUFS) me" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="rms-vs-lufs-loudness-in-audacity-explained">RMS vs. LUFS
+Loudness in Audacity Explained</h1>
+<p>When working with audio in Audacity, understanding volume measurement
+is critical for producing balanced mixes, podcasts, and master tracks
+that meet industry standards. While both Root Mean Square (RMS) and
+Loudness Units relative to Full Scale (LUFS) measure average signal
+levels over time rather than instant peaks, they do so using
+fundamentally different methods. RMS measures raw, unweighted electrical
+signal power, whereas LUFS applies psychoacoustic filtering to simulate
+how the human ear actually hears loudness. Understanding these
+distinctions allows you to choose the right metering format in Audacity
+depending on whether you are mastering for streaming services,
+broadcasting, or audiobook production.</p>
+<h2 id="what-is-rms-loudness">What Is RMS Loudness?</h2>
+<p>Root Mean Square (RMS) is a mathematical calculation that measures
+the average power of an audio waveform over time. Rather than
+identifying the loudest instantaneous transient (peak), RMS provides an
+estimate of continuous energy.</p>
+<p>In audio software like Audacity, RMS treats all audio frequencies
+equally. A 40 Hz sub-bass rumble produces the exact same RMS value as a
+3 kHz vocal presence tone if their electrical signal amplitudes are
+identical.</p>
+<p>Because the human auditory system is not equally sensitive across the
+entire frequency spectrum, a pure RMS measurement does not necessarily
+reflect how loud a track <em>sounds</em> to a listener. A bass-heavy mix
+can register a high RMS reading while sounding noticeably quieter to the
+human ear than a mid-range heavy mix with a lower RMS reading.</p>
+<h2 id="what-is-lufs-loudness">What Is LUFS Loudness?</h2>
+<p>LUFS (Loudness Units relative to Full Scale), internationally
+standardized under ITU-R BS.1770 and EBU R128, measures perceived
+loudness. It is functionally equivalent to LKFS (Loudness, K-weighted,
+relative to Full Scale).</p>
+<p>LUFS solves the limitations of RMS by running the audio signal
+through a "K-weighting" filter before calculating the average. This
+filter mimics human auditory perception by:</p>
+<ul>
+<li>Attenuating low frequencies, where the ear is less sensitive.</li>
+<li>Slightly boosting frequencies between 2 kHz and 4 kHz, where the
+human ear is most sensitive to presence and intelligibility.</li>
+</ul>
+<p>Additionally, standard LUFS calculations implement a gating
+mechanism. Gating pauses the measurement during silences or very quiet
+passages so that long pauses do not falsely lower the measured loudness
+of the track as a whole.</p>
+<p>LUFS is measured in three ways:</p>
+<ul>
+<li><strong>Integrated LUFS:</strong> Measures the perceived loudness
+across the entirety of an audio file from start to finish.</li>
+<li><strong>Short-Term LUFS:</strong> Measures loudness over a sliding
+three-second window to evaluate section-by-section loudness.</li>
+<li><strong>Momentary LUFS:</strong> Measures loudness over an un-gated
+400-millisecond window for real-time monitoring.</li>
+</ul>
+<h2 id="key-differences-between-rms-and-lufs">Key Differences Between
+RMS and LUFS</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">RMS</th>
+<th style="text-align: left;">LUFS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Measurement Basis</strong></td>
+<td style="text-align: left;">Pure mathematical electrical power</td>
+<td style="text-align: left;">Human psychoacoustic perception</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Frequency Response</strong></td>
+<td style="text-align: left;">Completely flat across all
+frequencies</td>
+<td style="text-align: left;">K-weighted filter matching human ear
+sensitivity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gating</strong></td>
+<td style="text-align: left;">No gating (includes pauses and
+silence)</td>
+<td style="text-align: left;">Gated (disregards quiet passages below a
+threshold)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary Use Cases</strong></td>
+<td style="text-align: left;">Audiobooks (ACX standards), hardware
+monitoring</td>
+<td style="text-align: left;">Streaming services (Spotify, YouTube,
+Apple), TV/radio broadcast</td>
+</tr>
+</tbody>
+</table>
+<h2 id="working-with-rms-and-lufs-in-audacity">Working with RMS and LUFS
+in Audacity</h2>
+<p>Audacity includes built-in tools to measure and apply both loudness
+standards:</p>
+<h3 id="loudness-normalization-effect">Loudness Normalization
+Effect</h3>
+<p>Found under <strong>Effect &gt; Volume and Compression &gt; Loudness
+Normalization</strong>, Audacity provides options for both
+standards:</p>
+<ul>
+<li><strong>Perceived Loudness (LUFS):</strong> Audacity normalizes
+using integrated LUFS. This is the ideal choice when preparing audio for
+streaming platforms like Spotify (target: -14 LUFS), YouTube (target:
+-14 LUFS), or podcasts (target: -16 LUFS for stereo, -19 LUFS for
+mono).</li>
+<li><strong>RMS:</strong> Audacity normalizes by total continuous power.
+This option is commonly required when producing audiobooks for platforms
+like ACX/Audible, which strictly mandate that submissions fall between
+-23 dB and -18 dB RMS.</li>
+</ul>
+<h3 id="measuring-levels-in-audacity">Measuring Levels in Audacity</h3>
+<p>To analyze existing audio without altering its volume:</p>
+<ul>
+<li><strong>For RMS:</strong> Select an audio track and navigate to
+<strong>Analyze &gt; Measure RMS</strong> to get an accurate decibel
+readout of the selection's average power. The <strong>Analyze &gt;
+Contrast</strong> tool can also be used to evaluate RMS differences
+between foreground and background audio.</li>
+<li><strong>For LUFS:</strong> While Audacity can normalize directly to
+a target LUFS value, full real-time metering often benefits from loading
+third-party VST plugins (such as Youlean Loudness Meter) into Audacity’s
+plugin manager to visualize Integrated, Short-Term, and Momentary LUFS
+simultaneously.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/rms-vs-lufs-loudness-in-audacity-explained';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

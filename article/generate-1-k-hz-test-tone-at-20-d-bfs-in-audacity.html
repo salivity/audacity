@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate 1 kHz Test Tone at -20 dBFS in Audacity - audacity</title>
+    <meta name="description" content="This guide explains how to generate a standard 1 kHz sine wave reference tone at -20 dBFS using Audacity for broadcast audio alignment. Generating an accurate reference tone ensures audio levels match standardized broadcast delivery specifications across">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/generate-1-k-hz-test-tone-at-20-d-bfs-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Generate 1 kHz Test Tone at -20 dBFS in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/generate-1-k-hz-test-tone-at-20-d-bfs-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to generate a standard 1 kHz sine wave reference tone at -20 dBFS using Audacity for broadcast audio alignment. Generating an accurate reference tone ensures audio levels match standardized broadcast delivery specifications across" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="generate-1-khz-test-tone-at--20-dbfs-in-audacity">Generate 1 kHz
+Test Tone at -20 dBFS in Audacity</h1>
+<p>This guide explains how to generate a standard 1 kHz sine wave
+reference tone at -20 dBFS using Audacity for broadcast audio alignment.
+Generating an accurate reference tone ensures audio levels match
+standardized broadcast delivery specifications across playback systems,
+mixing consoles, and transmission hardware.</p>
+<h3 id="step-1-set-the-project-rate">Step 1: Set the Project Rate</h3>
+<p>Broadcast standards (such as EBU R128 and ATSC A/85) typically
+require a 48 kHz sampling rate.</p>
+<ol type="1">
+<li>Open Audacity.</li>
+<li>In the bottom-left corner of the interface (or via <strong>Audio
+Setup</strong> &gt; <strong>Audio Settings</strong> depending on your
+Audacity version), ensure the <strong>Project Sample Rate</strong> is
+set to <strong>48000 Hz</strong>.</li>
+</ol>
+<h3 id="step-2-open-the-tone-generator">Step 2: Open the Tone
+Generator</h3>
+<ol type="1">
+<li>Navigate to the top menu and select <strong>Generate</strong>.</li>
+<li>Click <strong>Tone...</strong> to open the tone generator dialog
+box.</li>
+</ol>
+<h3 id="step-3-configure-tone-parameters">Step 3: Configure Tone
+Parameters</h3>
+<p>Enter the following settings to create the reference signal:</p>
+<ul>
+<li><strong>Waveform:</strong> Select <strong>Sine</strong>.</li>
+<li><strong>Frequency (Hz):</strong> Enter <code>1000</code> (which
+corresponds to 1 kHz).</li>
+<li><strong>Amplitude:</strong> Enter <code>0.1</code>. <em>(Audacity
+uses a linear scale from 0.0 to 1.0 for amplitude. In digital audio, -20
+dBFS equals a linear amplitude of 0.1, calculated as <span
+class="math inline">\(10^{(-20/20)}\)</span>.)</em></li>
+<li><strong>Duration:</strong> Set the desired length for your alignment
+tone (standard broadcast line-up tones are typically 30 to 60
+seconds).</li>
+</ul>
+<p>Click <strong>Generate</strong> (or <strong>OK</strong>) to render
+the track onto the timeline.</p>
+<h3 id="step-4-verify-the-output-level">Step 4: Verify the Output
+Level</h3>
+<ol type="1">
+<li>Locate the <strong>Playback Meter</strong> at the top of the
+workspace.</li>
+<li>Press the <strong>Spacebar</strong> to play the generated tone.</li>
+<li>Observe the meter bars. Both channels (or the single mono channel)
+should peak steadily at exactly <strong>-20 dB</strong>.</li>
+</ol>
+<h3 id="step-5-export-the-alignment-file">Step 5: Export the Alignment
+File</h3>
+<ol type="1">
+<li>Go to <strong>File</strong> &gt; <strong>Export
+Audio...</strong></li>
+<li>Choose <strong>WAV (Microsoft)</strong> as the format.</li>
+<li>Select <strong>Signed 24-bit PCM</strong> (or 16-bit PCM depending
+on delivery requirements).</li>
+<li>Set the sample rate to <strong>48000 Hz</strong>.</li>
+<li>Save the file for use as a broadcast alignment asset.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/generate-1-k-hz-test-tone-at-20-d-bfs-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

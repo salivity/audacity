@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Process Multiple Files with Audacity Macros - audacity</title>
+    <meta name="description" content="Audacity includes a powerful batch processing feature called Macros that allows you to apply a defined sequence of effects, edits, and export commands across hundreds of audio files automatically. Instead of opening and editing each recording individually">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/batch-process-multiple-files-with-audacity-macros">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Batch Process Multiple Files with Audacity Macros - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/batch-process-multiple-files-with-audacity-macros" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity includes a powerful batch processing feature called Macros that allows you to apply a defined sequence of effects, edits, and export commands across hundreds of audio files automatically. Instead of opening and editing each recording individually" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="batch-process-multiple-files-with-audacity-macros">Batch Process
+Multiple Files with Audacity Macros</h1>
+<p>Audacity includes a powerful batch processing feature called Macros
+that allows you to apply a defined sequence of effects, edits, and
+export commands across hundreds of audio files automatically. Instead of
+opening and editing each recording individually, you can configure your
+processing chain once and run it across an entire folder of audio files,
+dramatically reducing editing time while ensuring uniform audio quality
+throughout your project.</p>
+<h3 id="step-1-create-or-configure-your-macro">Step 1: Create or
+Configure Your Macro</h3>
+<p>Before processing a batch of files, you need a defined Macro:</p>
+<ol type="1">
+<li>Open Audacity.</li>
+<li>Navigate to <strong>Tools</strong> &gt; <strong>Macros</strong> (or
+<strong>Tools</strong> &gt; <strong>Manage Macros</strong> depending on
+your version).</li>
+<li>Click <strong>New</strong> in the left panel to create a new macro,
+and name it (e.g., "Podcast Batch").</li>
+<li>Use the <strong>Insert</strong> button on the right to add the
+commands and effects you want to apply in sequential order. Common
+additions include:
+<ul>
+<li><strong>Noise Reduction</strong> or <strong>High-Pass
+Filter</strong></li>
+<li><strong>Compressor</strong></li>
+<li><strong>Loudness Normalization</strong> or
+<strong>Normalize</strong></li>
+<li>An export command, such as <strong>ExportWAV</strong> or
+<strong>ExportMp3</strong></li>
+</ul></li>
+<li>Adjust the parameters of each effect by selecting the command and
+clicking <strong>Edit Parameters</strong>.</li>
+<li>Click <strong>Save</strong> to store the macro sequence.</li>
+</ol>
+<h3 id="step-2-run-the-macro-on-multiple-files">Step 2: Run the Macro on
+Multiple Files</h3>
+<p>Once your Macro is configured, you can apply it directly to your
+audio files without opening them in the workspace:</p>
+<ol type="1">
+<li>Go to <strong>Tools</strong> &gt; <strong>Apply Macro</strong> &gt;
+<strong>Palette...</strong> (or simply stay in the
+<strong>Tools</strong> &gt; <strong>Macros</strong> dialog).</li>
+<li>Select your desired macro from the list on the left.</li>
+<li>Click the <strong>Files...</strong> button on the right.</li>
+<li>In the file browser window, navigate to the folder containing your
+audio files.</li>
+<li>Select all the files you wish to process. You can select hundreds of
+files at once by using <code>Ctrl + A</code> (Windows/Linux) or
+<code>Cmd + A</code> (macOS).</li>
+<li>Click <strong>Open</strong>.</li>
+</ol>
+<p>Audacity will immediately begin opening each file sequentially,
+running through the list of commands, and exporting the processed
+version. A progress indicator will display the current status of the
+batch.</p>
+<h3 id="where-output-files-are-saved">Where Output Files Are Saved</h3>
+<p>By default, Audacity exports the processed files into a newly created
+subfolder named <code>macro-output</code> located within the source
+folder of the original files. This prevents your original recordings
+from being accidentally overwritten.</p>
+<h3 id="best-practices-for-batch-processing">Best Practices for Batch
+Processing</h3>
+<ul>
+<li><strong>Always keep backups:</strong> Keep a separate backup copy of
+your raw, unedited audio files before running large automated
+batches.</li>
+<li><strong>Test on a sample file first:</strong> Create a test folder
+with two or three files to verify that the effects, parameters, and
+output formats meet your standards before running the macro on hundreds
+of files.</li>
+<li><strong>Include an Export command:</strong> A macro applied to files
+must include an export step (such as <code>ExportMp3</code> or
+<code>ExportWAV</code>). If omitted, Audacity will process the files in
+memory without saving the results to disk.</li>
+<li><strong>System resource management:</strong> While Audacity handles
+large batches reliably, processing hundreds of heavy, multi-gigabyte
+audio files requires significant CPU and drive access. Close
+resource-intensive background applications to ensure optimal
+performance.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/batch-process-multiple-files-with-audacity-macros';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

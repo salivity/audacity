@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Delay Tricks Cause Phase Cancellation in Audacity - audacity</title>
+    <meta name="description" content="Widening a mono audio track in Audacity using delay techniques—commonly known as the Haas effect—is a popular way to create an artificial stereo field, but it frequently introduces severe phase cancellation. This issue occurs when a mono track is duplicat">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/why-delay-tricks-cause-phase-cancellation-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Why Delay Tricks Cause Phase Cancellation in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/why-delay-tricks-cause-phase-cancellation-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Widening a mono audio track in Audacity using delay techniques—commonly known as the Haas effect—is a popular way to create an artificial stereo field, but it frequently introduces severe phase cancellation. This issue occurs when a mono track is duplicat" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="why-delay-tricks-cause-phase-cancellation-in-audacity">Why Delay
+Tricks Cause Phase Cancellation in Audacity</h1>
+<p>Widening a mono audio track in Audacity using delay
+techniques—commonly known as the Haas effect—is a popular way to create
+an artificial stereo field, but it frequently introduces severe phase
+cancellation. This issue occurs when a mono track is duplicated, panned
+left and right, and one channel is delayed by a few milliseconds. While
+the result sounds wide in stereo, combining or summing those channels
+creates destructive interference that hollows out the sound, strips
+low-end energy, or causes the audio to disappear entirely on mono
+playback systems.</p>
+<h2 id="the-mechanism-of-delay-based-widening">The Mechanism of
+Delay-Based Widening</h2>
+<p>To create artificial stereo width from a single mono source,
+producers typically duplicate the original track, pan one copy hard left
+and the other hard right, and apply a small delay (typically between 1
+and 30 milliseconds) to one side. The human brain interprets the
+arrival-time difference between the ears as spatial separation rather
+than two distinct echoes. Because both channels contain identical
+waveforms with only a time offset, they remain mathematically and
+temporally linked.</p>
+<h2 id="constructive-and-destructive-interference">Constructive and
+Destructive Interference</h2>
+<p>Sound travels in alternating cycles of positive and negative air
+pressure (peaks and troughs). When two identical waveforms play
+simultaneously, their interaction depends entirely on their time
+alignment:</p>
+<ul>
+<li><strong>Constructive Interference:</strong> When the peaks and
+troughs of both waves align in time, their amplitudes combine, making
+the sound louder and reinforced.</li>
+<li><strong>Destructive Interference:</strong> When the delay shifts one
+waveform so that its positive peak aligns with the negative trough of
+the other, the two waves subtract from each other. If the amplitudes are
+equal and exactly 180 degrees out of phase, they cancel each other out
+completely, producing silence at that specific frequency.</li>
+</ul>
+<h2 id="the-comb-filtering-phenomenon">The Comb Filtering
+Phenomenon</h2>
+<p>A static time delay does not cancel all frequencies equally; instead,
+it targets specific intervals across the frequency spectrum. The delayed
+signal will be in-phase at some frequencies and completely out-of-phase
+at others based on their wavelengths.</p>
+<p>For instance, a 1-millisecond delay introduces a complete phase
+cancellation at 500 Hz (where 1 ms equals half a wavelength), as well as
+at odd harmonics like 1500 Hz, 2500 Hz, and so forth. This series of
+evenly spaced frequency cutouts looks like the teeth of a comb on an
+audio analyzer, giving the phenomenon its name: comb filtering. Comb
+filtering imparts a hollow, metallic, or nasal quality to instruments
+and vocals.</p>
+<h2 id="why-mono-summing-exposes-the-flaw">Why Mono Summing Exposes the
+Flaw</h2>
+<p>During headphone or proper stereo speaker playback, the acoustic
+separation between your left and right ears prevents full acoustic
+cancellation, masking the comb filtering to an extent. However, phase
+cancellation becomes catastrophic when the mix is collapsed to mono.</p>
+<p>Many listening environments—including smartphones, smart speakers,
+club sound systems, and AM/FM radios—sum the left and right stereo
+channels into a single mono channel. When the panned left and delayed
+right channels are electronically summed together:</p>
+<ol type="1">
+<li>The opposing positive and negative voltages meet directly in the
+signal path.</li>
+<li>The frequencies affected by destructive interference drop out
+entirely.</li>
+<li>The track loses its volume, presence, and punch, often sinking
+behind other elements in the mix.</li>
+</ol>
+<h2 id="audacity-specific-factors">Audacity-Specific Factors</h2>
+<p>In Audacity, widening is usually achieved manually by duplicating
+tracks, using the Time Shift tool, or applying simple delay plugins
+without built-in phase-correction utilities. Because Audacity lacks
+native, real-time mono-summing monitoring on the master output by
+default, users often fail to notice comb filtering during editing.
+Choosing an arbitrary millisecond delay without calculating how it
+aligns with the fundamental frequencies of the source material reliably
+guarantees destructive phase issues across common playback systems.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/why-delay-tricks-cause-phase-cancellation-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
