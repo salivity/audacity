@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Avoid Editing Audacity Projects in Cloud Folders - audacity</title>
+    <meta name="description" content="Editing Audacity projects directly inside cloud-synchronized folders such as Dropbox, Google Drive, or Microsoft OneDrive is one of the leading causes of unrecoverable project corruption. While cloud storage is an excellent solution for backups, the backg">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/why-avoid-editing-audacity-projects-in-cloud-folders">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Why Avoid Editing Audacity Projects in Cloud Folders - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/why-avoid-editing-audacity-projects-in-cloud-folders" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Editing Audacity projects directly inside cloud-synchronized folders such as Dropbox, Google Drive, or Microsoft OneDrive is one of the leading causes of unrecoverable project corruption. While cloud storage is an excellent solution for backups, the backg" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="why-avoid-editing-audacity-projects-in-cloud-folders">Why Avoid
+Editing Audacity Projects in Cloud Folders</h1>
+<p>Editing Audacity projects directly inside cloud-synchronized folders
+such as Dropbox, Google Drive, or Microsoft OneDrive is one of the
+leading causes of unrecoverable project corruption. While cloud storage
+is an excellent solution for backups, the background synchronization
+processes actively interfere with how Audacity writes and manages audio
+data in real time. To protect your work from catastrophic data loss,
+database errors, and software crashes, audio files must always be edited
+from a local directory.</p>
+<h3 id="how-audacity-manages-project-data">How Audacity Manages Project
+Data</h3>
+<p>Modern versions of Audacity (version 3.0 and newer) store entire
+projects inside a single <code>.aup3</code> file, which operates as an
+active SQLite database. During an editing session, Audacity constantly
+reads, writes, and modifies data blocks within this database at high
+speeds, generating temporary companion files (such as <code>-wal</code>
+and <code>-shm</code> files) to track changes. Older versions of
+Audacity relied on an <code>.aup</code> file paired with a data folder
+containing thousands of fragmented audio blocks. In both cases, Audacity
+requires exclusive, uninterrupted read-and-write access to its files to
+function correctly.</p>
+<h3 id="file-locking-conflicts-and-sync-collisions">File Locking
+Conflicts and Sync Collisions</h3>
+<p>Cloud storage clients operate by continuously monitoring your
+directories for changes. The moment Audacity writes a new chunk of audio
+or updates the database, the sync engine attempts to read and upload
+that modified file to the cloud.</p>
+<p>This behavior creates a file-locking conflict:</p>
+<ul>
+<li><strong>Simultaneous Access:</strong> Audacity needs an exclusive
+write lock to save changes, while the cloud agent simultaneously
+attempts to read lock the file to upload it.</li>
+<li><strong>Write Failures:</strong> When the cloud service temporarily
+locks the project file to upload it, Audacity is denied access to its
+own database.</li>
+<li><strong>Corrupted Databases:</strong> Interrupting an active SQLite
+write sequence often results in the dreaded "database disk image is
+malformed" error, rendering the <code>.aup3</code> project
+unopenable.</li>
+</ul>
+<h3 id="sync-latency-and-conflicted-copies">Sync Latency and Conflicted
+Copies</h3>
+<p>Cloud clients cannot always resolve rapid, complex micro-changes
+across a network in real time. If the sync client cannot keep up with
+Audacity's constant disk operations, it may assume a synchronization
+error has occurred. Consequently, platforms like Dropbox or OneDrive
+will generate "conflicted copies" of the project file. If your project
+splits into separate versions mid-session, Audacity loses the internal
+references to your audio data, leading to missing tracks, silence in
+your timeline, and broken undo histories.</p>
+<h3 id="the-correct-workflow-for-cloud-storage">The Correct Workflow for
+Cloud Storage</h3>
+<p>To safely use cloud storage with Audacity, separate your editing
+environment from your backup storage:</p>
+<ol type="1">
+<li><strong>Work Locally:</strong> Always save and edit your active
+Audacity projects on a non-synced internal hard drive or SSD (such as
+your local Documents folder).</li>
+<li><strong>Close the Program:</strong> When your editing session is
+complete, save the project and exit Audacity completely. Ensure the
+temporary <code>-wal</code> and <code>-shm</code> files disappear from
+the folder, indicating the database has safely closed.</li>
+<li><strong>Copy to the Cloud:</strong> Copy or move the finished
+<code>.aup3</code> file into your cloud-synced folder for safe archiving
+and backup.</li>
+<li><strong>Download Before Re-editing:</strong> If you need to work on
+the project again from another machine, copy the file from the cloud
+back onto the local disk before launching Audacity.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/why-avoid-editing-audacity-projects-in-cloud-folders';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

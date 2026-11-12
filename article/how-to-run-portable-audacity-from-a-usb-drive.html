@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Run Portable Audacity from a USB Drive - audacity</title>
+    <meta name="description" content="Running Audacity from an external USB drive allows you to record, edit, and produce audio on virtually any computer without installing software or leaving configuration files behind. This guide explains how to obtain the portable files, set up the necessa">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-run-portable-audacity-from-a-usb-drive">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Run Portable Audacity from a USB Drive - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-run-portable-audacity-from-a-usb-drive" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Running Audacity from an external USB drive allows you to record, edit, and produce audio on virtually any computer without installing software or leaving configuration files behind. This guide explains how to obtain the portable files, set up the necessa" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-run-portable-audacity-from-a-usb-drive">How to Run
+Portable Audacity from a USB Drive</h1>
+<p>Running Audacity from an external USB drive allows you to record,
+edit, and produce audio on virtually any computer without installing
+software or leaving configuration files behind. This guide explains how
+to obtain the portable files, set up the necessary directory structure
+on your USB drive to ensure user settings stay self-contained, and
+launch the application seamlessly across different machines.</p>
+<h3 id="step-1-download-the-audacity-standalone-package">Step 1:
+Download the Audacity Standalone Package</h3>
+<p>To use Audacity portably, you need the standalone archive rather than
+the standard desktop installer.</p>
+<ol type="1">
+<li>Go to the official Audacity website or a trusted repository such as
+PortableApps.com.</li>
+<li>Download the 64-bit or 32-bit <strong>ZIP package</strong> of the
+latest Audacity release (or the <code>.paf.exe</code> installer if using
+PortableApps).</li>
+<li>Ensure you do not download the standard <code>.exe</code> installer,
+as that requires administrative rights and installs files to the local
+host operating system.</li>
+</ol>
+<h3 id="step-2-prepare-the-usb-drive-and-extract-the-files">Step 2:
+Prepare the USB Drive and Extract the Files</h3>
+<ol type="1">
+<li>Insert your USB flash drive or external drive into your
+computer.</li>
+<li>Open the drive in your file manager and create a dedicated folder,
+such as <code>Audacity Portable</code>.</li>
+<li>Open the downloaded Audacity ZIP file and extract all contents
+directly into your newly created folder on the USB drive.</li>
+</ol>
+<h3 id="step-3-enable-portable-mode-for-settings">Step 3: Enable
+Portable Mode for Settings</h3>
+<p>By default, the standard ZIP version of Audacity may attempt to read
+and save preferences to the host machine's local user directory. You can
+force Audacity to store all settings directly on your flash drive:</p>
+<ol type="1">
+<li>Navigate into the folder on your USB drive where
+<code>Audacity.exe</code> is located.</li>
+<li>Create a new folder in this exact directory.</li>
+<li>Name this new folder
+<strong><code>Portable Settings</code></strong>.</li>
+</ol>
+<p>When Audacity starts, it checks for the existence of this folder. If
+detected, it saves all application settings, plugin configurations, and
+preferences inside <code>Portable Settings</code> instead of the host
+computer's local application data folder. <em>(Note: If you downloaded
+the pre-configured version from PortableApps.com, this step is handled
+automatically).</em></p>
+<h3 id="step-4-configure-temporary-directories-for-performance">Step 4:
+Configure Temporary Directories for Performance</h3>
+<p>Working with large audio files over a slow USB connection can cause
+latency or playback stutters. To optimize performance:</p>
+<ol type="1">
+<li>Double-click <code>Audacity.exe</code> from your USB drive to launch
+the program.</li>
+<li>Open <strong>Edit</strong> &gt; <strong>Preferences</strong> (or
+press <code>Ctrl + P</code>).</li>
+<li>Select the <strong>Directories</strong> category on the left.</li>
+<li>Set your <strong>Temporary files directory</strong> based on your
+needs:
+<ul>
+<li><strong>For strict privacy:</strong> Keep the temporary folder
+pointed to a folder on your USB drive.</li>
+<li><strong>For better performance:</strong> Temporarily point it to a
+fast local drive on the host PC, provided you remember to clear it or
+let Audacity delete the temporary data upon closing.</li>
+</ul></li>
+</ol>
+<h3 id="step-5-safely-eject-after-use">Step 5: Safely Eject After
+Use</h3>
+<p>When you finish your editing session:</p>
+<ol type="1">
+<li>Save your project and export your final audio files.</li>
+<li>Close Audacity completely.</li>
+<li>Always use your operating system's "Safely Remove Hardware" or
+"Eject" feature before unplugging the USB drive. Unplugging the drive
+while Audacity is writing project data can lead to corrupted audio files
+and broken project directories.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-run-portable-audacity-from-a-usb-drive';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

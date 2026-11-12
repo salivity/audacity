@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Automate Effect Parameters in Audacity - audacity</title>
+    <meta name="description" content="Audacity does not natively feature dynamic parameter automation lanes for third-party plugins or built-in effects, meaning you cannot draw continuous automation curves for modulation parameters like LFO rate, chorus depth, or filter cutoff over time. Howe">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-automate-effect-parameters-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Automate Effect Parameters in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-automate-effect-parameters-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity does not natively feature dynamic parameter automation lanes for third-party plugins or built-in effects, meaning you cannot draw continuous automation curves for modulation parameters like LFO rate, chorus depth, or filter cutoff over time. Howe" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-automate-effect-parameters-in-audacity">How to Automate
+Effect Parameters in Audacity</h1>
+<p>Audacity does not natively feature dynamic parameter automation lanes
+for third-party plugins or built-in effects, meaning you cannot draw
+continuous automation curves for modulation parameters like LFO rate,
+chorus depth, or filter cutoff over time. However, you can achieve
+dynamic modulation effects using built-in modulation tools, amplitude
+envelopes, Nyquist scripting, and manual audio-splitting techniques.
+This guide outlines the software's current capabilities and the most
+effective workarounds to simulate modulation automation.</p>
+<h3 id="audacitys-native-automation-limits">Audacity’s Native Automation
+Limits</h3>
+<p>Unlike full digital audio workstations (DAWs) such as Ableton Live,
+Reaper, or FL Studio, Audacity is primarily a destructive audio editor.
+While modern versions of Audacity support real-time effects, the program
+still lacks automation lanes for plugin parameters. The only native
+parameters that can be continuously automated over a timeline are:</p>
+<ul>
+<li><strong>Volume/Gain:</strong> Managed using the <strong>Envelope
+Tool</strong> directly on the audio track.</li>
+<li><strong>Panning:</strong> Adjusted using the track pan slider
+(static, unless split across mono tracks).</li>
+<li><strong>Tempo/Speed:</strong> Controlled globally using a
+<strong>Time Track</strong>.</li>
+</ul>
+<h3 id="workarounds-for-dynamic-modulation">Workarounds for Dynamic
+Modulation</h3>
+<p>If you need a parameter like flanger speed, phaser depth, or filter
+resonance to evolve over time, use the following methods:</p>
+<h4 id="1-the-crossfade-and-split-method">1. The Crossfade and Split
+Method</h4>
+<p>The most common way to simulate a sweep between two modulation states
+is parallel processing with volume envelopes:</p>
+<ol type="1">
+<li>Duplicate your original audio track so you have two identical
+versions.</li>
+<li>Apply the modulation effect to Track 1 with your starting parameter
+settings (e.g., slow LFO rate).</li>
+<li>Apply the modulation effect to Track 2 with your ending parameter
+settings (e.g., fast LFO rate).</li>
+<li>Select the <strong>Envelope Tool</strong> (F2) on both tracks.</li>
+<li>Fade Track 1 out over the desired timeframe while simultaneously
+fading Track 2 in.</li>
+</ol>
+<p>This creates a smooth perceptual transition from the initial setting
+to the final setting.</p>
+<h4 id="2-built-in-dynamic-effects">2. Built-in Dynamic Effects</h4>
+<p>Certain native effects in Audacity have time-variant modulation built
+directly into their algorithms:</p>
+<ul>
+<li><strong>Wahwah:</strong> Uses an internal LFO to sweep a bandpass
+filter over time.</li>
+<li><strong>Tremolo:</strong> Continuously modulates amplitude at a
+designated frequency.</li>
+<li><strong>Phaser:</strong> Sweeps phase cancellation notches across
+the frequency spectrum automatically.</li>
+</ul>
+<p>While these effects do modulate over time, the parameters controlling
+the modulation (such as LFO frequency) remain constant throughout the
+selection.</p>
+<h4 id="3-nyquist-scripting">3. Nyquist Scripting</h4>
+<p>Audacity’s internal programming language, Nyquist, allows you to
+apply mathematical functions that change values over the duration of an
+audio selection. Advanced users can write or modify Nyquist plug-ins to
+sweep parameters—such as low-pass filter cutoffs—dynamically across a
+track using time-based control signals (envelopes).</p>
+<h3 id="summary">Summary</h3>
+<p>Dynamic parameter automation over time is not natively supported in
+Audacity for custom effect parameters. For simple dynamic modulation,
+splitting tracks and crossfading or using built-in Nyquist tools
+provides a functional workaround. If your project relies heavily on
+drawing complex, real-time automation curves for modulation depths,
+resonance, or plugin parameters, consider using a dedicated DAW.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-automate-effect-parameters-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

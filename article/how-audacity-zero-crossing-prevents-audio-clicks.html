@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Audacity Zero Crossing Prevents Audio Clicks - audacity</title>
+    <meta name="description" content="When editing audio in Audacity, cutting or splicing a track can often introduce an unwanted clicking or popping sound at the edit point. The &quot;Find Zero Crossings&quot; feature is designed to prevent this issue by automatically aligning your selection edges wit">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-audacity-zero-crossing-prevents-audio-clicks">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Audacity Zero Crossing Prevents Audio Clicks - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-audacity-zero-crossing-prevents-audio-clicks" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When editing audio in Audacity, cutting or splicing a track can often introduce an unwanted clicking or popping sound at the edit point. The &quot;Find Zero Crossings&quot; feature is designed to prevent this issue by automatically aligning your selection edges wit" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-audacity-zero-crossing-prevents-audio-clicks">How Audacity
+Zero Crossing Prevents Audio Clicks</h1>
+<p>When editing audio in Audacity, cutting or splicing a track can often
+introduce an unwanted clicking or popping sound at the edit point. The
+"Find Zero Crossings" feature is designed to prevent this issue by
+automatically aligning your selection edges with points in the waveform
+where the signal amplitude is at absolute zero. By ensuring cuts and
+joins only occur when the audio wave is inactive, the tool creates
+seamless transitions without requiring time-consuming manual
+crossfades.</p>
+<h3 id="why-clicks-and-pops-occur-during-cuts">Why Clicks and Pops Occur
+During Cuts</h3>
+<p>Sound waves consist of alternating positive and negative electrical
+values that cause speaker cones to vibrate back and forth. If you split,
+cut, or paste an audio track at a point where the wave is at a peak or
+trough (a non-zero amplitude), the signal is forced to instantly drop to
+silence (zero).</p>
+<p>This sudden, instantaneous change in voltage creates an abrupt jump
+in the speaker cone's position. The human ear perceives this mechanical
+jump as a distinct click, tick, or pop. The higher the amplitude at the
+moment of the cut, the louder and more noticeable the click becomes.</p>
+<h3 id="what-is-a-zero-crossing">What is a Zero Crossing?</h3>
+<p>A zero crossing is any exact moment where the audio waveform
+intersects the center horizontal line on the Audacity timeline. At this
+precise point, the amplitude (volume) and voltage of the audio signal
+are zero.</p>
+<p>Because there is no electrical energy driving the speaker at a zero
+crossing, cutting, deleting, or splitting audio at this exact point will
+not cause the speaker to snap violently back to the center position.</p>
+<h3 id="how-the-find-zero-crossings-tool-works">How the "Find Zero
+Crossings" Tool Works</h3>
+<p>Finding zero crossings manually at high zoom levels is tedious.
+Audacity automates this process through the "Find Zero Crossings"
+command (accessible via the <code>Select</code> menu or by pressing the
+shortcut key <code>Z</code>).</p>
+<p>When you invoke the tool:</p>
+<ol type="1">
+<li><strong>Boundary Adjustment:</strong> Audacity scans the audio near
+both the start and end edges of your current selection.</li>
+<li><strong>Nearest Target Search:</strong> The tool nudges each
+selection boundary slightly left or right to find the nearest sample
+point where the waveform value is zero.</li>
+<li><strong>Phase Matching:</strong> Whenever possible, it attempts to
+match points where the wave moves in the same direction (e.g., rising
+from negative to positive) to preserve smooth phase continuity between
+spliced sections.</li>
+</ol>
+<h3 id="practical-benefits-for-audio-editing">Practical Benefits for
+Audio Editing</h3>
+<p>Using the Zero Crossing tool simplifies workflow across several
+common editing tasks:</p>
+<ul>
+<li><strong>Removing Mistakes or Pauses:</strong> Cutting unwanted words
+or dead air leaves the remaining ends at zero amplitude, allowing them
+to snap together cleanly.</li>
+<li><strong>Creating Seamless Loops:</strong> When creating loops for
+music production or background noise beds, matching both the beginning
+and end of the loop to zero crossings prevents clicks on each
+repetition.</li>
+<li><strong>Reduced Need for Micro-Fades:</strong> While editors often
+use tiny fade-ins and fade-outs (crossfades) to disguise clicks,
+aligning cuts to zero crossings solves the root cause instantly without
+altering track timing or volume envelopes.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-audacity-zero-crossing-prevents-audio-clicks';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

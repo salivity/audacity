@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audacity Wahwah Effect: Bandpass Modulation Explained - audacity</title>
+    <meta name="description" content="The Wahwah effect in Audacity simulates the classic analog guitar pedal by dynamically moving a narrow frequency band back and forth across the audio spectrum. This article explains the technical mechanics behind this process, focusing on how a bandpass f">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/audacity-wahwah-effect-bandpass-modulation-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audacity Wahwah Effect: Bandpass Modulation Explained - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/audacity-wahwah-effect-bandpass-modulation-explained" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Wahwah effect in Audacity simulates the classic analog guitar pedal by dynamically moving a narrow frequency band back and forth across the audio spectrum. This article explains the technical mechanics behind this process, focusing on how a bandpass f" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="audacity-wahwah-effect-bandpass-modulation-explained">Audacity
+Wahwah Effect: Bandpass Modulation Explained</h1>
+<p>The Wahwah effect in Audacity simulates the classic analog guitar
+pedal by dynamically moving a narrow frequency band back and forth
+across the audio spectrum. This article explains the technical mechanics
+behind this process, focusing on how a bandpass filter combines with a
+Low-Frequency Oscillator (LFO) and resonant peaking to modulate
+frequencies and create the distinctive, vocal-like "wah" sound.</p>
+<h3 id="the-mechanics-of-bandpass-modulation">The Mechanics of Bandpass
+Modulation</h3>
+<p>At its core, the Wahwah effect transforms audio by continuously
+altering the frequency response of the input signal using three core
+audio processing stages:</p>
+<ol type="1">
+<li><strong>Bandpass Filtering</strong>: Unlike a high-pass or low-pass
+filter that cuts off sound at a single boundary, a bandpass filter
+permits only a specific, narrow range of frequencies to pass through
+unchanged while substantially cutting (attenuating) frequencies both
+above and below this band.</li>
+<li><strong>LFO-Driven Sweeping</strong>: In a static filter, the center
+frequency of the bandpass remains stationary. Audacity's Wahwah effect
+introduces a Low-Frequency Oscillator (LFO), which automatically
+moves—or sweeps—the center frequency up and down across the audio
+spectrum over time.</li>
+<li><strong>Resonance Boosting</strong>: To make the moving band
+audible, the filter applies resonance (often referred to as "Q").
+Resonance boosts the amplitude directly at the filter's center
+frequency, producing a sharp, pronounced spectral peak that mimics human
+vowel formants (specifically shifting between "oo" and "ah").</li>
+</ol>
+<h3 id="how-wahwah-parameters-control-modulation-in-audacity">How Wahwah
+Parameters Control Modulation in Audacity</h3>
+<p>Audacity provides several controls that directly manipulate how the
+bandpass filter behaves and modulates:</p>
+<ul>
+<li><strong>LFO Frequency (Hz)</strong>: Sets the speed of modulation. A
+higher frequency causes the bandpass filter to sweep back and forth
+rapidly, while a lower frequency results in a slow, undulating
+sweep.</li>
+<li><strong>LFO Start Phase (Degrees)</strong>: Determines where the
+modulation cycle begins (from 0 to 360 degrees). This dictates whether
+the bandpass starts sweeping upward, downward, or from the peak of its
+range.</li>
+<li><strong>Depth (%)</strong>: Governs the range of the frequency
+sweep. At higher depth percentages, the bandpass filter sweeps across a
+wider portion of the frequency spectrum. At lower percentages, the sweep
+is constrained to a narrower band around the base frequency.</li>
+<li><strong>Resonance</strong>: Controls the sharpness and intensity of
+the bandpass peak. Higher values narrow the passed frequency range and
+increase the volume boost at the center frequency, making the sweeping
+effect much more aggressive and vocal.</li>
+<li><strong>Wah Frequency Offset (%)</strong>: Shifts the base or
+resting center frequency of the bandpass filter. Adjusting this raises
+or lowers the overall frequency territory that the LFO sweep
+traverses.</li>
+<li><strong>Output Level</strong>: Scales the final gain to compensate
+for the volume increases caused by high resonance settings.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/audacity-wahwah-effect-bandpass-modulation-explained';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

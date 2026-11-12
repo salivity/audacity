@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Export Multichannel Audio from Audacity - audacity</title>
+    <meta name="description" content="Exporting a multichannel surround audio file from Audacity can lead to unexpected results if the software is left at its default configuration. By default, Audacity automatically downmixes all project tracks into a standard stereo or mono file during expo">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-export-multichannel-audio-from-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Export Multichannel Audio from Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-export-multichannel-audio-from-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Exporting a multichannel surround audio file from Audacity can lead to unexpected results if the software is left at its default configuration. By default, Audacity automatically downmixes all project tracks into a standard stereo or mono file during expo" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-export-multichannel-audio-from-audacity">How to Export
+Multichannel Audio from Audacity</h1>
+<p>Exporting a multichannel surround audio file from Audacity can lead
+to unexpected results if the software is left at its default
+configuration. By default, Audacity automatically downmixes all project
+tracks into a standard stereo or mono file during export, stripping away
+spatial positioning. This article explains what happens during this
+default export process, why it occurs, and how to configure Audacity to
+preserve discrete surround sound channels.</p>
+<p>When you attempt to export a project containing more than two audio
+tracks—such as a 5.1 or 7.1 surround configuration—without adjusting
+Audacity’s internal settings, the software initiates an automatic stereo
+downmix. A prompt will typically appear warning you that the tracks will
+be mixed down and exported as one stereo file. If you proceed, Audacity
+combines every active track into left and right channels based on their
+pan positions. This results in the complete loss of your discrete
+surround channels (such as center, LFE/subwoofer, and surround
+speakers), effectively flattening the audio into a two-channel file.</p>
+<p>This behavior occurs because Audacity defaults to standard
+two-channel output to prevent compatibility issues with common playback
+systems. To bypass this automatic downmix, you must enable the
+software's advanced routing features prior to exporting.</p>
+<p>To preserve your surround channels, navigate to <strong>Edit &gt;
+Preferences</strong> (or <strong>Audacity &gt; Preferences</strong> on
+macOS), select the <strong>Import / Export</strong> category, and choose
+<strong>Use custom mix</strong> (labeled as <strong>Use advanced mixing
+options</strong> in some versions).</p>
+<p>Once this setting is active, selecting an export option will open the
+<strong>Advanced Mixing Options</strong> dialog box before the file is
+rendered. This interface allows you to:</p>
+<ol type="1">
+<li><strong>Specify Output Channels:</strong> Set the total number of
+output channels to match your surround format (e.g., 6 channels for 5.1
+surround or 8 channels for 7.1 surround).</li>
+<li><strong>Map Tracks Directly:</strong> Manually map each project
+track to its corresponding output channel by clicking the connection
+grid. This ensures that specific audio stems, like the center channel or
+low-frequency effects, are routed to their designated positions rather
+than being blended into the front channels.</li>
+</ol>
+<p>Additionally, file format compatibility plays a critical role in
+multichannel export. Formats such as standard MP3 do not support
+multichannel audio and will fail to output surround sound. To retain
+discrete channels, you must export your project in a format that
+natively supports multichannel streams, such as WAV, AIFF, FLAC, or Ogg
+Vorbis. If the correct format is selected and the custom mix matrix is
+properly routed, Audacity will successfully generate a true multichannel
+surround audio file.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-export-multichannel-audio-from-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

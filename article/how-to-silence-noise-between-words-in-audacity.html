@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Silence Noise Between Words in Audacity - audacity</title>
+    <meta name="description" content="Unwanted background sounds such as breaths, room tone, and microphone hiss between spoken words can distract listeners and lower the quality of your audio. In Audacity, you can eliminate these interruptions either automatically using tools like the Noise">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/how-to-silence-noise-between-words-in-audacity">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Silence Noise Between Words in Audacity - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/how-to-silence-noise-between-words-in-audacity" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Unwanted background sounds such as breaths, room tone, and microphone hiss between spoken words can distract listeners and lower the quality of your audio. In Audacity, you can eliminate these interruptions either automatically using tools like the Noise" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-silence-noise-between-words-in-audacity">How to Silence
+Noise Between Words in Audacity</h1>
+<p>Unwanted background sounds such as breaths, room tone, and microphone
+hiss between spoken words can distract listeners and lower the quality
+of your audio. In Audacity, you can eliminate these interruptions either
+automatically using tools like the Noise Gate and Truncate Silence, or
+manually using the Silence Audio tool and direct deletion. This guide
+covers the most efficient methods to mute or remove those unwanted
+sounds to produce crisp, professional speech tracks.</p>
+<h2 id="method-1-automatically-mute-noise-with-a-noise-gate">Method 1:
+Automatically Mute Noise with a Noise Gate</h2>
+<p>The Noise Gate plugin automatically silences any audio that falls
+below a specified volume threshold, leaving the louder spoken words
+untouched.</p>
+<ol type="1">
+<li>Select your audio track by clicking the track header or pressing
+<strong>Ctrl + A</strong> (Windows) or <strong>Cmd + A</strong>
+(Mac).</li>
+<li>Go to the top menu and select <strong>Effect &gt; Noise Removal and
+Repair &gt; Noise Gate</strong>.</li>
+<li>Adjust the <strong>Gate threshold</strong>: Set this just above the
+level of the background noise, but below the quietest parts of your
+speech (typically between -30 dB and -40 dB).</li>
+<li>Set the <strong>Level reduction</strong>: Choose how much to
+attenuate the noise. Setting this to -100 dB will completely mute the
+gaps.</li>
+<li>Adjust the <strong>Attack</strong> (around 10–25 ms) so the gate
+opens quickly when words begin, and the <strong>Decay/Release</strong>
+(around 100–250 ms) so the ends of words are not cut off abruptly.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<h2 id="method-2-manually-mute-noise-with-the-silence-audio-tool">Method
+2: Manually Mute Noise with the Silence Audio Tool</h2>
+<p>If you only have a few spots to clean up and want complete control
+without affecting the rest of the track, use the Silence Audio
+shortcut.</p>
+<ol type="1">
+<li>Use the <strong>Selection Tool (F1)</strong> to highlight the noisy
+gap between two spoken words.</li>
+<li>Press <strong>Ctrl + L</strong> (Windows) or <strong>Cmd +
+L</strong> (Mac), or click the <strong>Silence Audio Selection</strong>
+button on the edit toolbar (an icon showing a flat line between two
+audio peaks).</li>
+<li>The selected section will be replaced with pure silence while
+preserving the original timing of your speech.</li>
+</ol>
+<h2 id="method-3-delete-gaps-completely-to-shorten-pauses">Method 3:
+Delete Gaps Completely to Shorten Pauses</h2>
+<p>If you prefer to remove the dead space entirely rather than leaving
+silence, you can cut the gaps out.</p>
+<h3 id="manual-deletion">Manual Deletion</h3>
+<ol type="1">
+<li>Highlight the unwanted noise between words using the
+<strong>Selection Tool</strong>.</li>
+<li>Press the <strong>Delete</strong> or <strong>Backspace</strong>
+key.</li>
+<li>The audio to the right will shift left, closing the gap.</li>
+</ol>
+<h3 id="automated-deletion-truncate-silence">Automated Deletion
+(Truncate Silence)</h3>
+<ol type="1">
+<li>Select your entire track.</li>
+<li>Navigate to <strong>Effect &gt; Special &gt; Truncate
+Silence</strong>.</li>
+<li>Set the <strong>Threshold</strong> to a level that detects only the
+background noise (e.g., -40 dB).</li>
+<li>Set the <strong>Minimum Duration</strong> to specify how long a
+pause must be before Audacity acts on it (e.g., 0.5 seconds).</li>
+<li>Set the <strong>Truncate to</strong> value to the length you want to
+compress the pauses down to (e.g., 0.2 seconds).</li>
+<li>Click <strong>Apply</strong> to automatically shorten and clean
+every long pause across the entire track.</li>
+</ol>
+<h2 id="method-4-clean-residual-noise-with-noise-reduction">Method 4:
+Clean Residual Noise with Noise Reduction</h2>
+<p>If the background noise is consistent throughout both the speech and
+the pauses, run Audacity's standard Noise Reduction effect before gating
+or silencing.</p>
+<ol type="1">
+<li>Highlight a small section containing <em>only</em> background
+noise.</li>
+<li>Go to <strong>Effect &gt; Noise Removal and Repair &gt; Noise
+Reduction</strong>.</li>
+<li>Click <strong>Get Noise Profile</strong>.</li>
+<li>Select the entire recording (<strong>Ctrl + A</strong> / <strong>Cmd
++ A</strong>).</li>
+<li>Open <strong>Noise Reduction</strong> again, leave the defaults
+(Noise Reduction: 12 dB, Sensitivity: 6, Frequency Smoothing: 3), and
+click <strong>OK</strong>.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/how-to-silence-noise-between-words-in-audacity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

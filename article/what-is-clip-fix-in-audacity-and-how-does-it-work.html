@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Clip Fix in Audacity and How Does It Work? - audacity</title>
+    <meta name="description" content="Audacity’s Clip Fix is an audio restoration tool designed to repair clipped or distorted recordings by mathematically reconstructing truncated waveform peaks. This article explains what the Clip Fix effect does, how digital clipping degrades audio, the ma">
+    <link rel="canonical" href="https://salivity.github.io/audacity/article/what-is-clip-fix-in-audacity-and-how-does-it-work">
+    <link rel="search" type="application/opensearchdescription+xml" title="audacity" href="/audacity/opensearch.xml">
+    <link rel="icon" href="/audacity/favicon.ico">
+    <link rel="stylesheet" href="/audacity/css/style.css">
+    <link media="print" rel="stylesheet" href="/audacity/css/print.css">
+    <script src="/audacity/js/fuse.min.js"></script>
+    <script src="/audacity/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Is Clip Fix in Audacity and How Does It Work? - audacity" />
+    <meta property="og:url" content="https://salivity.github.io/audacity/article/what-is-clip-fix-in-audacity-and-how-does-it-work" />
+    <meta property="og:image" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/audacity/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audacity’s Clip Fix is an audio restoration tool designed to repair clipped or distorted recordings by mathematically reconstructing truncated waveform peaks. This article explains what the Clip Fix effect does, how digital clipping degrades audio, the ma" />
+    <link rel="manifest" href="/audacity/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/audacity/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>audacity</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/audacity/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="what-is-clip-fix-in-audacity-and-how-does-it-work">What Is Clip
+Fix in Audacity and How Does It Work?</h1>
+<p>Audacity’s Clip Fix is an audio restoration tool designed to repair
+clipped or distorted recordings by mathematically reconstructing
+truncated waveform peaks. This article explains what the Clip Fix effect
+does, how digital clipping degrades audio, the mathematical
+interpolation methods used to redraw missing waveform data, and the
+necessary steps to apply it correctly to your audio tracks.</p>
+<h3 id="understanding-digital-audio-clipping">Understanding Digital
+Audio Clipping</h3>
+<p>Digital audio operates within a fixed dynamic range defined by a
+digital ceiling known as 0 dBFS (decibels full scale). When an incoming
+audio signal is recorded too loud, or when gain processing pushes a
+signal beyond this limit, the audio hardware or software cannot
+represent the values exceeding 0 dBFS.</p>
+<p>Instead of capturing smooth, rounded wave peaks, the system chops off
+the tops and bottoms of the waveform, resulting in flat, squared-off
+plateaus. This introduces harsh harmonic distortion, artifacts, and a
+loss of dynamic clarity.</p>
+<h3 id="what-is-the-clip-fix-effect">What Is the Clip Fix Effect?</h3>
+<p>Clip Fix is a built-in Nyquist-based processing effect in Audacity.
+It is categorized as a de-clipper. Rather than simply filtering out
+harsh frequencies, Clip Fix identifies where clipping has occurred and
+attempts to reconstruct the lost peaks by estimating what the original,
+unclipped sound wave looked like before it was truncated.</p>
+<h3 id="how-clip-fix-reconstructs-clipped-peaks">How Clip Fix
+Reconstructs Clipped Peaks</h3>
+<p>The reconstruction process relies on mathematical prediction,
+specifically through the following steps:</p>
+<ol type="1">
+<li><strong>Flat Peak Detection:</strong> The algorithm analyzes the
+waveform to detect consecutive samples that stay at or near the same
+maximum threshold. Users configure a "threshold" percentage in the Clip
+Fix interface (typically set between 90% and 98%) to tell the algorithm
+how close to maximum volume a sample must be to be considered
+"clipped."</li>
+<li><strong>Slope and Curve Analysis:</strong> Once a clipped segment is
+flagged, the algorithm examines the unclipped samples immediately
+preceding and following the flattened plateau. It measures the slope,
+velocity, and trajectory of the incoming and outgoing sound wave.</li>
+<li><strong>Cubic Spline Interpolation:</strong> Using the trajectory
+data from the adjacent, undamaged samples, Clip Fix applies cubic spline
+interpolation. This mathematical technique generates a smooth,
+continuous polynomial curve between the entry and exit points of the
+clipped section, replacing the flat plateau with an arched peak that
+matches the natural behavior of an acoustic sound wave.</li>
+<li><strong>Dynamic Range Expansion:</strong> Because the new peak
+extends higher than the flat plateau it replaces, the overall peak
+amplitude of that section increases.</li>
+</ol>
+<h3 id="critical-requirement-creating-headroom">Critical Requirement:
+Creating Headroom</h3>
+<p>Because the reconstructed peaks will be taller than the original
+clipped flat tops, applying Clip Fix directly to a track that already
+hits 0 dBFS will cause the newly generated peaks to clip again.</p>
+<p>To use Clip Fix effectively:</p>
+<ul>
+<li><strong>Reduce Gain First:</strong> Select the audio and use the
+<strong>Amplify</strong> effect with a negative value (such as -3 dB to
+-6 dB) to lower the entire waveform below 0 dBFS. This creates the
+necessary headroom for the restored peaks to occupy.</li>
+<li><strong>Apply Clip Fix:</strong> Run the effect, setting the
+threshold to identify the clipped areas based on the newly reduced
+levels.</li>
+<li><strong>Normalize:</strong> Once the peaks are rebuilt, you can
+safely normalize the audio to bring it back to the desired peak
+volume.</li>
+</ul>
+<h3 id="limitations-of-clip-fix">Limitations of Clip Fix</h3>
+<p>Clip Fix is an interpolative estimation tool, not an exact recovery
+mechanism. While it successfully removes harsh square-wave distortion on
+moderately clipped audio, it cannot restore severely crushed signals
+where large segments of the waveform are missing. If too much of the
+original curve is flattened, the algorithm lacks sufficient context to
+accurately predict the original shape of the sound.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/audacity/article/what-is-clip-fix-in-audacity-and-how-does-it-work';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/audacity/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/audacity/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
